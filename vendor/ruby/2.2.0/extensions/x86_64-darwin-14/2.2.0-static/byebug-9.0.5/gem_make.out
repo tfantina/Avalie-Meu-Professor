@@ -1,0 +1,20 @@
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/byebug-9.0.5/ext/byebug
+/Users/tfantina/.rvm/rubies/ruby-2.2.1/bin/ruby -r ./siteconf20160806-31904-1uakoyb.rb extconf.rb
+creating Makefile
+
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+ld: warning: directory not found for option '-L/Users/haven/.sm/pkg/active/lib'
+
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -m 0755 byebug.bundle ./.gem.20160806-31904-213xc1/byebug

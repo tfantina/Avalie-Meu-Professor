@@ -1,0 +1,20 @@
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/bcrypt-3.1.11/ext/mri
+/Users/tfantina/.rvm/rubies/ruby-2.2.1/bin/ruby -r ./siteconf20160806-31904-1bszjdt.rb extconf.rb
+creating Makefile
+
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" clean
+
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+compiling crypt.c
+compiling crypt_blowfish.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.bundle
+ld: warning: directory not found for option '-L/Users/haven/.sm/pkg/active/lib'
+
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/bcrypt-3.1.11/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -m 0755 bcrypt_ext.bundle ./.gem.20160806-31904-n9cljq

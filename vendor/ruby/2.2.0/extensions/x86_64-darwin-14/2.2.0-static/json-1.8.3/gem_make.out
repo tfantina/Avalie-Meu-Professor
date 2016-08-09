@@ -1,0 +1,13 @@
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/json-1.8.3/ext/json
+/Users/tfantina/.rvm/rubies/ruby-2.2.1/bin/ruby -r ./siteconf20160806-31904-1acs0ls.rb extconf.rb
+creating Makefile
+
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/json-1.8.3/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/json-1.8.3/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/json-1.8.3/ext/json
+make "DESTDIR=" install

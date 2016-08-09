@@ -1,0 +1,83 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+body {
+  background: hsl(213, 100%, 62%)
+}
+
+.review_title {
+  margin: 0 0 20px 0;
+}
+.reviews {
+  padding: 15px 0;
+  border-bottom: 1px solid hsl(213, 27%, 62%);
+  .star-rating {
+    padding-bottom: 6px;
+  }
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.col-md-4 img {
+  margin-top: 10px;
+}
+.col-md-6 {
+  margin-top: 10px;
+}
+
+/*miscellaneous error stuff */
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  //width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+
+  }
+}
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}

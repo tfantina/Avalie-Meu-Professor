@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rating: 1
+  hw: 1
+  ease: 1
+  tests: 1
+  interesting: 1
+  helpfull: 1
+  comment: MyText
+
+two:
+  rating: 1
+  hw: 1
+  ease: 1
+  tests: 1
+  interesting: 1
+  helpfull: 1
+  comment: MyText

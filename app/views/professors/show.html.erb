@@ -1,0 +1,60 @@
+
+<div class="panel panel-default">
+
+  <div class="pannel-body">
+    <div class="row">
+
+      <div class="col-md-4">
+        <%= image_tag @professor.image.url(:medium) %>
+          </br>
+          </br>
+          <% if !@review.blank? %>
+            <%= link_to "Review this Professor", new_professor_review_path(@professor), class: "btn btn-primary"%>
+          <% end %>
+      </div>
+
+      <div class="col-md-6">
+          <h1 class="review_title"> <%= @professor.fullname %> </h1>
+          <ul class="list-unstyled">
+            <% if !@review.blank? %>
+            <li> <strong>Average Review: </strong><div class="star-rating" data-score= <%= @avg_review %> </div></li>
+            <% end %>
+
+            <li><strong>School: </strong><%= @professor.school %></li>
+            <li><strong>Department: </strong>  <%= @professor.department %></li>
+            <li><%= "#{@review.length}" " Review".pluralize(@review.length)%></li>
+          </ul>
+      </div>
+      <div class="col-md-8">
+
+          <% if @review.blank? %>
+            <h3> This professor is not yet reviewed would you like to review: </h3>
+            <%= link_to "Review Now!", new_professor_review_path(@professor), class: "btn btn-danger btn-lg" %>
+          <% else %>
+            <% @review.each do |review| %>
+              <div class="reviews">
+                <div class="star-rating" data-score= <%= review.hw %> </div>
+                  </br>
+                  <%= review.comment %><br>
+                  <%= @user %>
+
+                  </br>
+              </div>
+          </div>
+          <% end %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+
+<%= link_to 'Edit', edit_professor_path(@professor) %> |
+<%= link_to 'Back', professors_path %>
+
+<script>
+  $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true, score: function(){
+          return $(this).attr('data-score');
+      }
+  });
+  </script>

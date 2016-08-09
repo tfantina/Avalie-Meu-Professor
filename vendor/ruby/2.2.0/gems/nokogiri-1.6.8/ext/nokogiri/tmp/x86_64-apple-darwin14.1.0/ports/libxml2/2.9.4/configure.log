@@ -1,0 +1,5 @@
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking build system type... x86_64-apple-darwin15.0.0
+checking host system type... x86_64-apple-darwin14.1.0
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... configure: error: unsafe absolute working directory name

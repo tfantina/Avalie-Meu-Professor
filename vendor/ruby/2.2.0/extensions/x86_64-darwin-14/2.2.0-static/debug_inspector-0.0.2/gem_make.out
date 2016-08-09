@@ -1,0 +1,16 @@
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+/Users/tfantina/.rvm/rubies/ruby-2.2.1/bin/ruby -r ./siteconf20160806-31904-113d5fj.rb extconf.rb
+creating Makefile
+
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+ld: warning: directory not found for option '-L/Users/haven/.sm/pkg/active/lib'
+
+current directory: /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/prof-review/vendor/ruby/2.2.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -m 0755 debug_inspector.bundle ./.gem.20160806-31904-1hw1k4z
