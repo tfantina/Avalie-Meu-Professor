@@ -5,7 +5,7 @@
       <p> With over <%= @num %> professors we are your go to choice!</p>
 
       <p> Search for a professor, school, department or <%= link_to "click to see the full database.", professors_path %> </p>
-      
+
         <%= form_tag search_professors_path, method: :get, class: "form form-sm", role: "Search" do %>
       <p>
         <%= text_field_tag :search, params[:search], class: "form-control" %>
@@ -18,7 +18,7 @@
   <% @footer.each do |professor| %>
      <div class=".col-sm-6 col-md-3">
        <div class="thumbnail">
-         <%= link_to (image_tag professor.image.url(:medium), class: 'image'), professor %>
+      
          <h3><%= professor.try(:fullname) %></h3>
          <ul class="list-unstyled text-muted">
            <li> <%= professor.try(:school) %></li>

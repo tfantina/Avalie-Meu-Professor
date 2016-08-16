@@ -12,9 +12,9 @@
 <% @professors.each do |professor| %>
    <div class=".col-sm-6 col-md-3">
      <div class="thumbnail">
-       <%= link_to (image_tag professor.image.url(:medium), class: 'image'), professor %>
-       
+  
        <ul class="list-unstyled text-muted">
+         <li> <h2> <%= link_to professor.try(:fullname), professor %>
          <li> <%= professor.try(:school) %></li>
          <li class="small"> <%= professor.try(:department) %></li>
        </ul>
