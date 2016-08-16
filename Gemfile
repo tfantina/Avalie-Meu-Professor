@@ -31,10 +31,8 @@ gem 'searchkick', '~> 1.2', '>= 1.2.1'
 gem 'will_paginate', '~> 3.1'
 #paginate for bootstrap
 gem 'bootstrap-will_paginate', '~> 0.0.10'
-#Carrierwave
-#gem 'carrierwave'
 #Cloudinary
-#gem 'cloudinary'
+gem 'cloudinary'
 #Paperclip forcloudinary
 gem 'paperclip-cloudinary'
 #elasticsearch stuff
