@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @username = User.user_name.where(user_id: review.user_id)
+  #  @username = User.user_name.where(user_id: review.user_id)
 
   end
 
