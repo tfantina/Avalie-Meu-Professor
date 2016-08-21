@@ -1,11 +1,12 @@
 require 'elasticsearch/model'
 class Professor < ActiveRecord::Base
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
 #  attr_accessor :photo
 #  mount_uploader :photo, PhotoUploader
 
   #elasticsearch for heroku
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
 
   searchkick
   belongs_to :user
