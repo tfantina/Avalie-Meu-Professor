@@ -43,7 +43,7 @@ gem 'paperclip-cloudinary'
 #gem 'elasticsearch-rails'
 #gem 'elasticsearch-model'
 #bonsi
-gem 'bonsai-elasticsearch-rails', '~> 0.0.4'
+#gem 'bonsai-elasticsearch-rails', '~> 0.0.4'
 
 group :production do
   gem 'rails_12factor'
