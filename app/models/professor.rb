@@ -1,7 +1,7 @@
 require 'elasticsearch/model'
 class Professor < ActiveRecord::Base
-  attr_accessor :photo
-  mount_uploader :photo, PhotoUploader
+#  attr_accessor :photo
+#  mount_uploader :photo, PhotoUploader
 
   #elasticsearch for heroku
   include Elasticsearch::Model
