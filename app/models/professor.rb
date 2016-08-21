@@ -1,8 +1,12 @@
 require 'elasticsearch/model'
 class Professor < ActiveRecord::Base
-#  include Cloudinary::Paperclip
+  attr_accessor :photo
+  mount_uploader :photo, PhotoUploader
+
+  #elasticsearch for heroku
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
+
   searchkick
   belongs_to :user
   has_many :reviews
@@ -16,6 +20,7 @@ class Professor < ActiveRecord::Base
 
  def username
   Review.where("user_id IN (following_ids) OR user_id = :user_id", following_ids: following_ids, user_id: id)
-end
+ end
 
+  Professor.import
 end

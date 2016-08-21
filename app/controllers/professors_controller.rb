@@ -1,7 +1,11 @@
 class ProfessorsController < ApplicationController
   before_action :set_professor, only: [:show, :edit, :update, :destroy]
 #  before_action :authenticate_user!, except: [:index, :show, :search, :review]
+  before_filter :check_configuration
 
+  def check_configuration
+    render 'configuration_missing' if Cloudinary.config.api_key.blank?
+  end
 
   # GET /professors
   # GET /professors.json
@@ -17,7 +21,7 @@ class ProfessorsController < ApplicationController
       @review = Review.where(professor_id: @professor.id).order("created_at DESC")
       #@user = User.user_name.where(user_id: @review.user_id)
       @avg_review = @review.average(:hw)
-
+      render
 
   end
 
@@ -43,7 +47,6 @@ class ProfessorsController < ApplicationController
   # POST /professors.json
   def create
     @professor = current_user.professors.build(professor_params)
-
     respond_to do |format|
       if @professor.save
         format.html { redirect_to @professor, notice: 'Professor was successfully created.' }
@@ -84,7 +87,9 @@ class ProfessorsController < ApplicationController
     def set_professor
       @professor = Professor.find(params[:id])
     end
-
+    def local_image_path(name)
+      Rails.root.join('uploads', name).to_s
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def professor_params
