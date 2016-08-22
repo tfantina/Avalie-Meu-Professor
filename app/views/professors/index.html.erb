@@ -8,17 +8,18 @@
   </div>
 <% end %>
 <div class="row">
-
+<div class="list-group">
+  <ul class="list-unstyled">
 <% @professors.each do |professor| %>
-<div class="panel panel-default">
-  <div class=" panel-body">
-    <h3><%= link_to professor.try(:fullname), professor %></h3>
+
+  <%= link_to professor, class: "list-group-item" do %>
+  <h4><%= professor.try(:fullname) %></h4>
         <%= professor.try(:school) %>
         <%= professor.try(:department) %>
-      </div>
-</div>
+        <% end %>
 
   <% end %>
-
+</ul>
 </div>
+    </div>
  <%= will_paginate @professors %>
