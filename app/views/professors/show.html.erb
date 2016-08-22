@@ -5,7 +5,7 @@
     <div class="row">
 
       <div class="col-md-4">
-      
+
           </br>
           </br>
           <% if !@review.blank? %>
@@ -52,7 +52,7 @@
 
 <script>
   $('.star-rating').raty({
-      path: '/assets/',
+      path: 'http://dev.travisfantina.com/stars/',
       readOnly: true, score: function(){
           return $(this).attr('data-score');
       }
