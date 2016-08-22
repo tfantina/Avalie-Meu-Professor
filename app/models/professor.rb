@@ -1,5 +1,5 @@
 require 'elasticsearch/model'
-require 'elasticsearch/transport'
+
 
 class Professor < ActiveRecord::Base
 #  include Cloudinary::Paperclip
@@ -21,3 +21,6 @@ class Professor < ActiveRecord::Base
 end
 
 end
+
+Professor.import
+@professors = Professor.search('foobar').records
