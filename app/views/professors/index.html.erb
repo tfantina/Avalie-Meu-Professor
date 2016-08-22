@@ -10,16 +10,14 @@
 <div class="row">
 
 <% @professors.each do |professor| %>
-   <div class=".col-sm-6 col-md-3">
-     <div class="thumbnail">
-  
-       <ul class="list-unstyled text-muted">
-         <li> <h2> <%= link_to professor.try(:fullname), professor %>
-         <li> <%= professor.try(:school) %></li>
-         <li class="small"> <%= professor.try(:department) %></li>
-       </ul>
-     </div>
-    </div>
+<div class="panel panel-default">
+  <div class=" panel-body">
+    <h3><%= link_to professor.try(:fullname), professor %></h3>
+        <%= professor.try(:school) %>
+        <%= professor.try(:department) %>
+      </div>
+</div>
+
   <% end %>
 
 </div>
