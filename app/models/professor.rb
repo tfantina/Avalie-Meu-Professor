@@ -1,5 +1,4 @@
 require 'elasticsearch/model'
-require 'elasticsearch/transport'
 
 class Professor < ActiveRecord::Base
 #  include Cloudinary::Paperclip
