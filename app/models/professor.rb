@@ -20,3 +20,6 @@ class Professor < ActiveRecord::Base
 end
 
 end
+
+Professor.import
+@professors = Professor.search('foobar').records
