@@ -45,7 +45,7 @@ gem 'bonsai-elasticsearch-rails', '~> 0.0.4'
 
 group :production do
   gem 'rails_12factor'
-  gem 'puma', '~> 3.4'
+  #gem 'puma', '~> 3.4'
   gem 'pg'
 end
 
