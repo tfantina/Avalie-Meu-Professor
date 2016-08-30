@@ -40,11 +40,11 @@ gem 'paperclip-cloudinary'
 #elasticsearch stuff
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
-#bonsi
-gem 'bonsai-elasticsearch-rails'
+
 
 group :production do
   gem 'rails_12factor'
+  gem 'bonsai-elasticsearch-rails'
   #gem 'puma', '~> 3.4'
   gem 'pg'
 end
