@@ -38,11 +38,10 @@ gem 'bootstrap-will_paginate', '~> 0.0.10'
 #Paperclip forcloudinary
 gem 'paperclip-cloudinary'
 #elasticsearch stuff
-
 gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 #bonsi
-gem 'bonsai-elasticsearch-rails', '~> 0.0.4'
+gem 'bonsai-elasticsearch-rails'
 
 group :production do
   gem 'rails_12factor'
