@@ -1,8 +1,7 @@
-require 'elasticsearch/model'
+
 
 class Professor < ActiveRecord::Base
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
+
 
 #  attr_accessor :photo
 #  mount_uploader :photo, PhotoUploader
@@ -28,5 +27,5 @@ class Professor < ActiveRecord::Base
   Professor.import  #professors will be added automatically to Elasticsearch index
 end
 
-Professor.import
-@professors = Professor.search('foobar').records
+#Professor.import
+#@professors = Professor.search('foobar').records
