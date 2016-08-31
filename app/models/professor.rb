@@ -25,8 +25,8 @@ class Professor < ActiveRecord::Base
   Review.where("user_id IN (following_ids) OR user_id = :user_id", following_ids: following_ids, user_id: id)
  end
 
-  Professor.import  #professors will be added automatically to Elasticsearch index
+  #Professor.import  #professors will be added automatically to Elasticsearch index
 end
 
-#Professor.import
-#@professors = Professor.search('foobar').records
+Professor.import
+@professors = Professor.search('foobar').records

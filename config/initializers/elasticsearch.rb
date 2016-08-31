@@ -1,3 +1,4 @@
+require 'elasticsearch/model'
 
 BONSAI_URL = ENV['http://ivy-3059605.us-east-1.bonsai.io']
 if BONSAI_URL
