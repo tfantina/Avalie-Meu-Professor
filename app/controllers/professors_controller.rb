@@ -4,7 +4,7 @@ class ProfessorsController < ApplicationController
   before_filter :check_configuration
 
   def check_configuration
-    render 'configuration_missing' if Cloudinary.config.api_key.blank?
+    #render 'configuration_missing' if Cloudinary.config.api_key.blank?
   end
 
   # GET /professors
