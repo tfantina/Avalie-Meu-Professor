@@ -7,6 +7,7 @@ class Professor < ActiveRecord::Base
   searchkick
   belongs_to :user
   has_many :reviews
+  validates :fullname, :school, :department,  presence: true, length: {maximum: 255} 
 
 #  if Rails.env == 'production'
 #  has_attached_file :image,
