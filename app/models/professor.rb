@@ -1,13 +1,18 @@
 require 'elasticsearch/model'
 
 class Professor < ActiveRecord::Base
-#  include Cloudinary::Paperclip
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
+
+#  attr_accessor :photo
+#  mount_uploader :photo, PhotoUploader
+
+  #elasticsearch for heroku
+
   searchkick
   belongs_to :user
   has_many :reviews
-  validates :fullname, :school, :department,  presence: true, length: {maximum: 255} 
+  validates :fullname, :school, :department,  presence: true, length: {maximum: 255}
 
 #  if Rails.env == 'production'
 #  has_attached_file :image,
@@ -18,8 +23,9 @@ class Professor < ActiveRecord::Base
 
  def username
   Review.where("user_id IN (following_ids) OR user_id = :user_id", following_ids: following_ids, user_id: id)
-end
+ end
 
+  Professor.import  #professors will be added automatically to Elasticsearch index
 end
 
 Professor.import
