@@ -1,7 +1,8 @@
-
+require 'elasticsearch/model'
 
 class Professor < ActiveRecord::Base
-
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
 #  attr_accessor :photo
 #  mount_uploader :photo, PhotoUploader
