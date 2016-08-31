@@ -1,10 +1,8 @@
-require 'elasticsearch/model'
+BONSAI_URL = ENV['http://ivy-3059605.us-east-1.bonsai.io']
+if BONSAI_URL
+  Elasticsearch::Model.client = Elasticsearch::client = Elasticsearch::Client.new(
+      url: http://ivy-3059605.us-east-1.bonsai.io,
+      log: true
+  )
 
-BONSAI_URL = ENV['http://ivy-3059605.us-east-1.bonsai.io'] ||
-  Rails.application.config_for(:elasticsearch)["http://ivy-3059605.us-east-1.bonsai.io"]
-
-# Set up an app-wide client object
-Elasticsearch::Model.client = Elasticsearch::Client.new(
-  url: BONSAI_URL,
-  log: true
-)
+end  
