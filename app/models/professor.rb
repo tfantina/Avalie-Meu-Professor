@@ -1,13 +1,5 @@
-require 'elasticsearch/model'
 
 class Professor < ActiveRecord::Base
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
-
-#  attr_accessor :photo
-#  mount_uploader :photo, PhotoUploader
-
-  #elasticsearch for heroku
 
   searchkick
   belongs_to :user
@@ -25,8 +17,5 @@ class Professor < ActiveRecord::Base
   Review.where("user_id IN (following_ids) OR user_id = :user_id", following_ids: following_ids, user_id: id)
  end
 
-  #Professor.import  #professors will be added automatically to Elasticsearch index
-end
 
-Professor.import
-@professors = Professor.search('foobar').records
+end

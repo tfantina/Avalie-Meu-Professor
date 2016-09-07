@@ -40,9 +40,9 @@ gem 'cloudinary'
 #Paperclip forcloudinary
 gem 'paperclip-cloudinary'
 #elasticsearch stuff
-gem 'bonsai-elasticsearch-rails'
-gem 'elasticsearch-rails'
-gem 'elasticsearch-model'
+#gem 'bonsai-elasticsearch-rails'
+#gem 'elasticsearch-rails'
+#gem 'elasticsearch-model'
 
 
 
