@@ -5,8 +5,8 @@ require 'elasticsearch/model'
 # Rails 4.2+ config_for method to fetch the URL from an optional
 # config/elasticsearch.yml file.
 
-BONSAI_URL = ENV['http://beech-6556653.us-east-1.bonsai.io'] ||
-  Rails.application.config_for(:elasticsearch)["http://beech-6556653.us-east-1.bonsai.io"]
+BONSAI_URL = ENV['beech-6556653.us-east-1.bonsai.io'] ||
+  Rails.application.config_for(:elasticsearch)["beech-6556653.us-east-1.bonsai.io"]
 
 # Set up an app-wide client object
 Elasticsearch::Model.client = Elasticsearch::Client.new(
