@@ -39,8 +39,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 #Paperclip forcloudinary
 gem 'paperclip-cloudinary'
-#Elasticsearch items
-gem 'bonsai-elasticsearch-rails'
+
 
 
 
