@@ -1,2 +1,1 @@
-web: bundle exec rails server -p $PORT
-web: lein run -m demo.web $PORT
+web: bundle exec puma -p $PORT
