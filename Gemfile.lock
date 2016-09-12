@@ -229,8 +229,6 @@ DEPENDENCIES
   carrierwave
   cloudinary
   coffee-rails (~> 4.1.0)
-  elasticsearch-model
-  elasticsearch-rails
   jbuilder (~> 2.0)
   jquery-rails
   paperclip (~> 4.3, >= 4.3.6)

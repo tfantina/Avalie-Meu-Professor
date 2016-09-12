@@ -19,3 +19,5 @@ class Professor < ActiveRecord::Base
 
 
 end
+
+Professor.import
