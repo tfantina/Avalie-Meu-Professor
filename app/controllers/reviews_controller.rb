@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
     else
       @review = Review.create(review_params)
       @review.professor_id = @professor.id
-      @review.Guest = :Guest
+      @review.guest = :guest
       @review.save
       redirect_to @professor
     end

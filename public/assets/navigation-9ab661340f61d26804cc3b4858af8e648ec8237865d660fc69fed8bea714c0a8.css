@@ -1,0 +1,109 @@
+/* line 3, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 0px;
+  background-color: rgba(160, 17, 47, 0.8);
+  border-color: rgba(160, 17, 47, 0.8);
+}
+
+/* line 12, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.btn {
+  margin-bottom: 15px;
+}
+
+/* title */
+/* line 18, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-brand {
+  color: #FFF;
+}
+
+/* line 21, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #FFF;
+}
+
+/* link */
+/* line 26, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-nav > li > a {
+  color: #FFF;
+}
+
+/* line 29, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #FFF;
+}
+
+/* line 33, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #E7E7E7;
+}
+
+/* line 39, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #D5D5D5;
+}
+
+/* caret */
+/* line 46, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+  border-top-color: #777;
+  border-bottom-color: #777;
+}
+
+/* line 50, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #333;
+  border-bottom-color: #333;
+}
+
+/* line 55, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+  border-top-color: #555;
+  border-bottom-color: #555;
+}
+
+/* mobile version */
+/* line 62, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-toggle {
+  border-color: #DDD;
+}
+
+/* line 65, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #DDD;
+}
+
+/* line 69, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #CCC;
+}
+
+@media (max-width: 767px) {
+  /* line 73, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+
+  /* line 76, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+  }
+}
+/* line 82, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-header {
+  color: #ffffff;
+}

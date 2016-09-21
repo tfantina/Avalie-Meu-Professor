@@ -19,9 +19,10 @@ class ProfessorsController < ApplicationController
 
   def show
       @review = Review.where(professor_id: @professor.id).order("created_at DESC")
-      #@user = User.user_name.where(user_id: @review.user_id)
+      @user = User.where(user_id: @review.user_id)
       @avg_review = @review.average(:hw)
       render
+
 
   end
 
