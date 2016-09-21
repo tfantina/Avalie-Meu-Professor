@@ -14,6 +14,9 @@ class ReviewsController < ApplicationController
 
   # POST /reviews
   # POST /reviews.json
+
+  #---------------This needs to be changed to allow visitors to review-------------------
+
   def create
     if user_signed_in?
       @review = current_user.reviews.create(review_params)
@@ -21,8 +24,11 @@ class ReviewsController < ApplicationController
       @review.save
       redirect_to @professor
     else
-      redirect_to login_path
-      flash[:error] = "You must be logged in to review!"
+      @review = Review.create(review_params)
+      @review.professor_id = @professor.id
+      @review.Guest = :Guest
+      @review.save
+      redirect_to @professor
     end
   end
 
@@ -63,6 +69,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:rating, :hw, :ease, :tests, :interesting, :helpfull, :comment, :user_id)
+      params.require(:review).permit(:rating, :hw, :ease, :tests, :interesting, :helpfull, :comment)
     end
 end

@@ -1,6 +1,6 @@
 class ProfessorsController < ApplicationController
   before_action :set_professor, only: [:show, :edit, :update, :destroy]
-#  before_action :authenticate_user!, except: [:index, :show, :search, :review]
+  before_action :authenticate_with_http_digest, except: [:index, :show, :search]
   before_filter :check_configuration
 
   def check_configuration
@@ -39,7 +39,7 @@ class ProfessorsController < ApplicationController
     end
   end
 
-  # GET /professors/1/edi
+  # GET /professors/1/edit
   def edit
   end
 

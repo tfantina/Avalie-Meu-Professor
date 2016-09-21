@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false }
   validates :user_name, length: {maximum: 30}, uniqueness: {case_sensitive: false}
-  #dependent: :destroy removes comments if the user deletes their account I don't know if we want this...
   has_secure_password
   validates :password, length: {minimum: 6}
 

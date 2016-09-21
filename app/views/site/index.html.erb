@@ -1,5 +1,5 @@
-  <div class="jumbotron">
-    <h2> Professor Review </h2>
+ <div class="intro">
+    <h1> Professor Review </h1>
     <p> Read reviews before chooing a classes, rate your professors at the end of the semester
       and sign in to add a professor. </p>
       <p> With over <%= @num %> professors we are your go to choice!</p>
@@ -8,17 +8,17 @@
 
         <%= form_tag search_professors_path, method: :get, class: "form form-sm", role: "Search" do %>
       <p>
-        <%= text_field_tag :search, params[:search], class: "form-control" %>
-        <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+        <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Professor" %>
+        <%= submit_tag "Search", name: nil, class: "btn btn-success" %>
       </p>
       <% end %>
-  </div>
+</div>
 
   <div class="row">
   <% @footer.each do |professor| %>
      <div class=".col-sm-6 col-md-3">
        <div class="thumbnail">
-      
+
          <h3><%= professor.try(:fullname) %></h3>
          <ul class="list-unstyled text-muted">
            <li> <%= professor.try(:school) %></li>

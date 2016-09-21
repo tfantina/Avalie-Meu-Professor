@@ -1,1 +1,14 @@
-<%= @user.user_name %>, <%= @user.email %>
+<h1> Your account</h1>
+<div class="row">
+  <div class="col-xs-2">
+
+    <%= gravatar_for @user %>
+
+  </div>
+  <div class="col-md-8">
+<strong>Username: </strong><%= @user.user_name %> (this is the username that will show up on your reviews).
+<br>
+<strong>Email:</strong>
+ <%= @user.email %>
+ </div>
+ </div>

@@ -12,13 +12,16 @@
   <!-- bootstrap stuff-->
 
   <div class="container">
-
-    <% flash.each do |name, msg| %>
+  <div class="row">
+    <div class="center-block ">    <% flash.each do |name, msg| %>
       <%= content_tag(:div,msg, class: "alert alert-info") %>
       <% end %>
     <%= yield %>
-    <%= debug(params) if Rails.env.development? %>
+    <!-- # debug(params) if Rails.env.development? %> -->
   </div>
+  </div>
+</div>
+<%= render 'layouts/footer' %>
 
 </body>
 </html>
