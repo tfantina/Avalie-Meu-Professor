@@ -18,18 +18,13 @@ class ReviewsController < ApplicationController
   #---------------This needs to be changed to allow visitors to review-------------------
 
   def create
-    if user_signed_in?
+
       @review = current_user.reviews.create(review_params)
       @review.professor_id = @professor.id
+        @review.guest = :guest
       @review.save
       redirect_to @professor
-    else
-      @review = Review.create(review_params)
-      @review.professor_id = @professor.id
-      @review.guest = :guest
-      @review.save
-      redirect_to @professor
-    end
+
   end
 
 
