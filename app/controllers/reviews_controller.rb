@@ -14,17 +14,28 @@ class ReviewsController < ApplicationController
 
   # POST /reviews
   # POST /reviews.json
+  
 
-  #---------------This needs to be changed to allow visitors to review-------------------
+  #---------------The user login system has been disabled for everyone except admins
+  # in the future we may add user login functionality but at the moment it seems
+  #counter intuitive to getting as many students to user the service as possible.  ----------------#
+
 
   def create
 
-      @review = current_user.reviews.create(review_params)
+
+  #if user_signed_in?
+  #  @review = current_user.reviews.create(review_params)
+  #    @review.professor_id = @professor.id
+  #    @review.save
+  #    redirect_to @professor
+  #  else
+      @review = Review.create(review_params)
       @review.professor_id = @professor.id
-        @review.guest = :guest
+      @review.guest = :guest
       @review.save
       redirect_to @professor
-
+  #  end
   end
 
 

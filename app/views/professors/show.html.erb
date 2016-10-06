@@ -4,6 +4,18 @@
   <div class="pannel-body">
     <div class="row">
 
+            <div class="col-md-6">
+                <h1 class="review_title"> <%= @professor.fullname %> </h1>
+                <ul class="list-unstyled">
+                  <% if !@review.blank? %>
+                  <li> <strong>Average Review: </strong><div class="star-rating" data-score= <%= @avg_review %> </div></li>
+                  <% end %>
+
+                  <li><strong>School: </strong><%= @professor.school %></li>
+                  <li><strong>Department: </strong>  <%= @professor.department %></li>
+                  <li><%= "#{@review.length}" " Review".pluralize(@review.length)%></li>
+                </ul>
+            </div>
       <div class="col-md-4">
 
           </br>
@@ -13,18 +25,6 @@
           <% end %>
       </div>
 
-      <div class="col-md-6">
-          <h1 class="review_title"> <%= @professor.fullname %> </h1>
-          <ul class="list-unstyled">
-            <% if !@review.blank? %>
-            <li> <strong>Average Review: </strong><div class="star-rating" data-score= <%= @avg_review %> </div></li>
-            <% end %>
-
-            <li><strong>School: </strong><%= @professor.school %></li>
-            <li><strong>Department: </strong>  <%= @professor.department %></li>
-            <li><%= "#{@review.length}" " Review".pluralize(@review.length)%></li>
-          </ul>
-      </div>
       <div class="col-md-8">
 
           <% if @review.blank? %>
@@ -36,6 +36,10 @@
                 <div class="star-rating" data-score= <%= review.hw %> </div>
                   </br>
                   <%= review.comment %>
+
+                  <%= review.guest %>
+
+
               </div>
           </div>
           <% end %>
@@ -43,10 +47,22 @@
       </div>
     </div>
   </div>
-
+<% if user_is_admin? %>
 <%= link_to 'Edit', edit_professor_path(@professor) %> |
+<%= link_to 'Delete', @professor, method: :delete, data: {confirm: "Are you sure you want to delete this professor?"} %> |
+<% end %>
+
+<%= button_to 'Flag', :action => 'flag', :remote=> true %>
+
 <%= link_to 'Back', professors_path %>
 
+
+<script> $(document).ready
+  $("#flag").on("ajax:success", (e, data, status, xhr)
+    $("#flag").append xhr.responseText
+  ).on "ajax:error", (e, xhr, status, error)
+    $("#flag").append "<p>ERROR</p>"
+    </script>
 <script>
   $('.star-rating').raty({
       path: 'http://dev.travisfantina.com/stars/',

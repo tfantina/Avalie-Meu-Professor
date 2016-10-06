@@ -19,7 +19,7 @@ class ProfessorsController < ApplicationController
 
   def show
       @review = Review.where(professor_id: @professor.id).order("created_at DESC")
-      @user = User.where(user_id: @review.user_id)
+      #@user = User.where(user_id: @review.user_id)   <===== uncomment when showing users.
       @avg_review = @review.average(:hw)
       render
 
@@ -29,7 +29,8 @@ class ProfessorsController < ApplicationController
 
   # GET /professors/new
   def new
-    @professor = current_user.professors.build
+    @professor = Professor.new
+    # Replace above with: @professor = current_user.professors.build  when implementing user model
   end
 
   def search
@@ -42,12 +43,18 @@ class ProfessorsController < ApplicationController
 
   # GET /professors/1/edit
   def edit
+    flag = Professor.update(params[:flag])
+    if flag.save!
+      render :status => 200
+    else
+      render "Problem"
+    end
   end
 
   # POST /professors
   # POST /professors.json
   def create
-    @professor = current_user.professors.build(professor_params)
+    @professor = Professor.create(professor_params)
     respond_to do |format|
       if @professor.save
         format.html { redirect_to @professor, notice: 'Professor was successfully created.' }
@@ -81,6 +88,15 @@ class ProfessorsController < ApplicationController
       format.html { redirect_to professors_url, notice: 'Professor was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+
+#working with ajax to allow users to flag profesor without refreshing.
+
+  def flag
+    @professor = Professor.find(params[:id])
+    @professor.flag + 1
+
   end
 
   private
