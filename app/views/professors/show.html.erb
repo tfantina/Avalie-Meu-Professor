@@ -37,9 +37,6 @@
                   </br>
                   <%= review.comment %>
 
-                  <%= review.guest %>
-
-
               </div>
           </div>
           <% end %>
@@ -47,13 +44,12 @@
       </div>
     </div>
   </div>
-<% if user_is_admin? %>
+<% if user_signed_in? && current_user.admin? %>
 <%= link_to 'Edit', edit_professor_path(@professor) %> |
 <%= link_to 'Delete', @professor, method: :delete, data: {confirm: "Are you sure you want to delete this professor?"} %> |
 <% end %>
 
-<%= button_to 'Flag', :action => 'flag', :remote=> true %>
-
+<%= link_to 'Flag', flag_professor_path(@professor), method: :post, :remote => true %>
 <%= link_to 'Back', professors_path %>
 
 

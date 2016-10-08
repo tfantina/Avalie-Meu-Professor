@@ -2,6 +2,8 @@ class ProfessorsController < ApplicationController
   before_action :set_professor, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_with_http_digest, except: [:index, :show, :search]
   before_filter :check_configuration
+  before_action :admin_user, only: :destory
+
 
   def check_configuration
     #render 'configuration_missing' if Cloudinary.config.api_key.blank?
@@ -43,12 +45,7 @@ class ProfessorsController < ApplicationController
 
   # GET /professors/1/edit
   def edit
-    flag = Professor.update(params[:flag])
-    if flag.save!
-      render :status => 200
-    else
-      render "Problem"
-    end
+
   end
 
   # POST /professors
@@ -95,7 +92,16 @@ class ProfessorsController < ApplicationController
 
   def flag
     @professor = Professor.find(params[:id])
-    @professor.flag + 1
+    @professor.increment!(:flag)
+
+  #  respond_to do |format|
+  #    format.html { redirect_to professors_url }
+  #    format.json { head :no_content }
+  #    #format.js {render :layout => false }
+#end
+
+    #@professor = Professor.find(params[:id])
+    #@professor.flag + 1
 
   end
 
@@ -108,9 +114,13 @@ class ProfessorsController < ApplicationController
       Rails.root.join('uploads', name).to_s
     end
 
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def professor_params
       params.require(:professor).permit(:fullname, :school, :department #, :image [:image_file_name. :image_file_size, :image_content_type, :image_updated_at]
-      )
+)
     end
 end

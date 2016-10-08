@@ -1,15 +1,22 @@
 Rails.application.routes.draw do
 
 
+
+
+  root 'site#index'
+
   resources :professors do
+
+#  post 'flag' => 'professors#flag'
 
       collection do
         get 'search'
       end
+      member do
+        post 'flag', :professor
+      end
       resources :reviews, except: [:show, :index]
   end
-
-  root 'site#index'
 
   resources :users
   get 'signup' => 'users#new'

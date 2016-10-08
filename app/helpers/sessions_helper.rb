@@ -22,6 +22,7 @@ module SessionsHelper
     end
   end
 
+
   def user_signed_in?
     !current_user.nil?
   end
