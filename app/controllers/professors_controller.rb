@@ -93,19 +93,9 @@ class ProfessorsController < ApplicationController
   def flag
     @professor = Professor.find(params[:id])
     @professor.increment!(:flag)
-
-  #  respond_to do |format|
-  #    format.html { redirect_to professors_url }
-  #    format.json { head :no_content }
-  #    #format.js {render :layout => false }
-#end
-
-    #@professor = Professor.find(params[:id])
-    #@professor.flag + 1
-
   end
 
-  private
+  private h
     # Use callbacks to share common setup or constraints between actions.
     def set_professor
       @professor = Professor.find(params[:id])

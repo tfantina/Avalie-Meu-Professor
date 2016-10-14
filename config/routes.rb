@@ -18,6 +18,13 @@ Rails.application.routes.draw do
       resources :reviews, except: [:show, :index]
   end
 
+
+  resources :reviews do
+    member do
+      post 'flag', :review
+    end
+  end
+
   resources :users
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'

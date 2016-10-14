@@ -35,7 +35,7 @@
               <div class="reviews">
                 <div class="star-rating" data-score= <%= review.hw %> </div>
                   </br>
-                  <%= review.comment %>
+                  <%= review.comment %> <%= link_to 'Flag', flag_review_path(review), method: :post, :remote => true %>
 
               </div>
           </div>

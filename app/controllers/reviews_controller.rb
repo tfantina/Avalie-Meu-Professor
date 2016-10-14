@@ -6,6 +6,8 @@ class ReviewsController < ApplicationController
   # GET /reviews/new
   def new
     @review = Review.new
+
+
   end
 
   # GET /reviews/1/edit
@@ -14,7 +16,7 @@ class ReviewsController < ApplicationController
 
   # POST /reviews
   # POST /reviews.json
-  
+
 
   #---------------The user login system has been disabled for everyone except admins
   # in the future we may add user login functionality but at the moment it seems
@@ -22,8 +24,6 @@ class ReviewsController < ApplicationController
 
 
   def create
-
-
   #if user_signed_in?
   #  @review = current_user.reviews.create(review_params)
   #    @review.professor_id = @professor.id
@@ -33,9 +33,15 @@ class ReviewsController < ApplicationController
       @review = Review.create(review_params)
       @review.professor_id = @professor.id
       @review.guest = :guest
-      @review.save
-      redirect_to @professor
-  #  end
+      respond_to do |format|
+      if verify_recaptcha(model: @review) && @review.save
+        format.html{ redirect_to @professor, notice: 'Review was successfully created.' }
+        format.json { render :show, status: :created, location: @review }
+      else
+        format.html { render :new, notice: 'Please fill out the captcha.'}
+        format.json { render json: @review.errors, status: :unprocessable_entity}
+      end
+   end
   end
 
 
@@ -63,6 +69,12 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def flag
+      @review = Review.find(params[:id])
+      @review.increment!(:flag)
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_review
@@ -75,6 +87,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:rating, :hw, :ease, :tests, :interesting, :helpfull, :comment)
+      params.require(:review).permit(:rating, :ease, :helpfull, :interest, :comment)
     end
 end

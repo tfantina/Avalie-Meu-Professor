@@ -1,0 +1,25 @@
+<% if !user_signed_in?  %>
+  <div class="jumbotron">
+    <h1> Professor Review </h1>
+    <p> Read reviews before chooing a class, rate your professors at the end of the semester
+      and sign in to add a professor. </p>
+      <p> <%= link_to "Sign up to add a professor", signup_path, class: "btn btn-primary btn-lg" %></p>
+
+  </div>
+<% end %>
+<div class="row">
+<div class="list-group">
+  <ul class="list-unstyled">
+<% @professors.each do |professor| %>
+
+  <%= link_to professor, class: "list-group-item" do %>
+  <h4><%= professor.try(:fullname) %></h4>
+        <%= professor.try(:school) %>
+        <%= professor.try(:department) %>
+        <% end %>
+
+  <% end %>
+</ul>
+</div>
+    </div>
+ <%= will_paginate @professors %>

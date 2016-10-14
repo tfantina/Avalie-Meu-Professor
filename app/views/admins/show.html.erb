@@ -1,0 +1,25 @@
+ Welcome <%= @user.user_name %>
+<br>
+<strong>Panel notifications:</strong>
+
+<div class="row">
+<div class="col-lg-6">
+
+<% if @professor.blank? %>
+Nothing to review!
+<% else %>
+<div class="list-group">
+  <ul class="list-unstyled">
+  <% @professor.each do |prof| %>
+      <li class="list-group-item">  <%= prof.fullname %> has been flagged <%= pluralize(prof.flag, 'time') %>.   <%= link_to 'View', prof %>  <%= link_to 'Edit', edit_professor_path(prof) %> <%= link_to 'Delete', prof, method: :delete, data: {confirm: "Are you sure you want to delete this professor?"} %> </li>
+      <% end %>
+
+  </ul>
+</div>
+<% end %>
+
+</div>
+<div class="col-lg-6">
+  hi
+</div>
+</div>

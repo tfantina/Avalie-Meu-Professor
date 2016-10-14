@@ -11,17 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004034717) do
+ActiveRecord::Schema.define(version: 20161010212210) do
 
   create_table "professors", force: :cascade do |t|
     t.string   "fullname"
     t.string   "school"
     t.string   "department"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "user_id"
     t.string   "photo"
-    t.integer  "flag"
+    t.integer  "flag",       default: 0
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -32,24 +32,25 @@ ActiveRecord::Schema.define(version: 20161004034717) do
     t.integer  "interesting"
     t.integer  "helpfull"
     t.text     "comment"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "user_id"
     t.integer  "professor_id"
     t.string   "guest"
-    t.integer  "flag",         default: 0
+    t.integer  "flag"
+    t.integer  "useful"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",              default: "", null: false
+    t.string   "email",              default: "",    null: false
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "user_name"
     t.string   "password_digest"
     t.string   "remember_digest"
-    t.boolean  "admin"
+    t.boolean  "admin",              default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

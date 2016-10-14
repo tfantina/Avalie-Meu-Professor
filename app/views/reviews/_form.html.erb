@@ -21,20 +21,8 @@
 
 
   <div class="field">
-    <strong> Homework Difficulty/Amount:</strong>
-    <div id="star-hw"></div>
-  </div>
-</br>
-
-  <div class="field">
     <strong>Easiness: </strong>
     <div id="star-ease"></div>
-  </div>
-</br>
-
-  <div class="field">
-    <strong> Test Difficulty/Amount: </strong>
-    <div id="star-test"></div>
   </div>
 </br>
 
@@ -60,9 +48,14 @@
     <%= f.text_area :guest %>
   </div>
   <% end %>
+
+  <%= raw recaptcha_tags %>
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
+
 
 <% end %>
 

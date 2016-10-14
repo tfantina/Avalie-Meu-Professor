@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
 ruby '2.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
@@ -39,6 +40,8 @@ gem 'carrierwave'
 gem 'cloudinary'
 #Paperclip forcloudinary
 gem 'paperclip-cloudinary'
+#recaptcha
+gem 'recaptcha', require: 'recaptcha/rails'
 
 
 
