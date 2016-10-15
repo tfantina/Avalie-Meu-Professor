@@ -73,6 +73,7 @@ class ReviewsController < ApplicationController
       @review = Review.find(params[:id])
       @review.increment!(:flag)
 
+
   end
 
   private

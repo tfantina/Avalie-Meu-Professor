@@ -42,6 +42,8 @@ gem 'cloudinary'
 gem 'paperclip-cloudinary'
 #recaptcha
 gem 'recaptcha', require: 'recaptcha/rails'
+#Elasticsearch
+gem 'bonsai-elasticsearch-rails'
 
 
 
