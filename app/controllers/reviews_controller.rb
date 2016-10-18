@@ -1,10 +1,13 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_professor
+  before_action :set_professor, :except => [:flag, :vote]
+
+
 
 
   # GET /reviews/new
   def new
+
     @review = Review.new
 
 
@@ -15,7 +18,7 @@ class ReviewsController < ApplicationController
   end
 
   # POST /reviews
-  # POST /reviews.json
+  # POST /reviews.jso
 
 
   #---------------The user login system has been disabled for everyone except admins
@@ -72,8 +75,11 @@ class ReviewsController < ApplicationController
   def flag
       @review = Review.find(params[:id])
       @review.increment!(:flag)
+  end
 
-
+  def vote
+    @review = Review.find(params[:id])
+    @review.increment!(:useful)
   end
 
   private

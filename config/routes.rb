@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :reviews do
     member do
-      post 'flag', :review
+      post 'flag', 'vote', 'downvote',  :review
     end
   end
 
