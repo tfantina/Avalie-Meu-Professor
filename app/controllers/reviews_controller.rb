@@ -36,6 +36,7 @@ class ReviewsController < ApplicationController
       @review = Review.create(review_params)
       @review.professor_id = @professor.id
       @review.guest = :guest
+      #@review.rating = (:ease + :interest + :helpful)/3
       respond_to do |format|
       if verify_recaptcha(model: @review) && @review.save
         format.html{ redirect_to @professor, notice: 'Review was successfully created.' }
