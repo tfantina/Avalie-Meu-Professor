@@ -15,3 +15,8 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree
+
+
+$(document).ready(function() {
+  $(".has-tooltip").tooltip();
+});

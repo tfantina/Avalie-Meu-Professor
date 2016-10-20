@@ -2,6 +2,8 @@
 <div class="panel panel-default">
 
   <div class="pannel-body">
+
+    <!-- professor top info -->
     <div class="row">
 
             <div class="col-md-6">
@@ -26,23 +28,51 @@
           <% end %>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-8">
+    <br>
+    <!-- end top info -->
+
+
+    <!-- start reviews -->
+    <!-- what if the review is blank -->
 
           <% if @review.blank? %>
             <h3> This professor is not yet reviewed would you like to review: </h3>
             <center><%= link_to "Review Now!", new_professor_review_path(@professor), class: "btn btn-danger btn-lg" %></center>
+    <!-- for every other review -->
           <% else %>
+          <!-- reviews start -->
             <% @review.each do |review| %>
-              <div class="reviews">
-                <div class="star-rating" data-score= <%= review.hw %> </div>
-                  </br>
-                  <%= review.comment %> <%= link_to 'Flag', flag_review_path(review), method: :post, :remote => true %>
-                  <br>
-                  Did you find this review useful? <%= link_to 'Upvote', vote_review_path(review), method: :post, :remote => true %>
+            <div class="row review">
+            <div class="col-sm-2 review-panl">
+                <div class="location">
+                    <div class="star-rating" data-score= <%= review.hw %> </div>
+                </div>
+                <div class="row">
+                <%= link_to vote_review_path(review), method: :post, class: "vote-up", :remote => true do  %>
+                <span class="glyphicon glyphicon-chevron-up has-tooltip", title="Vote this comment up if you found it useful."></span>
+                <% end %>
 
               </div>
+              <div class="row">
+              <%= link_to flag_review_path(review), method: :post, :remote => true do %>
+                <span class="glyphicon glyphicon-flag has-tooltip", title="Flag as inappropriate or irrelevent"></span>
+                <% end %>
+            </div>
+            </div>
           </div>
+
+            <div class="col-md-7">
+
+                  <%= review.comment %>
+
+
+
+              </div>
+              <div class="col-md-2"></div>
+
+          </div>
+
+          <br>
           <% end %>
           <% end %>
       </div>
@@ -54,12 +84,10 @@
       <%= link_to 'Flag', flag_professor_path(@professor), method: :post, :remote => true %>
       <%= link_to 'Back', professors_path %>
 
-    </div>
-  </div>
-
+</div>
 
 <script> $(document).ready
-  $("#flag").on("ajax:success", (e, data, status, xhr)
+  $("#flag").on("ajax:success", (e, data, status, xhr))
     $("#flag").append xhr.responseText
   ).on "ajax:error", (e, xhr, status, error)
     $("#flag").append "<p>ERROR</p>"

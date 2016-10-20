@@ -80,6 +80,12 @@ class ReviewsController < ApplicationController
   def vote
     @review = Review.find(params[:id])
     @review.increment!(:useful)
+    if @review.save
+      respond_to do |format|
+        format.html {redirect_to @review }
+        format.js
+      end
+    end
   end
 
   private
