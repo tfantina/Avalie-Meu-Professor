@@ -51,6 +51,9 @@
                 <%= link_to vote_review_path(review), method: :post, class: "vote-up", :remote => true do  %>
                 <span class="glyphicon glyphicon-chevron-up has-tooltip", title="Vote this comment up if you found it useful."></span>
                 <% end %>
+                <%= link_to downvote_review_path(review), method: :post, class: "vote-up", :remote => true do  %>
+                <span class="glyphicon glyphicon-chevron-up has-tooltip", title="Vote this comment up if you found it useful."></span>
+                <% end %>
 
               </div>
               <div class="row">
