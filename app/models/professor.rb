@@ -1,5 +1,5 @@
 class Professor < ActiveRecord::Base
-   include Elasticsearch::Model
+  # include Elasticsearch::Model
   # include Elasticsearch::Model::Callbacks
 
   searchkick
