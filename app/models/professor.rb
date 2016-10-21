@@ -1,6 +1,6 @@
 class Professor < ActiveRecord::Base
-#  include Elasticsearch::Model
-#  include Elasticsearch::Model::Callbacks
+   include Elasticsearch::Model
+   include Elasticsearch::Model::Callbacks
 
   searchkick
   belongs_to :user
@@ -21,4 +21,4 @@ class Professor < ActiveRecord::Base
 
 end
 
-#Professor.import
+Professor.import
