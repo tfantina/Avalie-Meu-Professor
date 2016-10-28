@@ -5,6 +5,7 @@ class ProfessorsController < ApplicationController
   before_action :admin_user, only: :destory
 
 
+
   def check_configuration
     #render 'configuration_missing' if Cloudinary.config.api_key.blank?
   end
@@ -22,8 +23,8 @@ class ProfessorsController < ApplicationController
   def show
       @review = Review.where(professor_id: @professor.id).order("created_at DESC")
       #@user = User.where(user_id: @review.user_id)   <===== uncomment when showing users.
-      @avg_review = @review.average(:hw)
-      render
+      #@avg_review = @review.average(:hw)
+      #render
 
 
   end
@@ -51,13 +52,13 @@ class ProfessorsController < ApplicationController
   # POST /professors
   # POST /professors.json
   def create
-    @professor = Professor.create(professor_params)
+    @professor = Professor.new(professor_params)
     respond_to do |format|
-      if @professor.save
+      if verify_recaptcha(model: @professor) && @professor.save
         format.html { redirect_to @professor, notice: 'Professor was successfully created.' }
         format.json { render :show, status: :created, location: @professor }
       else
-        format.html { render :new }
+        format.html { render :edit, notice: 'Please fill out the captcha.' }
         format.json { render json: @professor.errors, status: :unprocessable_entity }
       end
     end

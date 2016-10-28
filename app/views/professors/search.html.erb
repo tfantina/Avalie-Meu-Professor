@@ -1,19 +1,21 @@
 <dic class="row">
+
   <% @professors.each do |professor| %>
     <div class="col-sm-6 col-md-3">
         <div class="thumbnail">
-        
+
       <center><h4><ul class="list-unstyled">
-        <li><%= professor.try(:fullname) %> </li>
+        <li><%= professor.fullname %> </li>
       </ul></h4></center>
       <ul class="list-unstyled text-muted">
-        <li> <%= professor.try(:school) %></li>
-        <li class="small"> <%= professor.try(:department) %></li>
+        <li> <%= professor.school %></li>
+        <li class="small"> <%= professor.department %></li>
       </ul>
 
       </div>
     </div>
   <% end %>
   <%= will_paginate @professors %>
+
 
 </div>

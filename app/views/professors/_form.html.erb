@@ -1,7 +1,8 @@
 <%= form_for @professor, html: { multipart: true } do |f| %>
   <% if @professor.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@professor.errors.count, "error") %> prohibited this professor from being saved:</h2>
+      <h2><%= pluralize(@professor.errors.count, "erro") %> proibiram que este professor fosse salvo:
+</h2>
 
       <ul>
       <% @professor.errors.full_messages.each do |message| %>
@@ -12,25 +13,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label 'Full Name' %><br>
+    <%= f.label 'Nome Completo' %><br>
     <%= f.text_field :fullname %>
   </div>
 
   <div class="field">
-    <%= f.label :school %><br>
+    <%= f.label 'Escola' %><br>
     <%= f.text_field :school %>
   </div>
   <div class="field">
-    <%= f.label :department %><br>
+    <%= f.label 'Department' %><br>
     <%= f.text_field :department %>
   </div>
   <div class="field">
 
 <!--  <legend>Photo</legend>
   <%= f.file_field :photo %>
-
-
 -->
+  <%= raw recaptcha_tags %>
 </div>
   <div class="actions">
     <%= f.submit %>

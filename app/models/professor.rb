@@ -1,11 +1,11 @@
 class Professor < ActiveRecord::Base
   # include Elasticsearch::Model
   # include Elasticsearch::Model::Callbacks
-
   searchkick
   belongs_to :user
   has_many :reviews
   validates :fullname, :school, :department,  presence: true, length: {maximum: 255}
+  validates_uniqueness_of :fullname, :scope => :school
 
 #  if Rails.env == 'production'
 #  has_attached_file :image,

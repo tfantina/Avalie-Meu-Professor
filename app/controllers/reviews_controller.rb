@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
 
 
 
+
   # GET /reviews/new
   def new
 
@@ -33,16 +34,16 @@ class ReviewsController < ApplicationController
   #    @review.save
   #    redirect_to @professor
   #  else
-      @review = Review.create(review_params)
+      @review = Review.new(review_params)
       @review.professor_id = @professor.id
-      @review.guest = :guest
+      #@review.guest = :guest
       #@review.rating = (:ease + :interest + :helpful)/3
       respond_to do |format|
       if verify_recaptcha(model: @review) && @review.save
         format.html{ redirect_to @professor, notice: 'Review was successfully created.' }
-        format.json { render :show, status: :created, location: @review }
+        format.json { render @professor, status: :created, location: @review }
       else
-        format.html { render :new, notice: 'Please fill out the captcha.'}
+        format.html { render :edit, notice: 'Please fill out the captcha.'}
         format.json { render json: @review.errors, status: :unprocessable_entity}
       end
    end
@@ -55,7 +56,7 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       if @review.update(review_params)
         format.html { redirect_to @review, notice: 'Review was successfully updated.' }
-        format.json { render :show, status: :ok, location: @review }
+        format.json { render @professor, status: :ok, location: @review }
       else
         format.html { render :edit }
         format.json { render json: @review.errors, status: :unprocessable_entity }
@@ -112,6 +113,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:rating, :ease, :helpfull, :interest, :comment)
+      params.require(:review).permit(:rating, :ease, :helpfull, :interesting, :comment)
     end
 end

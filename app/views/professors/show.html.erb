@@ -10,12 +10,12 @@
                 <h1 class="review_title"> <%= @professor.fullname %> </h1>
                 <ul class="list-unstyled">
                   <% if !@review.blank? %>
-                  <li> <strong>Average Review: </strong><div class="star-rating" data-score= <%= @avg_review %> </div>  <%= @avg_review %> stars. </li>
+                  <li> <strong>Média do professor: </strong><div class="star-rating" data-score= <%= @avg_review %> </div>  <%= @avg_review %> stars. </li>
 
                   <% end %>
 
-                  <li><strong>School: </strong><%= @professor.school %></li>
-                  <li><strong>Department: </strong>  <%= @professor.department %></li>
+                  <li><strong>Escola: </strong><%= @professor.school %></li>
+                  <li><strong>Matéria: </strong>  <%= @professor.department %></li>
                   <li><%= "#{@review.length}" " Review".pluralize(@review.length)%></li>
                 </ul>
             </div>
@@ -24,7 +24,7 @@
           </br>
           </br>
           <% if !@review.blank? %>
-            <%= link_to "Review this Professor", new_professor_review_path(@professor), class: "btn btn-primary"%>
+            <%= link_to "Avalie este professor", new_professor_review_path(@professor), class: "btn btn-primary"%>
           <% end %>
       </div>
     </div>
@@ -43,35 +43,48 @@
           <!-- reviews start -->
             <% @review.each do |review| %>
             <div class="row review">
-            <div class="col-sm-2 review-panl">
-                <div class="location">
-                    <div class="star-rating" data-score= <%= review.hw %> </div>
-                </div>
-                <div class="row">
-                <%= link_to vote_review_path(review), method: :post, class: "vote-up", :remote => true do  %>
-                <span class="glyphicon glyphicon-chevron-up has-tooltip", title="Vote this comment up if you found it useful."></span>
-                <% end %>
-                <%= link_to downvote_review_path(review), method: :post, class: "vote-up", :remote => true do  %>
-                <span class="glyphicon glyphicon-chevron-up has-tooltip", title="Vote this comment up if you found it useful."></span>
-                <% end %>
+              <div class="col-sm-2 review-panl">
+                Review from:
+                <br>
+                <%= review.created_at.strftime("%b %e, %Y") %>
+                    <div class="row">
+                          <!--
+                          <%= link_to vote_review_path(review), method: :post, class: "vote-up", :remote => true do  %>
+                          <span class="glyphicon glyphicon-chevron-up has-tooltip", title="Vote this comment up if you found it useful."></span>
+                          <% end %>
+                          <%= link_to downvote_review_path(review), method: :post, class: "vote-down", :remote => true do  %>
+                          <span class="glyphicon glyphicon-chevron-down has-tooltip", title="Vote this comment down if you did not find it useful."></span>
+                          <% end %> -->
 
-              </div>
-              <div class="row">
-              <%= link_to flag_review_path(review), method: :post, :remote => true do %>
-                <span class="glyphicon glyphicon-flag has-tooltip", title="Flag as inappropriate or irrelevent"></span>
-                <% end %>
+                  </div>
+                  <div class="row">
+                          <%= link_to flag_review_path(review), method: :post, :remote => true do %>
+                          <span class="glyphicon glyphicon-flag has-tooltip", title="Flag as inappropriate or irrelevent"></span>
+                          <% end %>
+                  </div>
             </div>
+            <div class="col-md-5">
+                <strong>Comments:</strong> <%= review.comment %>
             </div>
-          </div>
-
-            <div class="col-md-7">
-
-                  <%= review.comment %>
 
 
-
-              </div>
-              <div class="col-md-2"></div>
+            <div class="col-md-4">
+              <h4>Professor is</h4>
+              <table>
+                <tr>
+                  <td align='right'><strong>Easy:</strong> </td>
+                  <td><div class="star-rating" data-score="<%= review.ease %>"></div></td>
+                </tr>
+                <tr>
+                  <td align='right'><strong>Interesting:</strong></td>
+                  <td><div class="star-rating" data-score="<%= review.interesting %>"></div></td>
+                </tr>
+                <tr>
+                  <td align='right'><strong> Helpful:</strong></td>
+                  <td><div class="star-rating" data-score="<%= review.helpfull %>"> </div></td>
+                </tr>
+              </table>
+            </div>
 
           </div>
 
@@ -97,7 +110,7 @@
     </script>
 <script>
   $('.star-rating').raty({
-      path: 'http://dev.travisfantina.com/stars/',
+      path: 'http://dev.travisfantina.com/services/AvaliarMeuProfessor/stars/',
       readOnly: true, score: function(){
           return $(this).attr('data-score');
       }

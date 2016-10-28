@@ -28,13 +28,13 @@
 
   <div class="field">
     <strong> Your intrest in the subject: </strong>
-    <div id="star-interest"></div>
+    <div id="star-interesting"></div>
   </div>
 </br>
 
   <div class="field">
     <strong>Did they seem to care about your learning:</strong>
-    <div id="star-helpful"></div>
+    <div id="star-helpfull"></div>
   </div>
 </br>
 
@@ -42,14 +42,9 @@
     <strong>Comments:</strong><br>
     <%= f.text_area :comment, cols: "60", rows: "5" %>
   </div>
-  <% if !user_signed_in? %>
-  <div class="field">
-    <strong>Username:</strong>(this will be shown by your review):
-    <%= f.text_area :guest %>
-  </div>
-  <% end %>
 
   <%= raw recaptcha_tags %>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
@@ -60,29 +55,18 @@
 <% end %>
 
 <script>
-  $('#star-rating').raty({
-    path: 'http://dev.travisfantina.com/stars/',
-    scoreName: 'review[rating]'
-  });
-  $('#star-hw').raty({
-    path: 'http://dev.travisfantina.com/stars/',
-    scoreName: 'review[hw]'
-  });
+
   $('#star-ease').raty({
-    path: 'http://dev.travisfantina.com/stars/',
+    path: 'http://dev.travisfantina.com/services/AvaliarMeuProfessor/stars/',
     scoreName: 'review[ease]'
   });
-  $('#star-test').raty({
-    path: 'http://dev.travisfantina.com/stars/',
-    scoreName: 'review[tests]'
-  });
-  $('#star-interest').raty({
-    path: 'http://dev.travisfantina.com/stars/',
+  $('#star-interesting').raty({
+    path: 'http://dev.travisfantina.com/services/AvaliarMeuProfessor/stars/',
     scoreName: 'review[interesting]'
   });
-  $('#star-helpful').raty({
-    path: 'http://dev.travisfantina.com/stars/',
-    scoreName: 'review[helpful]'
+  $('#star-helpfull').raty({
+    path: 'http://dev.travisfantina.com/services/AvaliarMeuProfessor/stars/',
+    scoreName: 'review[helpfull]'
   });
 
   </script>
