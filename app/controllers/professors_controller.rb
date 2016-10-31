@@ -52,6 +52,7 @@ class ProfessorsController < ApplicationController
   # POST /professors
   # POST /professors.json
   def create
+    @schooldef = ['FGV', 'other']
     @professor = Professor.new(professor_params)
     respond_to do |format|
       if verify_recaptcha(model: @professor) && @professor.save

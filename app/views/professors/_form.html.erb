@@ -19,7 +19,9 @@
 
   <div class="field">
     <%= f.label 'Escola' %><br>
-    <%= f.text_field :school %>
+    <%= f.select(:school, ["FGV", "Other"]) %>
+    <%= f.text_field :school, class: "school-show", style: "display: none;"%>
+
   </div>
   <div class="field">
     <%= f.label 'Department' %><br>
@@ -32,7 +34,20 @@
 -->
   <%= raw recaptcha_tags %>
 </div>
+<br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Inserir", class: "btn btn-primary"%>
   </div>
 <% end %>
+
+<script>
+$(document).ready(function(){
+$('#professor_school').change(function() {
+  if(this.value == "Other") {
+    $('.school-show').show();
+  }else{
+    $('.school-show').hide();
+  }
+});
+});
+</script>
