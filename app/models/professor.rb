@@ -4,7 +4,7 @@ class Professor < ActiveRecord::Base
   searchkick
   belongs_to :user
   has_many :reviews
-  validates :fullname, :school, :department,  presence: true, length: {maximum: 255}
+  validates :fullname, :school,  presence: true, length: {maximum: 255}
   validates_uniqueness_of :fullname, :scope => :school
 
   SCHOOL_LIST = ["FGV", "Other"]

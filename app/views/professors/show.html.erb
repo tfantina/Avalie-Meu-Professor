@@ -10,12 +10,11 @@
                 <h1 class="review_title"> <%= @professor.fullname %> </h1>
                 <ul class="list-unstyled">
                   <% if !@review.blank? %>
-                  <li> <strong>Média do professor: </strong><div class="star-rating" data-score= <%= @avg_review %> </div>  <%= @avg_review %> stars. </li>
+                  <li> <strong>Média do professor: </strong><div class="star-rating" data-score='<%= Review.average(:rating) %>'> </div>  <%= @avg_review %> stars. </li>
 
                   <% end %>
 
                   <li><strong>Escola: </strong><%= @professor.school %></li>
-                  <li><strong>Matéria: </strong>  <%= @professor.department %></li>
                   <li><%= "#{@review.length}" " Review".pluralize(@review.length)%></li>
                 </ul>
             </div>
@@ -43,7 +42,9 @@
           <!-- reviews start -->
             <% @review.each do |review| %>
             <div class="row review">
+
               <div class="col-sm-2 review-panl">
+                  <div class="star-rating" data-score="<%= review.rating %>"></div>
                 Review from:
                 <br>
                 <%= review.created_at.strftime("%b %e, %Y") %>
@@ -72,7 +73,7 @@
               <h4>Professor é</h4>
               <table>
                 <tr>
-                  <td align='right'><strong>éfácil:</strong> </td>
+                  <td align='right'><strong>fácil:</strong> </td>
                   <td><div class="star-rating" data-score="<%= review.ease %>"></div></td>
                 </tr>
                 <tr>

@@ -20,13 +20,10 @@
   <div class="field">
     <%= f.label 'Escola' %><br>
     <%= f.select(:school, ["FGV", "Other"]) %>
-    <%= f.text_field :school, class: "school-show", style: "display: none;"%>
+     <%= f.text_field :school, value: "FVG", class: "school-show", style: "display: none;"%>
 
   </div>
-  <div class="field">
-    <%= f.label 'Department' %><br>
-    <%= f.text_field :department %>
-  </div>
+
   <div class="field">
 
 <!--  <legend>Photo</legend>
@@ -42,11 +39,14 @@
 
 <script>
 $(document).ready(function(){
+
 $('#professor_school').change(function() {
   if(this.value == "Other") {
     $('.school-show').show();
+    $('.school-show').val('');
   }else{
     $('.school-show').hide();
+    $('.school-show').val(this.value);
   }
 });
 });
