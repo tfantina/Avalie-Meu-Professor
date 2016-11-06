@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
 
   root 'site#index'
+  get 'terms' => 'site#terms'
 
   resources :professors do
 
@@ -26,6 +27,8 @@ Rails.application.routes.draw do
     member do
       post 'flag', 'vote', 'downvote',  :review
     end
+
+     delete 'reviews/destroy' => 'reviews#destroy'
   end
 
   resources :users

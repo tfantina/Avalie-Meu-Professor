@@ -23,7 +23,11 @@
      <%= f.text_field :school, value: "FVG", class: "school-show", style: "display: none;"%>
 
   </div>
+  <div class="field">
+      <%= f.check_box :terms_of_service %>  I agree to the website's <%= link_to "terms & conditions", terms_path %>
 
+  </div>
+  <br>
   <div class="field">
 
 <!--  <legend>Photo</legend>

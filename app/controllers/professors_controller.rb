@@ -14,7 +14,11 @@ class ProfessorsController < ApplicationController
   # GET /professors.json
   def index
      @professors = Professor.paginate(:page => params[:page], per_page: 20)
+  end
 
+  def schools
+    @professors = Professor.paginate(:page => params[:page], per_page: 20)
+    @school = Professor.where(school: @professors.ids)
   end
 
   # GET /professors/1
@@ -112,7 +116,7 @@ class ProfessorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def professor_params
-      params.require(:professor).permit(:fullname, :school, :department #, :image [:image_file_name. :image_file_size, :image_content_type, :image_updated_at]
+      params.require(:professor).permit(:fullname, :school, :department, :terms_of_service #, :image [:image_file_name. :image_file_size, :image_content_type, :image_updated_at]
 )
     end
 end

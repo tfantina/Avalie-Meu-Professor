@@ -142,7 +142,7 @@ $softgrey: rgba(41, 41, 41, 1);
 
 footer {
   background-color: $footer;
-  color: $white;
+  color: $softgrey;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -150,6 +150,13 @@ footer {
   margin-top: 25px;
   padding-left: 20px;
   padding-top: 10px;
+}
+
+.far-left {
+  position: absolute;
+  right: 0px;
+  color: $softgrey;
+  padding-bottom: 10px;
 }
 
 

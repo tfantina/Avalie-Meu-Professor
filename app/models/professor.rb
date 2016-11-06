@@ -6,11 +6,7 @@ class Professor < ActiveRecord::Base
   has_many :reviews
   validates :fullname, :school,  presence: true, length: {maximum: 255}
   validates_uniqueness_of :fullname, :scope => :school
-
-  SCHOOL_LIST = ["FGV", "Other"]
-
-
-
+  validates :terms_of_service, acceptance: true
 
 #  if Rails.env == 'production'
 #  has_attached_file :image,

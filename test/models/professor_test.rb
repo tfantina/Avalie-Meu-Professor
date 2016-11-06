@@ -15,6 +15,6 @@ class ProfessorTest < ActiveSupport::TestCase
   end
 
 
-  
+
 
 end
