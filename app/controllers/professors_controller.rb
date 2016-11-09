@@ -3,7 +3,7 @@ class ProfessorsController < ApplicationController
   before_action :authenticate_with_http_digest, except: [:index, :show, :search]
   before_filter :check_configuration
   before_action :admin_user, only: :destory
-
+  helper_method :sort_column, :sort_direction
 
 
   def check_configuration
@@ -13,7 +13,11 @@ class ProfessorsController < ApplicationController
   # GET /professors
   # GET /professors.json
   def index
-     @professors = Professor.paginate(:page => params[:page], per_page: 20)
+     @professors = Professor.paginate(:page => params[:page], per_page: 20).order(sort_column + " " + sort_direction)
+     @professor = Professor
+    # @review = Review.where(professor_id: @professor.ids)
+
+
   end
 
   def schools
@@ -27,8 +31,10 @@ class ProfessorsController < ApplicationController
   def show
       @review = Review.where(professor_id: @professor.id).order("created_at DESC")
       #@user = User.where(user_id: @review.user_id)   <===== uncomment when showing users.
-      #@avg_review = @review.average(:hw)
-      #render
+    if @review.exists?
+      @avg_review = @review.average(:rating).round(1)
+    end
+
 
 
   end
@@ -99,6 +105,10 @@ class ProfessorsController < ApplicationController
   def flag
     @professor = Professor.find(params[:id])
     @professor.increment!(:flag)
+    respond_to do |format|
+      format.html { redirect_to @professor}
+      format.js
+ end
   end
 
   private
@@ -106,17 +116,28 @@ class ProfessorsController < ApplicationController
     def set_professor
       @professor = Professor.find(params[:id])
     end
+
+    #may be used for image uploads
     def local_image_path(name)
       Rails.root.join('uploads', name).to_s
     end
 
+    #options change if the user is logged as admin
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
 
+    #logic for sorting options that users will get, sanatized
+    def sort_column
+       %w[fullname created_at].include?(params[:sort]) ? params[:sort]: "created_at"
+    end
+    def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction]: "DESC"
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def professor_params
-      params.require(:professor).permit(:fullname, :school, :department, :terms_of_service #, :image [:image_file_name. :image_file_size, :image_content_type, :image_updated_at]
-)
+      params.require(:professor).permit(:fullname, :school, :department, :terms_of_service #, :image [:image_file_name. :image_file_size, :image_content_type, :image_updated_at])
+    )
     end
 end

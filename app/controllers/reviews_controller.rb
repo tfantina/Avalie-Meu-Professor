@@ -77,6 +77,10 @@ class ReviewsController < ApplicationController
   def flag
       @review = Review.find(params[:id])
       @review.increment!(:flag)
+      respond_to do |format|
+        format.html { redirect_to @professor}
+        format.js
+      end
   end
 
   def vote

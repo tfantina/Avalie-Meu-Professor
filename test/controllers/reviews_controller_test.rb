@@ -5,11 +5,6 @@ class ReviewsControllerTest < ActionController::TestCase
     @review = reviews(:one)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:reviews)
-  end
 
   test "should get new" do
     get :new
@@ -18,9 +13,8 @@ class ReviewsControllerTest < ActionController::TestCase
 
   test "should create review" do
     assert_difference('Review.count') do
-      post :create, review: { comment: @review.comment, ease: @review.ease, helpfull: @review.helpfull, hw: @review.hw, interesting: @review.interesting, rating: @review.rating, tests: @review.tests }
+      post :create, review: { comment: @review.comment, ease: @review.ease, helpfull: @review.helpfull, interesting: @review.interesting, rating: @review.rating }
     end
-
     assert_redirected_to review_path(assigns(:review))
   end
 

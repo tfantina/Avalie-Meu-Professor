@@ -1,11 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  fullname: MyString
-  school: MyString
-  department: MyString
+James:
+  fullname: James Smith
+  school: FGV
+  department: Computer Science
+  flag: 2
 
-two:
-  fullname: MyString
-  school: MyString
-  department: MyString
+Sally:
+  fullname: Sally Jones
+  school: BYU
+  department: Computer Science
+  flag: 2
+
+Rodney:
+  fullname: Rodney Mullen
+  school: RGB
+  department: Math
+  flag: 0

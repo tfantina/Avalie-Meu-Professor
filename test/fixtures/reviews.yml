@@ -2,18 +2,16 @@
 
 one:
   rating: 1
-  hw: 1
   ease: 1
-  tests: 1
   interesting: 1
   helpfull: 1
-  comment: MyText
+  comment: Great Professor
+  flag: 2
 
 two:
   rating: 1
-  hw: 1
   ease: 1
-  tests: 1
   interesting: 1
   helpfull: 1
-  comment: MyText
+  comment: Text for a slightly longer review.
+  flag: 2

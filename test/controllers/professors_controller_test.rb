@@ -2,7 +2,8 @@ require 'test_helper'
 
 class ProfessorsControllerTest < ActionController::TestCase
   setup do
-    @professor = professors(:one)
+    @professor = professors(:James)
+    @flag = @professor.flag
   end
 
   test "should get index" do
@@ -18,9 +19,8 @@ class ProfessorsControllerTest < ActionController::TestCase
 
   test "should create professor" do
     assert_difference('Professor.count') do
-      post :create, professor: { department: @professor.department, fname: @professor.fname, lname: @professor.lname, school: @professor.school }
+      post :create, professor: { department: @professor.department, fullname: @professor.fullname, school: @professor.school }
     end
-
     assert_redirected_to professor_path(assigns(:professor))
   end
 
@@ -35,7 +35,7 @@ class ProfessorsControllerTest < ActionController::TestCase
   end
 
   test "should update professor" do
-    patch :update, id: @professor, professor: { department: @professor.department, fname: @professor.fname, lname: @professor.lname, school: @professor.school }
+    patch :update, id: @professor, professor: { department: @professor.department, fullame: @professor.fullname, school: @professor.school }
     assert_redirected_to professor_path(assigns(:professor))
   end
 
@@ -43,7 +43,13 @@ class ProfessorsControllerTest < ActionController::TestCase
     assert_difference('Professor.count', -1) do
       delete :destroy, id: @professor
     end
-
     assert_redirected_to professors_path
+  end
+
+  test "should flag professor" do
+    update :flag_professor, id: @professor
+    assert_difference(@flag.count, 1) do
+    end
+    assert_response :success
   end
 end

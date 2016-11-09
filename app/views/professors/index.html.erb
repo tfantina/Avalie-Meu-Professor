@@ -1,13 +1,18 @@
 
 <div class="row">
+
+Sort by: <%= sortable "fullname", "Full Name" %> | <%= sortable "created_at", "Date Created" %>
+</div>
+  <div class="row">
 <div class="list-group">
   <ul class="list-unstyled">
 <% @professors.each do |professor| %>
 
   <%= link_to professor, class: "list-group-item" do %>
-  <h4><%= professor.try(:fullname) %></h4>
-        <%= professor.try(:school) %>
-        <%= professor.try(:department) %>
+  <h4><%= professor.fullname %></h4>
+        <%= professor.school %>
+
+
         <% end %>
 
   <% end %>
