@@ -3,7 +3,7 @@
   <% @professors.each do |professor| %>
     <div class="col-sm-6 col-md-3">
         <div class="thumbnail">
-
+  <%= link_to professor, class: "list-group-item" do %>
       <center><h4><ul class="list-unstyled">
         <li><%= professor.fullname %> </li>
       </ul></h4></center>
@@ -11,7 +11,7 @@
         <li> <%= professor.school %></li>
         <li class="small"> <%= professor.department %></li>
       </ul>
-
+<% end %>
       </div>
     </div>
   <% end %>
