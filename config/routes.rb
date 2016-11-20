@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   get 'terms' => 'site#terms'
 
   resources :professors do
-
-#  post 'flag' => 'professors#flag'
-
       collection do
         get 'search'
       end
@@ -16,17 +13,19 @@ Rails.application.routes.draw do
       member do
         post 'flag', :professor
       end
-      resources :reviews, except: [:show, :index]
+      resources :reviews  do
+        member do
+          post 'flag', 'vote', 'downvote',  :review
+        end
+        resources :reviews, only: [:index, :create, :show]
+
+
+      end
+
   end
 
+  resources :reviews, only: [:destroy, :update, :edit]
 
-  resources :reviews do
-    member do
-      post 'flag', 'vote', 'downvote',  :review
-    end
-
-     delete 'reviews/destroy' => 'reviews#destroy'
-  end
 
   resources :users
   get 'signup' => 'users#new'

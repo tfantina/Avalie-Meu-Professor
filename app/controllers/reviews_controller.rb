@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_professor, :except => [:flag, :vote]
+  before_action :set_professor, :except => [:flag, :vote, :destroy]
 
 
 
@@ -69,7 +69,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     respond_to do |format|
-      format.html { redirect_to @professor, notice: 'Review was successfully destroyed.' }
+      format.html { redirect_to professors_url notice: 'Review was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -108,12 +108,12 @@ class ReviewsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_review
-      @review = Review.find(params[:id])
+     @review = Review.find(params[:id])
     end
 
     def set_professor
       @professor = Professor.find(params[:professor_id])
-    end
+      end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params

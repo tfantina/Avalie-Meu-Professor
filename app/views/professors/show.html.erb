@@ -48,20 +48,14 @@
                 <br>
                 <%= review.created_at.strftime("%b %e, %Y") %>
                     <div class="row">
-                          <!--
-                          <%= link_to vote_review_path(review), method: :post, class: "vote-up", :remote => true do  %>
-                          <span class="glyphicon glyphicon-chevron-up has-tooltip", title="Vote this comment up if you found it useful."></span>
-                          <% end %>
-                          <%= link_to downvote_review_path(review), method: :post, class: "vote-down", :remote => true do  %>
-                          <span class="glyphicon glyphicon-chevron-down has-tooltip", title="Vote this comment down if you did not find it useful."></span>
-                          <% end %> -->
+
 
                   </div>
                   <div class="row">
 
-                          <%= link_to flag_review_path(review), method: :post, class: "flag_link", :remote => true do %>
-                          <span class="glyphicon glyphicon-flag has-tooltip", title="Flag as inappropriate or irrelevent"></span>
-                          <% end %>
+                    <%= link_to flag_professor_review_path(@professor, review), method: :post, class: "flag_link", :remote => true do %>
+                    <span class="glyphicon glyphicon-flag has-tooltip", title="Flag as inappropriate or irrelevent"></span>
+                    <% end %>
                   </div>
             </div>
             <div class="col-md-5">
