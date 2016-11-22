@@ -11,32 +11,42 @@
     </div>
   <% end %>
 
-
+  <!-- ratings -->
   <div class="field">
     <strong>Facilidade: </strong>
     <div id="star-ease"></div>
   </div>
-</br>
+<br>
 
   <div class="field">
     <strong>  Seu interesse na matéria: </strong>
     <div id="star-interesting"></div>
   </div>
-</br>
+<br>
 
   <div class="field">
     <strong>O professor importou-se com seu aprendizado?</strong>
     <div id="star-helpfull"></div>
   </div>
-</br>
+  <br>
+  <!-- class drop down  -->
+    <div class="field" >
+      <strong>class:</string>
+        <%= f.select("study", "id", @study) %>
+        <%= f.text_field @study.study, value: "FVG", class: "school-show", style: "display: none;"%>
+   </div>
 
-  <div class="field" >
-    <strong>comentários:</strong><br>
-    <%= f.text_area :comment, cols: "60", rows: "5" %>
-  </div>
+    <br>
+    <div class="field" >
+      <strong>comentários:</strong><br>
+      <%= f.text_area :comment, cols: "60", rows: "5" %>
+    </div>
+
+
+  <!-- terms of service & captcha -->
+
   <div class="field">
       <%= f.check_box :terms_of_service %>  I agree to the website's <%= link_to "terms & conditions", terms_path %>
-
   </div>
   <br>
   <%= raw recaptcha_tags %>
@@ -44,8 +54,6 @@
   <div class="actions">
     <%= f.submit "Inserir", class: "btn btn-primary"%>
   </div>
-
-
 
 
 <% end %>

@@ -36,6 +36,7 @@ class ReviewsController < ApplicationController
   #  else
       @review = Review.new(review_params)
       @review.professor_id = @professor.id
+      @study = Study.pluck(:study, :id)
       #@review.guest = :guest
       #@review.rating = (:ease + :interest + :helpful)/3
       respond_to do |format|
