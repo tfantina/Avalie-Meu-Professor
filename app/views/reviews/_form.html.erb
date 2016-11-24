@@ -31,9 +31,8 @@
   <br>
   <!-- class drop down  -->
     <div class="field" >
-      <strong>class:</string>
-        <%= f.select("study", "id", @study) %>
-        <%= f.text_field @study.study, value: "FVG", class: "school-show", style: "display: none;"%>
+      <strong>class:</string><br>
+        <%= f.text_area :class, cols: "10", rows: "1" %>
    </div>
 
     <br>
@@ -72,5 +71,20 @@
     path: 'http://dev.travisfantina.com/services/AvaliarMeuProfessor/stars/',
     scoreName: 'review[helpfull]'
   });
+
+
+  $(document).ready(function(){
+
+  $('#professor_school').change(function() {
+    if(this.value == "Other") {
+      $('.class-show').show();
+      $('.class-show').val('');
+    }else{
+      $('.class-show').hide();
+      $('.class-show').val(this.value);
+    }
+  });
+  });
+
 
   </script>

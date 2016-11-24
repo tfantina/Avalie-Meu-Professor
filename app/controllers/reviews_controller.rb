@@ -8,9 +8,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-
     @review = Review.new
-
 
   end
 
@@ -36,7 +34,6 @@ class ReviewsController < ApplicationController
   #  else
       @review = Review.new(review_params)
       @review.professor_id = @professor.id
-      @study = Study.pluck(:study, :id)
       #@review.guest = :guest
       #@review.rating = (:ease + :interest + :helpful)/3
       respond_to do |format|
@@ -118,6 +115,8 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:rating, :ease, :helpfull, :interesting, :comment, :terms_of_service)
+      params.require(:review).permit(:rating, :ease, :helpfull, :interesting, :c_lass, :comment, :terms_of_service)
     end
+
+
 end
