@@ -30,10 +30,17 @@
   </div>
 </br>
 
-  <div class="field" >
+    <div class="field">
+      <%= f.text_field :classe, size: 20%>
+    </div>
+    <div class="field">
+      <%= f.options_from_collection_for_select(:classe) %>
+
+  <div class="field">
     <strong>comentários:</strong><br>
     <%= f.text_area :comment, cols: "60", rows: "5" %>
   </div>
+
   <div class="field">
       <%= f.check_box :terms_of_service %>  I agree to the website's <%= link_to "terms & conditions", terms_path %>
 
