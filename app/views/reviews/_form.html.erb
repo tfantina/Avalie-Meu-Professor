@@ -11,25 +11,40 @@
     </div>
   <% end %>
 
-
+  <!-- ratings -->
   <div class="field">
     <strong>Facilidade: </strong>
     <div id="star-ease"></div>
   </div>
-</br>
+<br>
 
   <div class="field">
     <strong>  Seu interesse na matéria: </strong>
     <div id="star-interesting"></div>
   </div>
-</br>
+<br>
 
   <div class="field">
     <strong>O professor importou-se com seu aprendizado?</strong>
     <div id="star-helpfull"></div>
   </div>
-</br>
+  <br>
+  <!-- class drop down  -->
+    <div class="field" >
+      <strong>class:</string><br>
+        <%= f.text_area :class, cols: "10", rows: "1" %>
+   </div>
 
+    <br>
+    <div class="field" >
+      <strong>comentários:</strong><br>
+      <%= f.text_area :comment, cols: "60", rows: "5" %>
+    </div>
+
+
+  <!-- terms of service & captcha -->
+
+<<<<<<< HEAD
     <div class="field">
       <%= f.text_field :classe, size: 20%>
     </div>
@@ -41,9 +56,10 @@
     <%= f.text_area :comment, cols: "60", rows: "5" %>
   </div>
 
+=======
+>>>>>>> dba5911772bae09efa385149cf57346fa38f5453
   <div class="field">
       <%= f.check_box :terms_of_service %>  I agree to the website's <%= link_to "terms & conditions", terms_path %>
-
   </div>
   <br>
   <%= raw recaptcha_tags %>
@@ -51,8 +67,6 @@
   <div class="actions">
     <%= f.submit "Inserir", class: "btn btn-primary"%>
   </div>
-
-
 
 
 <% end %>
@@ -71,5 +85,20 @@
     path: 'http://dev.travisfantina.com/services/AvaliarMeuProfessor/stars/',
     scoreName: 'review[helpfull]'
   });
+
+
+  $(document).ready(function(){
+
+  $('#professor_school').change(function() {
+    if(this.value == "Other") {
+      $('.class-show').show();
+      $('.class-show').val('');
+    }else{
+      $('.class-show').hide();
+      $('.class-show').val(this.value);
+    }
+  });
+  });
+
 
   </script>

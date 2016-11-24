@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161124025526) do
+=======
+ActiveRecord::Schema.define(version: 20161124024726) do
+>>>>>>> dba5911772bae09efa385149cf57346fa38f5453
 
   create_table "professors", force: :cascade do |t|
     t.string   "fullname"
@@ -50,6 +54,7 @@ ActiveRecord::Schema.define(version: 20161124025526) do
     t.string   "password_digest"
     t.string   "remember_digest"
     t.boolean  "admin",              default: false
+    t.string   "class"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

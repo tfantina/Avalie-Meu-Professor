@@ -8,9 +8,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-
     @review = Review.new
-
 
   end
 
@@ -117,6 +115,12 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
+<<<<<<< HEAD
       params.require(:review).permit(:rating, :ease, :helpfull, :interesting, :classe, :comment, :terms_of_service)
+=======
+      params.require(:review).permit(:rating, :ease, :helpfull, :interesting, :c_lass, :comment, :terms_of_service)
+>>>>>>> dba5911772bae09efa385149cf57346fa38f5453
     end
+
+
 end
