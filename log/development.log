@@ -1,0 +1,563 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateStudies (20161122021719)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "studies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "study" varchar, "review_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161122021719"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to DropStudies (20161123220006)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mDROP TABLE "studies"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161123220006"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddClassToUsers (20161123220144)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "users" ADD "class" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161123220144"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddClassToReviews (20161123220241)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "reviews" ADD "class" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161123220241"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveClassFromReviews (20161123221431)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TEMPORARY TABLE "areviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "ease" integer, "interesting" integer, "helpfull" integer, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "professor_id" integer, "guest" varchar, "flag" integer DEFAULT 0 NOT NULL, "useful" integer DEFAULT 0 NOT NULL, "classe" varchar, "class" varchar) [0m
+  [1m[35m (0.3ms)[0m  SELECT * FROM "reviews"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (1, NULL, 4, 5, 1, 'Test', '2016-10-24 17:02:48.052521', '2016-10-24 17:02:48.052521', NULL, NULL, NULL, 0, 0, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (3, NULL, 4, 5, 3, 'Test', '2016-10-24 19:45:24.751858', '2016-10-24 19:46:36.623404', NULL, NULL, NULL, 0, 0, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (4, NULL, 5, 5, 5, 'Test', '2016-10-24 19:47:05.248549', '2016-10-24 19:47:05.435051', NULL, 1, NULL, 0, 0, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (5, NULL, 5, 5, 5, 'Ahhhhha', '2016-10-24 19:47:14.642157', '2016-10-24 19:47:21.806857', NULL, NULL, NULL, 0, 0, NULL, NULL)
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (6, 3, 3, 3, 5, 'Test', '2016-10-24 19:50:02.460983', '2016-10-24 19:50:02.686331', NULL, 1, NULL, 0, 0, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (7, 4, 4, 5, 3, 'Test', '2016-10-24 19:52:43.504863', '2016-10-24 19:52:43.700426', NULL, 1, NULL, 0, 0, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (8, 4, 5, 5, 4, 'Not a comment', '2016-10-24 19:53:26.838593', '2016-10-24 19:53:26.990973', NULL, 1, NULL, 0, 0, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (9, 4, 4, 5, 5, 'Test :[)  II', '2016-10-24 19:54:43.045726', '2016-10-24 19:55:11.335796', NULL, NULL, NULL, 0, 0, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (10, 4, 4, 5, 5, 'TEST :)', '2016-10-24 19:55:35.567129', '2016-10-24 19:55:56.779219', NULL, NULL, NULL, 0, 0, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (11, 4, 5, 4, 4, 'Yeah', '2016-10-24 21:43:05.852106', '2016-10-24 21:43:06.032301', NULL, 1, NULL, 0, 0, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (12, 4, 5, 4, 5, 'Captcha Fail', '2016-10-24 21:43:18.592900', '2016-10-24 21:43:51.118442', NULL, NULL, NULL, 0, 0, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (13, 4, 5, 5, 4, 'Captcha fail? :}', '2016-10-24 21:44:31.924083', '2016-10-24 21:44:31.924083', NULL, NULL, NULL, 0, 0, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (14, 4, 5, 5, 4, 'Captcha fail? :}', '2016-10-24 21:45:55.081824', '2016-10-24 21:45:55.081824', NULL, NULL, NULL, 0, 0, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (15, 5, 5, 5, 5, 'Captcha fail? :}', '2016-10-24 21:46:44.456417', '2016-10-24 21:46:44.655559', NULL, 1, NULL, 0, 0, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (16, 5, 5, 5, 5, 'Borked?', '2016-10-24 21:46:55.711656', '2016-10-24 21:47:02.281956', NULL, NULL, NULL, 0, 0, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (17, 5, 5, 5, 5, 'Borked?', '2016-10-24 21:48:02.438399', '2016-10-24 21:48:02.670742', NULL, 1, NULL, 0, 0, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (18, 5, 5, 5, 5, 'Testable?', '2016-10-24 21:48:18.042617', '2016-10-24 21:48:18.196786', NULL, 1, NULL, 0, 0, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (19, 5, 5, 5, 5, 'Yeah', '2016-10-24 21:48:39.014782', '2016-10-24 21:48:39.165377', NULL, 1, NULL, 0, 0, NULL, NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (20, 5, 5, 5, 5, 'Bapbapbap I''m lov''en it.', '2016-10-25 03:30:20.262858', '2016-10-25 03:30:20.262858', NULL, 1, NULL, 0, 0, NULL, NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (21, 2, 5, 2, 1, 'Sarah had a terrible accent and was really hard to listen to. She would ramble in class about unrelated things for sometimes the whole lecture. Pretty easy though!', '2016-10-25 04:59:39.045007', '2016-10-25 04:59:39.045007', NULL, 2, NULL, 0, 0, NULL, NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (22, 1, 1, 1, 1, 'Test', '2016-11-02 19:21:16.028676', '2016-11-02 19:21:16.028676', NULL, 7, NULL, 0, 0, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (23, 5, 5, 5, 5, 'Test', '2016-11-02 19:21:39.846966', '2016-11-02 19:21:39.846966', NULL, 7, NULL, 0, 0, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (24, 5, 5, 5, 5, 'Test EH?', '2016-11-05 02:04:50.565544', '2016-11-05 02:04:50.565544', NULL, 1, NULL, 0, 0, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (25, 4, 5, 5, 4, 'Eh', '2016-11-05 02:05:21.081664', '2016-11-08 05:37:35.630519', NULL, 1, NULL, 1, 0, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (27, 1, 1, 1, 1, 'Test', '2016-11-06 03:35:26.716136', '2016-11-06 03:35:26.716136', NULL, 14, NULL, 0, 0, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (28, 5, 5, 5, 5, 'Standup friend!', '2016-11-06 03:36:35.229086', '2016-11-06 03:36:35.229086', NULL, 14, NULL, 0, 0, NULL, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (29, 4, 4, 5, 5, 'What the hek?', '2016-11-20 03:27:13.244687', '2016-11-20 03:27:17.080690', NULL, 4, NULL, 1, 0, NULL, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "areviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe","class") VALUES (30, 5, 5, 5, 5, 'Does it work?', '2016-11-24 03:27:12.531211', '2016-11-24 03:27:12.531211', NULL, 23, NULL, 0, 0, 'Test', NULL)
+  [1m[36m (0.9ms)[0m  [1mDROP TABLE "reviews"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "ease" integer, "interesting" integer, "helpfull" integer, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "professor_id" integer, "guest" varchar, "flag" integer DEFAULT 0 NOT NULL, "useful" integer DEFAULT 0 NOT NULL, "classe" varchar) 
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "areviews"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (1, NULL, 4, 5, 1, 'Test', '2016-10-24 17:02:48.052521', '2016-10-24 17:02:48.052521', NULL, NULL, NULL, 0, 0, NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (3, NULL, 4, 5, 3, 'Test', '2016-10-24 19:45:24.751858', '2016-10-24 19:46:36.623404', NULL, NULL, NULL, 0, 0, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (4, NULL, 5, 5, 5, 'Test', '2016-10-24 19:47:05.248549', '2016-10-24 19:47:05.435051', NULL, 1, NULL, 0, 0, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (5, NULL, 5, 5, 5, 'Ahhhhha', '2016-10-24 19:47:14.642157', '2016-10-24 19:47:21.806857', NULL, NULL, NULL, 0, 0, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (6, 3, 3, 3, 5, 'Test', '2016-10-24 19:50:02.460983', '2016-10-24 19:50:02.686331', NULL, 1, NULL, 0, 0, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (7, 4, 4, 5, 3, 'Test', '2016-10-24 19:52:43.504863', '2016-10-24 19:52:43.700426', NULL, 1, NULL, 0, 0, NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (8, 4, 5, 5, 4, 'Not a comment', '2016-10-24 19:53:26.838593', '2016-10-24 19:53:26.990973', NULL, 1, NULL, 0, 0, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (9, 4, 4, 5, 5, 'Test :[)  II', '2016-10-24 19:54:43.045726', '2016-10-24 19:55:11.335796', NULL, NULL, NULL, 0, 0, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (10, 4, 4, 5, 5, 'TEST :)', '2016-10-24 19:55:35.567129', '2016-10-24 19:55:56.779219', NULL, NULL, NULL, 0, 0, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (11, 4, 5, 4, 4, 'Yeah', '2016-10-24 21:43:05.852106', '2016-10-24 21:43:06.032301', NULL, 1, NULL, 0, 0, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (12, 4, 5, 4, 5, 'Captcha Fail', '2016-10-24 21:43:18.592900', '2016-10-24 21:43:51.118442', NULL, NULL, NULL, 0, 0, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (13, 4, 5, 5, 4, 'Captcha fail? :}', '2016-10-24 21:44:31.924083', '2016-10-24 21:44:31.924083', NULL, NULL, NULL, 0, 0, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (14, 4, 5, 5, 4, 'Captcha fail? :}', '2016-10-24 21:45:55.081824', '2016-10-24 21:45:55.081824', NULL, NULL, NULL, 0, 0, NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (15, 5, 5, 5, 5, 'Captcha fail? :}', '2016-10-24 21:46:44.456417', '2016-10-24 21:46:44.655559', NULL, 1, NULL, 0, 0, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (16, 5, 5, 5, 5, 'Borked?', '2016-10-24 21:46:55.711656', '2016-10-24 21:47:02.281956', NULL, NULL, NULL, 0, 0, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (17, 5, 5, 5, 5, 'Borked?', '2016-10-24 21:48:02.438399', '2016-10-24 21:48:02.670742', NULL, 1, NULL, 0, 0, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (18, 5, 5, 5, 5, 'Testable?', '2016-10-24 21:48:18.042617', '2016-10-24 21:48:18.196786', NULL, 1, NULL, 0, 0, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (19, 5, 5, 5, 5, 'Yeah', '2016-10-24 21:48:39.014782', '2016-10-24 21:48:39.165377', NULL, 1, NULL, 0, 0, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (20, 5, 5, 5, 5, 'Bapbapbap I''m lov''en it.', '2016-10-25 03:30:20.262858', '2016-10-25 03:30:20.262858', NULL, 1, NULL, 0, 0, NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (21, 2, 5, 2, 1, 'Sarah had a terrible accent and was really hard to listen to. She would ramble in class about unrelated things for sometimes the whole lecture. Pretty easy though!', '2016-10-25 04:59:39.045007', '2016-10-25 04:59:39.045007', NULL, 2, NULL, 0, 0, NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (22, 1, 1, 1, 1, 'Test', '2016-11-02 19:21:16.028676', '2016-11-02 19:21:16.028676', NULL, 7, NULL, 0, 0, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (23, 5, 5, 5, 5, 'Test', '2016-11-02 19:21:39.846966', '2016-11-02 19:21:39.846966', NULL, 7, NULL, 0, 0, NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (24, 5, 5, 5, 5, 'Test EH?', '2016-11-05 02:04:50.565544', '2016-11-05 02:04:50.565544', NULL, 1, NULL, 0, 0, NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (25, 4, 5, 5, 4, 'Eh', '2016-11-05 02:05:21.081664', '2016-11-08 05:37:35.630519', NULL, 1, NULL, 1, 0, NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (27, 1, 1, 1, 1, 'Test', '2016-11-06 03:35:26.716136', '2016-11-06 03:35:26.716136', NULL, 14, NULL, 0, 0, NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (28, 5, 5, 5, 5, 'Standup friend!', '2016-11-06 03:36:35.229086', '2016-11-06 03:36:35.229086', NULL, 14, NULL, 0, 0, NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (29, 4, 4, 5, 5, 'What the hek?', '2016-11-20 03:27:13.244687', '2016-11-20 03:27:17.080690', NULL, 4, NULL, 1, 0, NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "reviews" ("id","rating","ease","interesting","helpfull","comment","created_at","updated_at","user_id","professor_id","guest","flag","useful","classe") VALUES (30, 5, 5, 5, 5, 'Does it work?', '2016-11-24 03:27:12.531211', '2016-11-24 03:27:12.531211', NULL, 23, NULL, 0, 0, 'Test')[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "areviews"
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161123221431"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for ::1 at 2016-11-25 10:48:56 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT("professors"."id") FROM "professors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "professors"[0m
+  [1m[35mProfessor Load (0.2ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 3
+  [1m[36mProfessor Load (0.8ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4[0m
+  Rendered site/index.html.erb within layouts/application (5.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (60.6ms)
+Completed 500 Internal Server Error in 559ms (ActiveRecord: 3.2ms)
+
+ActionView::Template::Error (undefined method `fetch_value' for nil:NilClass):
+    18:           <li> <%= link_to "Todos os professores", professors_path %> </li>
+    19: 
+    20:           <li> <%= link_to "Novo professor", new_professor_path, class: "active" %> </li>
+    21:           <% if user_signed_in? %>
+    22:             <li><%= link_to "Log Out", logout_path, method: "delete" %>
+    23:               <% if current_user.admin? %>
+    24:               <li><%= link_to "Admin Pannel", admin_url(current_user.id) %></li>
+  app/helpers/sessions_helper.rb:15:in `current_user'
+  app/helpers/sessions_helper.rb:27:in `user_signed_in?'
+  app/views/layouts/_header.html.erb:21:in `_app_views_layouts__header_html_erb___592154980449973011_70151826367040'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__664423686620542639_70151783093420'
+
+
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (101.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (584.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (672.5ms)
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateProfessors (20160425193202)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fname" varchar, "lname" varchar, "school" varchar, "department" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160425193202"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to DeviseCreateUsers (20160425194553)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160425194553"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddUserIdToProfessors (20160425194819)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "professors" ADD "user_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160425194819"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateReviews (20160427011459)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "hw" integer, "ease" integer, "tests" integer, "interesting" integer, "helpfull" integer, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160427011459"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddUserIdToReviews (20160427210255)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.6ms)[0m  [1mDROP TABLE "studies"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddUserIdToReviews (20160427210255)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "studies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateProfessors (20160425193202)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fname" varchar, "lname" varchar, "school" varchar, "department" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160425193202"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to DeviseCreateUsers (20160425194553)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160425194553"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddUserIdToProfessors (20160425194819)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "professors" ADD "user_id" integer[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160425194819"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateReviews (20160427011459)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "hw" integer, "ease" integer, "tests" integer, "interesting" integer, "helpfull" integer, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160427011459"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddUserIdToReviews (20160427210255)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mDROP TABLE "studies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddProfessorIdToReviews (20160427210504)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "reviews" ADD "professor_id" integer[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160427210504"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to FixColumnName (20160507224830)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TEMPORARY TABLE "aprofessors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fullname" varchar, "lname" varchar, "school" varchar, "department" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "professors"
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "professors"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fullname" varchar, "lname" varchar, "school" varchar, "department" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "aprofessors"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "aprofessors"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160507224830"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to DeleteLname (20160511003944)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "aprofessors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fullname" varchar, "lname" varchar, "school" varchar, "department" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "professors"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "professors"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "professors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fullname" varchar, "school" varchar, "department" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "aprofessors"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "aprofessors"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160511003944"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddUserNameToUsers (20160707003223)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "users" ADD "user_name" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160707003223"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddPasswordDigestToUsers (20160709235507)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160709235507"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveColumsFromUsers (20160710002325)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.4ms)[0m  [1mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.7ms)[0m  DROP TABLE "users"
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ausers"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "ausers"
+  [1m[36m (0.7ms)[0m  [1mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) [0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.3ms)[0m  SELECT * FROM "users"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (0.4ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) 
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "users"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160710002325"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Migrating to RemoveMoreColumnsFromUsers (20160710004910)
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "users"
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ausers"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "ausers"
+  [1m[36m (0.3ms)[0m  [1mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "users"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) 
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+[0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "ausers"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "ausers"
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160710004910"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to RemoveSignintimesFromUsers (20160710005041)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")
+  [1m[36m (0.3ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (1.0ms)[0m  DROP TABLE "users"
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) [0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "users"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_name" varchar, "password_digest" varchar) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ausers_on_email' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160710005041"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddRememberDigestToUsers (20160726235606)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160726235606"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddPhotoToProfessor (20160817202212)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "professors" ADD "photo" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160817202212"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddAdminToUsers (20160919234833)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160919234833"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddGuestToReviews (20160920045528)
+  [1m[35m (1.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "reviews" ADD "guest" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160920045528"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddFlagToProfessors (20161004034639)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "professors" ADD "flag" integer DEFAULT 0[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161004034639"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddColumnsToReviews (20161010212210)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "reviews" ADD "flag" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "reviews" ADD "useful" integer DEFAULT 0 NOT NULL
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161010212210"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to RemoveColumnFromReviews (20161022025703)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TEMPORARY TABLE "areviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "hw" integer, "ease" integer, "tests" integer, "interesting" integer, "helpfull" integer, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "professor_id" integer, "guest" varchar, "flag" integer DEFAULT 0 NOT NULL, "useful" integer DEFAULT 0 NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "reviews"[0m
+  [1m[35m (0.7ms)[0m  DROP TABLE "reviews"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "hw" integer, "ease" integer, "interesting" integer, "helpfull" integer, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "professor_id" integer, "guest" varchar, "flag" integer DEFAULT 0 NOT NULL, "useful" integer DEFAULT 0 NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "areviews"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "areviews"[0m
+  [1m[35m (0.3ms)[0m  CREATE TEMPORARY TABLE "areviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "hw" integer, "ease" integer, "interesting" integer, "helpfull" integer, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "professor_id" integer, "guest" varchar, "flag" integer DEFAULT 0 NOT NULL, "useful" integer DEFAULT 0 NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "reviews"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "reviews"
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "ease" integer, "interesting" integer, "helpfull" integer, "comment" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "professor_id" integer, "guest" varchar, "flag" integer DEFAULT 0 NOT NULL, "useful" integer DEFAULT 0 NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "areviews"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "areviews"[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161022025703"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddClasseToReviews (20161124025526)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "reviews" ADD "classe" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20161124025526"]]
+  [1m[36m (3.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2016-11-25 10:53:28 -0700
+Processing by SiteController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT("professors"."id") FROM "professors"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "professors"
+  [1m[36mProfessor Load (0.2ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 0[0m
+  [1m[35mProfessor Load (0.2ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4
+  Rendered site/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (12.5ms)
+  Rendered layouts/_google_analytics.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 126ms (Views: 105.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/professors" for ::1 at 2016-11-25 10:53:32 -0700
+Processing by ProfessorsController#index as HTML
+  [1m[35mProfessor Load (0.4ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY created_at DESC LIMIT 20 OFFSET 0
+  Rendered professors/index.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 77ms (Views: 73.9ms | ActiveRecord: 0.5ms)
