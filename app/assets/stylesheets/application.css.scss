@@ -1,100 +1,23 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "navigation";
+
+$white: rgba(255,255, 255, 1);
+$footer: rgba(4, 101, 91, 1);
+$softgrey: rgba(41, 41, 41, 1);
+$global-bg: rgb(236, 243, 255);
 
 html {
   position: relative;
   min-height: 100%
 }
 body {
-  background:rgba(37, 146, 134, .4);
+  background: $global-bg;
   margin-bottom: 40px;
 }
 
 
 // navbar
-
-$navbar: rgba(14, 129, 117, 1);
-$navbar-toggle: rgba(60, 129, 117, 1);
-$white: rgba(255,255, 255, 1);
-$footer: rgba(4, 101, 91, 1);
-$softgrey: rgba(41, 41, 41, 1);
-
-.navbar-default {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 0px;
-  background-color: $navbar;
-  border-color: $navbar;
-//not sure where this goes
-}
-.btn {
-  margin-bottom: 15px;
-}
-
-// title
-.navbar-default .navbar-brand {
-    color: $white;
-}
-.navbar-default .navbar-brand:hover {
-    color: $white;
-}
-// links
-.navbar-default .navbar-nav > li > a,
-.navbar-default .navbar-nav > li > a:hover {
-    color: $white;
-}
-
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover {
-    color: $white;
-    background-color: $white;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-    color: #555;
-    background-color: $navbar-toggle;
-}
-/* caret */
-.navbar-default .navbar-nav > .dropdown > a .caret {
-    border-top-color: $navbar-toggle;
-    border-bottom-color: $navbar-toggle;
-}
-.navbar-default .navbar-nav > .dropdown > a:hover .caret,
-.navbar-default .navbar-nav > .dropdown > a:focus .caret {
-    border-top-color: #333;
-    border-bottom-color: #333;
-}
-.navbar-default .navbar-nav > .open > a .caret,
-.navbar-default .navbar-nav > .open > a:hover .caret,
-.navbar-default .navbar-nav > .open > a:focus .caret {
-    border-top-color: $navbar-toggle;
-    border-bottom-color: $navbar-toggle;
-}
-/* mobile version */
-.navbar-default .navbar-toggle {
-    border-color: #DDD;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-    background-color: #DDD;
-}
-.navbar-default .navbar-toggle .icon-bar {
-    background-color: #CCC;
-}
-@media (max-width: 767px) {
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-        color: #777;
-    }
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: $navbar-toggle;
-    }
-}
-
-.navbar-header {
-  color: $white;
-}
 
 /* site content */
 

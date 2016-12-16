@@ -561,3 +561,19 @@ Processing by ProfessorsController#index as HTML
   Rendered layouts/_google_analytics.html.erb (0.1ms)
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 77ms (Views: 73.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 13:12:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT("professors"."id") FROM "professors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "professors"[0m
+  [1m[35mProfessor Load (0.2ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 0
+  [1m[36mProfessor Load (0.7ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4[0m
+  Rendered site/index.html.erb within layouts/application (5.9ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss to /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.scss. (called from _app_views_layouts_application_html_erb__1701660029369651916_70243207915700 at /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss to /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.scss. (called from _app_views_layouts_application_html_erb__1701660029369651916_70243207915700 at /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/views/layouts/application.html.erb:5)
+  Rendered layouts/_header.html.erb (24.4ms)
+  Rendered layouts/_google_analytics.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 3044ms (Views: 3004.4ms | ActiveRecord: 1.7ms)

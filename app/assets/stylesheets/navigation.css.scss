@@ -1,51 +1,49 @@
-$nav-red: rgba(160, 17, 47, 0.8);
+
+$navbar: rgb(71, 133, 255);
+$navbar-toggle: rgba(60, 129, 117, 1);
+$white: rgba(255,255, 255, 1);
+
 
 .navbar-default {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 0px;
-  background-color: $nav-red;
-  border-color: $nav-red;
-
-
+  background-color: $navbar;
+  border-color: $navbar;
+//not sure where this goes
 }
 .btn {
   margin-bottom: 15px;
 }
 
-
-/* title */
+// title
 .navbar-default .navbar-brand {
-    color: #FFF;
+    color: $white;
 }
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-    color: #FFF;
+.navbar-default .navbar-brand:hover {
+    color: $white;
 }
-/* link */
-.navbar-default .navbar-nav > li > a {
-    color: #FFF;
+// links
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:hover {
+    color: $white;
 }
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: #FFF;
-}
+
 .navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-    color: #555;
-    background-color: #E7E7E7;
+.navbar-default .navbar-nav > .active > a:hover {
+    color: $white;
+    background-color: $white;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
     color: #555;
-    background-color: #D5D5D5;
+    background-color: $navbar-toggle;
 }
 /* caret */
 .navbar-default .navbar-nav > .dropdown > a .caret {
-    border-top-color: #777;
-    border-bottom-color: #777;
+    border-top-color: $navbar-toggle;
+    border-bottom-color: $navbar-toggle;
 }
 .navbar-default .navbar-nav > .dropdown > a:hover .caret,
 .navbar-default .navbar-nav > .dropdown > a:focus .caret {
@@ -55,8 +53,8 @@ $nav-red: rgba(160, 17, 47, 0.8);
 .navbar-default .navbar-nav > .open > a .caret,
 .navbar-default .navbar-nav > .open > a:hover .caret,
 .navbar-default .navbar-nav > .open > a:focus .caret {
-    border-top-color: #555;
-    border-bottom-color: #555;
+    border-top-color: $navbar-toggle;
+    border-bottom-color: $navbar-toggle;
 }
 /* mobile version */
 .navbar-default .navbar-toggle {
@@ -75,10 +73,10 @@ $nav-red: rgba(160, 17, 47, 0.8);
     }
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: #333;
+        color: $navbar-toggle;
     }
 }
 
 .navbar-header {
-  color: #ffffff;
+  color: $white;
 }

@@ -32,9 +32,9 @@
   <!-- class drop down  -->
     <div class="field" >
 
-      <strong>class:</string><br>
-        <%= f.text_area :classe, cols: "10", rows: "1" %>
-
+      <strong>class:</strong><br>
+        <%= f.collection_select(:classe, Review.order(:classe), :id, :classe, :include_blank => "Other Class", :prompt => "Class", ) %>
+        <%= f.text_field :classe, class: "class-show", style: "display: none;"%>
    </div>
 
     <br>
@@ -78,8 +78,8 @@
 
   $(document).ready(function(){
 
-  $('#professor_school').change(function() {
-    if(this.value == "Other") {
+  $('#review_classe').change(function() {
+    if(this.value == "Other Class") {
       $('.class-show').show();
       $('.class-show').val('');
     }else{
