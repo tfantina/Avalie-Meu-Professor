@@ -1,21 +1,15 @@
-<dic class="row">
-
+<div class="center-block">
+<div class="row">
+<div class="list-group">
+  <ul class="list-unstyled">
   <% @professors.each do |professor| %>
-    <div class="col-sm-6 col-md-3">
-        <div class="thumbnail">
-  <%= link_to professor, class: "list-group-item" do %>
-      <center><h4><ul class="list-unstyled">
-        <li><%= professor.fullname %> </li>
-      </ul></h4></center>
-      <ul class="list-unstyled text-muted">
-        <li> <%= professor.school %></li>
-        <li class="small"> <%= professor.department %></li>
-      </ul>
-<% end %>
-      </div>
-    </div>
+    <%= link_to professor, class: "list-group-item" do %>
+        <h4><%= professor.fullname %> </h4>
+        <%= professor.school %>
+    <% end %>
   <% end %>
-  <%= will_paginate @professors %>
-
-
+  </ul>
+</div>
+</div>
+<%= will_paginate @professors %>
 </div>

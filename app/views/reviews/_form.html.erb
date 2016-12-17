@@ -29,13 +29,7 @@
     <div id="star-helpfull"></div>
   </div>
   <br>
-  <!-- class drop down  -->
-    <div class="field" >
 
-      <strong>class:</strong><br>
-        <%= f.collection_select(:classe, Review.order(:classe), :id, :classe, :include_blank => "Other Class", :prompt => "Class", ) %>
-        <%= f.text_field :classe, class: "class-show", style: "display: none;"%>
-   </div>
 
     <br>
     <div class="field" >
