@@ -5793,3 +5793,120 @@ Processing by SiteController#index as HTML
   Rendered layouts/_google_analytics.html.erb (0.2ms)
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 118ms (Views: 102.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-17 16:40:18 -0700
+Processing by SiteController#index as HTML
+  [1m[35m (2.4ms)[0m  SELECT COUNT("professors"."id") FROM "professors"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "professors"[0m
+  [1m[35mProfessor Load (0.5ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 0
+  [1m[36mProfessor Load (0.6ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4[0m
+  Rendered site/index.html.erb within layouts/application (103.2ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (134.8ms)
+  Rendered layouts/_google_analytics.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 809ms (Views: 680.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/application.self-b53651171cd58742fe869257bd494ef8cd0588401618f7b5c50546337843b742.css?body=1" for ::1 at 2016-12-17 16:40:19 -0700
+
+
+Started GET "/" for ::1 at 2016-12-17 16:45:41 -0700
+Processing by SiteController#index as HTML
+  [1m[36m (2.2ms)[0m  [1mSELECT COUNT("professors"."id") FROM "professors"[0m
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "professors"
+  [1m[36mProfessor Load (1.4ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 0[0m
+  [1m[35mProfessor Load (2.1ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4
+  Rendered site/index.html.erb within layouts/application (21.7ms)
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_google_analytics.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 322ms (Views: 269.1ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/" for ::1 at 2016-12-19 15:46:01 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT("professors"."id") FROM "professors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "professors"[0m
+  [1m[35mProfessor Load (0.2ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 0
+  [1m[36mProfessor Load (0.8ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4[0m
+  Rendered site/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_header.html.erb (20.6ms)
+  Rendered layouts/_google_analytics.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 673ms (Views: 631.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.self-b53651171cd58742fe869257bd494ef8cd0588401618f7b5c50546337843b742.css?body=1" for ::1 at 2016-12-19 15:46:02 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-12-19 15:46:02 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-12-19 15:46:02 -0700
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2016-12-19 15:46:02 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-12-19 15:46:02 -0700
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-19 15:46:02 -0700
+
+
+Started GET "/assets/jquery.raty.self-eb7045c9858acfa4797981589f870a37b0dc801327e96148473cad672c94b9b8.js?body=1" for ::1 at 2016-12-19 15:46:02 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-19 15:46:02 -0700
+
+
+Started GET "/assets/professors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-19 15:46:02 -0700
+
+
+Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7de48b64906430f7ea12ae6f.js?body=1" for ::1 at 2016-12-19 15:46:02 -0700
+
+
+Started GET "/" for ::1 at 2016-12-19 15:48:57 -0700
+Processing by SiteController#index as HTML
+  [1m[35m (3.2ms)[0m  SELECT COUNT("professors"."id") FROM "professors"
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "professors"[0m
+  [1m[35mProfessor Load (0.3ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 0
+  [1m[36mProfessor Load (0.9ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4[0m
+  Rendered site/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 275ms (Views: 235.7ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/application.self-b53651171cd58742fe869257bd494ef8cd0588401618f7b5c50546337843b742.css?body=1" for ::1 at 2016-12-19 15:48:57 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-12-19 15:48:57 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-12-19 15:48:57 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-12-19 15:48:57 -0700
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-19 15:48:57 -0700
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2016-12-19 15:48:57 -0700
+
+
+Started GET "/assets/jquery.raty.self-eb7045c9858acfa4797981589f870a37b0dc801327e96148473cad672c94b9b8.js?body=1" for ::1 at 2016-12-19 15:48:57 -0700
+
+
+Started GET "/assets/professors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-19 15:48:57 -0700
+
+
+Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7de48b64906430f7ea12ae6f.js?body=1" for ::1 at 2016-12-19 15:48:57 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-19 15:48:57 -0700
