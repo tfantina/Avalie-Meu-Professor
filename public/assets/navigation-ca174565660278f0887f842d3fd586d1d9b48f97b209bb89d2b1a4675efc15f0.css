@@ -1,0 +1,106 @@
+/* line 7, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 0px;
+  background-color: #4785ff;
+  border-color: #4785ff;
+}
+
+/* line 15, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.btn {
+  margin-bottom: 15px;
+}
+
+/* line 20, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+/* line 23, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-brand:hover {
+  color: white;
+}
+
+/* line 26, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-brand {
+  height: 70px;
+  padding-right: 30px;
+}
+
+/* line 34, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:hover {
+  color: white;
+}
+
+/* line 39, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: white;
+  background-color: white;
+}
+
+/* line 44, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #3c8175;
+}
+
+/* caret */
+/* line 51, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+  border-top-color: #3c8175;
+  border-bottom-color: #3c8175;
+}
+
+/* line 55, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #333;
+  border-bottom-color: #333;
+}
+
+/* line 60, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+  border-top-color: #3c8175;
+  border-bottom-color: #3c8175;
+}
+
+/* mobile version */
+/* line 67, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-toggle {
+  border-color: #DDD;
+}
+
+/* line 70, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #DDD;
+}
+
+/* line 74, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #CCC;
+}
+
+@media (max-width: 767px) {
+  /* line 78, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+
+  /* line 81, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #3c8175;
+  }
+}
+/* line 87, /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss */
+.navbar-header {
+  color: white;
+}

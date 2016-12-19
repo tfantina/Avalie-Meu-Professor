@@ -5910,3 +5910,18 @@ Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7d
 
 
 Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-19 15:48:57 -0700
+
+
+Started GET "/" for ::1 at 2016-12-19 15:57:08 -0700
+Processing by SiteController#index as HTML
+  [1m[35m (1.5ms)[0m  SELECT COUNT("professors"."id") FROM "professors"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "professors"[0m
+  [1m[35mProfessor Load (0.4ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 0
+  [1m[36mProfessor Load (0.5ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4[0m
+  Rendered site/index.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 123ms (Views: 109.3ms | ActiveRecord: 2.6ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss to /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.scss. (called from mon_synchronize at /Users/tfantina/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/monitor.rb:214)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.css.scss to /Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/assets/stylesheets/navigation.scss. (called from mon_synchronize at /Users/tfantina/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/monitor.rb:214)
