@@ -6069,3 +6069,722 @@ Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7de48b64906430f7ea12ae6f.js?body=1" for ::1 at 2016-12-19 16:10:26 -0700
+
+
+Started GET "/" for ::1 at 2016-12-19 16:11:31 -0700
+Processing by SiteController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT("professors"."id") FROM "professors"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "professors"[0m
+  [1m[35mProfessor Load (0.3ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 1
+  [1m[36mProfessor Load (0.3ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4[0m
+  Rendered site/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 79ms (Views: 74.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-12-28 19:55:29 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT("professors"."id") FROM "professors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "professors"[0m
+  [1m[35mProfessor Load (0.3ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 0
+  [1m[36mProfessor Load (0.8ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4[0m
+  Rendered site/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.html.erb (22.1ms)
+  Rendered layouts/_google_analytics.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 553ms (Views: 509.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.self-b53651171cd58742fe869257bd494ef8cd0588401618f7b5c50546337843b742.css?body=1" for ::1 at 2016-12-28 19:55:30 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-12-28 19:55:30 -0700
+
+
+Started GET "/assets/jquery.raty.self-eb7045c9858acfa4797981589f870a37b0dc801327e96148473cad672c94b9b8.js?body=1" for ::1 at 2016-12-28 19:55:30 -0700
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2016-12-28 19:55:30 -0700
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-28 19:55:30 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-12-28 19:55:30 -0700
+
+
+Started GET "/assets/professors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-28 19:55:30 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-28 19:55:30 -0700
+
+
+Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7de48b64906430f7ea12ae6f.js?body=1" for ::1 at 2016-12-28 19:55:30 -0700
+
+
+Started GET "/professors" for ::1 at 2016-12-28 19:55:35 -0700
+Processing by ProfessorsController#index as HTML
+  [1m[35mProfessor Load (0.3ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY created_at DESC LIMIT 20 OFFSET 0
+  Rendered professors/index.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 105ms (Views: 102.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/professors/2" for ::1 at 2016-12-28 19:55:38 -0700
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfessor Load (0.3ms)[0m  [1mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mReview Exists (0.5ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT 1  [["professor_id", 2]]
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ?  ORDER BY created_at DESC[0m  [["professor_id", 2]]
+  Rendered professors/show.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 127ms (Views: 87.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/professors/new" for ::1 at 2016-12-28 19:55:39 -0700
+Processing by ProfessorsController#new as HTML
+  Rendered professors/_form.html.erb (577.8ms)
+  Rendered professors/new.html.erb within layouts/application (581.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 629ms (Views: 627.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/professors" for ::1 at 2016-12-28 19:55:50 -0700
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yyYJ0QE9sR4IfE4cyhRFhIQZFLwq2w0zjYtnnUVSHoRpJIh/xb33WrGIPbQ29bLMafaVrFA8RP0V6ear2Td5Tg==", "professor"=>{"fullname"=>"James Bond", "school"=>"BYU", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"", "commit"=>"Inserir"}
+  Rendered professors/_form.html.erb (1.9ms)
+  Rendered professors/edit.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_google_analytics.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 70ms (Views: 67.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/professors" for ::1 at 2016-12-28 19:55:55 -0700
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8/3PzrTyYkDIWt0i57wN4GiR9YKzJFiBrXiVTmgIIi9R/05gcHIkBHGuroobXfqohX50ksnDEU81GhR49G1F5Q==", "professor"=>{"fullname"=>"James Bond", "school"=>"FVG", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AHJ_Vuv-8v-p3wyV2VxqX0svwdyqK_c2vS4M7EeSkVTMKHXVO4XNKRRRl-uSynuQP5tcD7Eb5FI0y958Fr5Stquki-PRV6MG3oAsOOsouoW0_Hs8Q1b6woop9CuyxSOuXouCIThyqoksv2CZ2CIsp8HrFk7yHY0xd3jPNG_xp5w0V6rLI2q0MaYAyVU5WKiIEW-4DrOIQ0lg6zVTAd8NOFFLWMrRZkWMpHWGgaRVVmZdtdB_n7sD7arJdU4EvBlS6taKUzsp7WHAXpRRp4KtlpRDtM1QjdrYgUWu_Kr9JcF0wpk9LOLRwrEZ5i1mY7uUqU8LDWbuBNm-8m0841ZEspMdzxXioYmmoxnf1TiOr9Q0-vCeCoDLO4wM16_qPWU54Y3c14d8qNUdx8ZFUQ4eFE94ax0xvRBT0MaL4oj8rCHqcOoeTPjj7EhZqlnOunxKbFeczmBKcmZKkaJOcImMOiH3226Xn9bAP-OsRUZU3U2mwCMBGhs2rwtdCur-g8Oy6COJ4-0goXiBFNEV78bqyF9RxxJb5hIaRBLv7k28JlQQaXuzDN4d0IAxNfrW4EieFrfJ4_uU2pEWXXV4W9uaA_yxVGwK3n8uDH11ptawwd2WdSs50wWLp8O0XV3yz-cPLFMACQrcR9jZ95bttXals4IBXvJZisAIkcSUwMKtxbHlrD5dR9xjLAyftmt8z1jWJuDlXbVxN32PBpASrx8v162vykKsRaf2s4pI5wCTIubQXv7EPyB_Jp-gpeTkdrLGM2i1jySeqq1SfZOD0xkBoz7JDhU1cyFm1ls47gi1X8rcI5jENbw6S0a16wL3zs4TWSTLsGtcQqWemvlxHSPQKqvuJ7Ioc856LURk38BW3Jl7TdtdQEK1FgoatrEtAQ8_btdKvm6BtieH", "commit"=>"Inserir"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mProfessor Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "professors" WHERE ("professors"."fullname" = 'James Bond' AND "professors"."school" = 'FVG') LIMIT 1[0m
+  [1m[35mSQL (3.2ms)[0m  INSERT INTO "professors" ("fullname", "school", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["fullname", "James Bond"], ["school", "FVG"], ["created_at", "2016-12-29 02:55:55.559203"], ["updated_at", "2016-12-29 02:55:55.559203"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[33mProfessor Store (1492.9ms)[0m  {"id":3}
+Redirected to http://localhost:3000/professors/3
+Completed 302 Found in 1700ms (Searchkick: 1492.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/professors/3" for ::1 at 2016-12-28 19:55:57 -0700
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mProfessor Load (0.2ms)[0m  SELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT 1[0m  [["professor_id", 3]]
+  [1m[35mReview Load (0.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ?  ORDER BY created_at DESC  [["professor_id", 3]]
+  Rendered professors/show.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 73ms (Views: 69.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/professors/new" for ::1 at 2016-12-28 19:56:11 -0700
+Processing by ProfessorsController#new as HTML
+  Rendered professors/_form.html.erb (3.4ms)
+  Rendered professors/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 89ms (Views: 73.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/professors" for ::1 at 2016-12-28 19:56:23 -0700
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c+SvTVVV6d6V5BAhe2N5LK1/6DsWrskT43/NeP+2njnR5i7jkdWvmiwQY4mHgo5kQJBpK2xJgN17HUxOY9P58w==", "professor"=>{"fullname"=>"Taylor Swift", "school"=>"FVG", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AHJ_VuueiPxpBM5d58SdRRzKMmgXodFWwVgHNNwphgLJEeLGYU3CxtB5rdaG-LQZ0KQhC2hvjZ_xE4uW2qN4XspAGFqy5FMVnAfaRs7fdZRxr5xp7tHkssLWkh2wkmWCaR9qXAj5qLAmc6PSdRHEt5KptYUnRonmQ7migXuQH--48x_HvkekYgLs1Lniv4Dz1427hbMa47PGeJPj5IxRX-dGi9olH5bJkJrFC00GrTGyWWVF4kCWjnjlUySPTNNy5zlaqt4in3LbUsRP4UJBs0QX_c_x03FIbZAJVIi7mJBv4G_JcnQsA_HrKu2KNr6POyPahNVNCA1fHlEAThvih14TEJXqyDDsYfAJ5QS7Ripw0Lx42xE1VRoq8FwfWSwsslOA56qWTx_0YHYhwQDBm99mMzC2nrWlbULlPZJxz_V9Hc_3V4GgZtpATUnfDqsIrVxT5kwCAyvag5fA8JC-XhhaZ9JnHIThWY5Q1E1ehTWtDkNrWHY-LAdeNJE3-DXBju6tnNDBzj83VFug3qvEglDvHXXqOeqYH3LcNvOCIB8lK3li9UvqkbE9O6JOvqN2-xg5m1kUoRIEJePGpfuS9-tao_Hr2J1v81lQErlP7in-OwmyMjhbjav9yztnxDO9mgGv-wBYNdahSxGPFkW2IRzndqUpMSbi0ywHQ1lElG7jCrdXM5-acNofQpl0FmvWgsrAWqAkZgCahYijaV8l9rUX1JVrtgohN0j4fHkn3LhMtLMUj0llv8nZ5G-YB2KGyPOAam4Zj4XoivuCt9whJYnaq0GVDVUiH9YNaF1gmFvVQXLUqvNpmSPIf5bn77Hag1kNZ3bnx_ZI0zX7wRe5rUXrtopBP91oKghorpnlYZubHCF3F_FCHao", "commit"=>"Inserir"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProfessor Exists (0.3ms)[0m  SELECT  1 AS one FROM "professors" WHERE ("professors"."fullname" = 'Taylor Swift' AND "professors"."school" = 'FVG') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "professors" ("fullname", "school", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fullname", "Taylor Swift"], ["school", "FVG"], ["created_at", "2016-12-29 02:56:23.374643"], ["updated_at", "2016-12-29 02:56:23.374643"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[33mProfessor Store (39.8ms)[0m  {"id":4}
+Redirected to 
+Completed 500 Internal Server Error in 184ms (Searchkick: 39.8ms | ActiveRecord: 4.1ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/professors_controller.rb:69:in `block (2 levels) in create'
+  app/controllers/professors_controller.rb:67:in `create'
+
+
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (89.9ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (74.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (165.1ms)
+
+
+Started POST "/professors" for ::1 at 2016-12-28 19:57:44 -0700
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EdCISu3Q8+ef5dTrhg6oiWFCbC3IYqfo1AkpPVHK0Zaz0gnkKVC1oyYRp0N671/BjK3tPbKF7iZMa6gLza+2XA==", "professor"=>{"fullname"=>"Taylor Swift", "school"=>"FVG", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AHJ_VuvuZ4wS57aMWgsbjShnOTqSf-_DCzL-7mK9yle6E1eY29v896v5y0G7ph0s9OzAZMPoVHJEYM-lGtAvdUnv4SEvE3ufE3ELvMEq298u6ZsKsfFcCX2xly4f4kHR-A6kt6PdDOHvA65ZylsjnVEJtRk_bajsIVpdjFtulhL-s5SAK574k-YtutmeJUx5lDDszFz7DONOOWJUNRGBydzNGHF2RWNAD4OpafvbeG8CLS5ZAQ2FuEfsXEvXBODOYJ03kmKPzjAX74g_Mm4YuWZLFoQSFcWST46OYEDCS72GBn0IRaR4moM5Nas-Gbsd0P_AaIIbGurrGvxfkLGOX-XnvqqxvViirs5d9WjFtiiHvowNe3wVELYUBZ9uEkq7ooZmL_xx9SnO_pRr9roN5SBOFVLBoUtjN4jC3vqLmDcX_3ggAVwvYEtzECxOwOHpwEJjW87W5Q8z2uX9PyEkD1rkVV4sKaq6n7ulqmHFvaKp5u-SAPAjGk_dWYr_OdzfjeqlGT3NMHxCeWlCeVbZJVahMvOrND1FZy-RBHj36CsegXhp02kVGBi0ZLqAosgbU_nxuRBssFG4DrrR9-Ktn3EuzK6UajpUs_-_r_64ZnzvL_AXwVQ7DD-xwz6PhVo-pQfgc2PzpjQ6rV94qJniNtoeRPVYOXNOACGXJjbgG528Mdqnxx_w7RppuDijkFyvfUVobZa2nvybqRu9UugIkrVrzjfXXp3N1eHdMZWSMvzT--YPb-OehBe7HLmn-gT5JqSuN9gK0uZfaSDpjXygrUTk-F-mQDqsyoUf5xGGeghn3rg5DYpRIgCa3x5nlSbl8aJBVOwNR3dTwyc6k6fU2sQlgM8Bc436gQ", "commit"=>"Inserir"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProfessor Exists (0.2ms)[0m  SELECT  1 AS one FROM "professors" WHERE ("professors"."fullname" = 'Taylor Swift' AND "professors"."school" = 'FVG') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered professors/_form.html.erb (5.4ms)
+  Rendered professors/edit.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 261ms (Views: 81.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/professors" for ::1 at 2016-12-28 19:57:49 -0700
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+pqPtC2cGZGJH4ByBkZsGY/J25waHpVRi9tEXXUFmxdYmA4a6Rxf1TDr89r6p5tRYiZajGD53J8TucVr6WD83Q==", "professor"=>{"fullname"=>"Taylor Swift", "school"=>"FVG", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AHJ_Vutzt9ZjQcDQ6R0Akj7ERRH9irUVt_8iUo-ehzwl9Lg5gnWktWkeke7k5YjrxkWlEVA7igTVzlIchm9dckqVS46o4FxSneyrV1U5MgJllwkOwnRkmScWTdgw5mSh3VxF0fFFVCOwDFom2oaTeMSTYScJq_8hLvDFKBHjKE2u7d19u23m4XjLAZemdtCnBu7gGmwS9BMvj0kiqcckPIvn4hgcGE8-8RfmheueDv9HvG3zr5fuD7wUFQNINECb6ud_4dSkBWQj9aGRpKLoAo7vpgtkiFTVP08mUPmpZlwE0OSaApbs3vKX-LYfZYqssXtpakVGA5M_C63NlbCL7Ty8HhK8hSyz4olFvUkjOiIL-uQf_c9wwttLHufaSWGa-m1rBWdE2qkLXv90v9RcndzskSfOhl4g7siCQ1swVuM7WMfppBhxJsIR9-y-jnE8hxkXHglJjBH7HIVBf0yf_9RoqJ1NbE8PEP_owBWzOT9FZPaZh4GvWKYxwwrVZwyEQz7fgSNSZZL0n50UyGfrq7YhzeBmJU5Q4vG10PIbIM11Iqn1MAFQnOKHR8CuCUg6pny0jLaVcZYgc2htCbSpGTdsKT_u4xE_nOjKaeHRHTrRRWd2cNn-RLLvxopWc-cyEBup_mO7-ovXP00pZSGKfwFwRQV_dJeCoI83tsu4XDW4lUZ0hm6s-9QtVSBiezexIRLFhajVslHgfH2PvwcNx40kbAjYD0QY8GKGZXRVqJhA2GPlfB_npZZ-aqkjHGBGtHexPdpvROSaXDAMLsppioZVtvIhekXzPw", "commit"=>"Inserir"}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mProfessor Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "professors" WHERE ("professors"."fullname" = 'Taylor Swift' AND "professors"."school" = 'FVG') LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  Rendered professors/_form.html.erb (2.8ms)
+  Rendered professors/edit.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_google_analytics.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 198ms (Views: 61.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/professors" for ::1 at 2016-12-28 19:57:56 -0700
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UUbAdElSqKPHLGUWQ3a4kVSZw4BFveVMeIVAE8PUnurzREHajdLu537YFr6/l0/ZuXZCkD9arILg58ElX7H5IA==", "professor"=>{"fullname"=>"Taylor Swift!", "school"=>"FVG", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AHJ_VutRpnOVJ9kod2Xp18mdKiTqJ5cQwPiDrjdCXZBI_2nDFa5Gc51_9bLvgJSCBlUHAxFAdOpf2AumbOKm2X5H5DDS-Jrp3oXBAbwz6vFh_cwKPIbp2NlgXM62S4zympWiU-HjB1cwRWgeE8nbGPYzB5aEZGJ5We_CA6se2peR5iW_Uzqu9Rgz40WcVDUJ7MFJhsGdD3AGw9mxg9DqF98GqwRWwKD0PLJb2yUObjnk1at8MJo7VJz00SB0mYau2OcpJ_kV07AaMZKttO6z5MGuWlrasOcb74m3JBYQ39-CKZ1xSHJw9ezhOEwuHIzkgnesh9ttGOIBBdbkA4sICtv9EG8b1CqQ5-lBxFTUVIlYa2AnNVvRT3XjU2KhjsgYZgiE_G2zVJ7Z3w-E9dYnN2wa5PSL2Ro8hQV1ObsY9E05exFhj0E7oDIFelntwqXLh5qrkjE0qPVNJ0dc-kRPK0jfP2AA8ALC3q01a1SxlXQudift7xJxpRMV61kXOArGmxuQpmY2WJcN-tCdgamdy0obbkskpbNsWUoij4P-BnYICv4jzVvRql16xhdzMo21U5WOi6w4lCu4xMnf4CIG40K9_KqljlJRcSSCSC_kYnSiCkaCCJA0ZDsTf-GP502B6iv-gID4qnZVHB6M7HGQn5p5h_wedXcfvPWyRZZGRnJjbkX2QsmhyPBZ-D4KTlz7Ia0KJ0nldDgsZTN_VUG5QGbBVwH0kAWmSsQ95T9A7n46c-wKx6QQwCqoMm3w1BGVr-0VE176NJkDf7z88pFjhKCqc-StN6_FQcCL0oKiWoq7UGjCqDkgy2Oqd5IQogmfCSpxRlslHGUqTWUdDNTBNNnFR1M1Ysk4O6vLI8dKLIaVTE8u-zqc7gAR33zfX9RGQUoQI3ny3ll_", "commit"=>"Inserir"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProfessor Exists (0.2ms)[0m  SELECT  1 AS one FROM "professors" WHERE ("professors"."fullname" = 'Taylor Swift!' AND "professors"."school" = 'FVG') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "professors" ("fullname", "school", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fullname", "Taylor Swift!"], ["school", "FVG"], ["created_at", "2016-12-29 02:57:56.730824"], ["updated_at", "2016-12-29 02:57:56.730824"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[33mProfessor Store (93.4ms)[0m  {"id":5}
+Redirected to 
+Completed 500 Internal Server Error in 275ms (Searchkick: 93.4ms | ActiveRecord: 3.2ms)
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/professors_controller.rb:69:in `block (2 levels) in create'
+  app/controllers/professors_controller.rb:67:in `create'
+
+
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.1ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (85.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (69.8ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (159.8ms)
+
+
+Started POST "/professors" for ::1 at 2016-12-28 20:01:10 -0700
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UUbAdElSqKPHLGUWQ3a4kVSZw4BFveVMeIVAE8PUnurzREHajdLu537YFr6/l0/ZuXZCkD9arILg58ElX7H5IA==", "professor"=>{"fullname"=>"Taylor Swift!", "school"=>"FVG", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AHJ_VutRpnOVJ9kod2Xp18mdKiTqJ5cQwPiDrjdCXZBI_2nDFa5Gc51_9bLvgJSCBlUHAxFAdOpf2AumbOKm2X5H5DDS-Jrp3oXBAbwz6vFh_cwKPIbp2NlgXM62S4zympWiU-HjB1cwRWgeE8nbGPYzB5aEZGJ5We_CA6se2peR5iW_Uzqu9Rgz40WcVDUJ7MFJhsGdD3AGw9mxg9DqF98GqwRWwKD0PLJb2yUObjnk1at8MJo7VJz00SB0mYau2OcpJ_kV07AaMZKttO6z5MGuWlrasOcb74m3JBYQ39-CKZ1xSHJw9ezhOEwuHIzkgnesh9ttGOIBBdbkA4sICtv9EG8b1CqQ5-lBxFTUVIlYa2AnNVvRT3XjU2KhjsgYZgiE_G2zVJ7Z3w-E9dYnN2wa5PSL2Ro8hQV1ObsY9E05exFhj0E7oDIFelntwqXLh5qrkjE0qPVNJ0dc-kRPK0jfP2AA8ALC3q01a1SxlXQudift7xJxpRMV61kXOArGmxuQpmY2WJcN-tCdgamdy0obbkskpbNsWUoij4P-BnYICv4jzVvRql16xhdzMo21U5WOi6w4lCu4xMnf4CIG40K9_KqljlJRcSSCSC_kYnSiCkaCCJA0ZDsTf-GP502B6iv-gID4qnZVHB6M7HGQn5p5h_wedXcfvPWyRZZGRnJjbkX2QsmhyPBZ-D4KTlz7Ia0KJ0nldDgsZTN_VUG5QGbBVwH0kAWmSsQ95T9A7n46c-wKx6QQwCqoMm3w1BGVr-0VE176NJkDf7z88pFjhKCqc-StN6_FQcCL0oKiWoq7UGjCqDkgy2Oqd5IQogmfCSpxRlslHGUqTWUdDNTBNNnFR1M1Ysk4O6vLI8dKLIaVTE8u-zqc7gAR33zfX9RGQUoQI3ny3ll_", "commit"=>"Inserir"}
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/professors_controller.rb:67:in `create'
+
+
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.0ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (70.8ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (158.2ms)
+
+
+Started GET "/professors" for ::1 at 2016-12-28 20:01:12 -0700
+Processing by ProfessorsController#index as HTML
+  [1m[36mProfessor Load (0.5ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+  Rendered professors/index.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 103ms (Views: 93.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/professors/new" for ::1 at 2016-12-28 20:01:15 -0700
+Processing by ProfessorsController#new as HTML
+  Rendered professors/_form.html.erb (2.5ms)
+  Rendered professors/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_google_analytics.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 65ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/professors" for ::1 at 2016-12-28 20:01:22 -0700
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cjF1fb+5LYcuHSk1xtPkzfZpt9tl0Vfd93aDbvhEyonQM/TTezlrw5fpWp06MhOFG4Y2yx82HhNvFAJYZCGtQw==", "professor"=>{"fullname"=>"James Dean", "school"=>"FVG", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AHJ_VuuCha-Loel-F-0WUCkWtlYDeOHgk-Ao1P57UmE-FvrvrI3EoTLJWmbGTuaTzO_B2MXKr_wxaeivRVdtM9It_B39GFGFyme6EXS86cscTgmRblMiTehY9Y2oZc83W8SLx43FzzEr2FaZcE7e7SUZPFMX8R6Q2gnQa7Zf6P-DuN-4V9c92KdwFchET7v6raqCUnm_27pvuQ3CRJG7zVv_QkybzKX3hkj_le4Usu8uQ7tKmgUgPjcN67ve1E-JVa72NfyS9eeVHziMddhhnI_p4eC0BHJ-IF_cAE3z0EvgQiyY0P0rBLDeao5Pq2PExhZF5YfOEfVdCOWhHtzL9ShyNGNauxg70k6otVH0bmHtdw-snnqF0WKEbQJaSJvxVg8l9dPioO6CMbl6LMpNntpnZIMR2ZfdQGhJyX3z4OAWcFiUK2LroxwEuTWJedv0guv__lblTE59MqeDkEZ0INTKn0NdCIgNtLMucQc98pau8UMdsssXCFcEyZ5G6zP-F7950_x-aDEDKqm1GhrlKP86xZ7a9sxPkis5oEmbcOpnvwMMXVw5m92uDispHnOKyY11NtTZWmUIRPZsXR5GJoVYza59iMWNEEThT32Z4LM5jLCHnnEmocT6FfLRT68uSdzk2kcRtrEIdT8oC-3x9Nk94BkZ_7cJkeRO8r_vSNEdrHeNZ7RJ40B5qegfUm8Eu1wDe6Bh9fjsqq5KIdaKmCH8WXgXqejy9Ek1eNqXBXaE1OPJnnJ72mGuxOLRdyawgoQy3p28a9u2OsFR01Q1yAZh1VCKX62U2EnQPzB7zLx7nrTZNQXzKwSa04uwW_cQE7GCP1uqJSgKqD3j4jdgfjuVaM3IxpHI4bsHvJ4KIicjY3BIKRl1J7A", "commit"=>"Inserir"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/professors_controller.rb:67:in `create'
+
+
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (98.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (67.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (151.5ms)
+
+
+Started GET "/" for ::1 at 2016-12-28 20:03:30 -0700
+Processing by SiteController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT("professors"."id") FROM "professors"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "professors"[0m
+  [1m[35mProfessor Load (0.2ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 1
+  [1m[36mProfessor Load (0.3ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4[0m
+  Rendered site/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 131ms (Views: 104.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/professors/new" for ::1 at 2016-12-28 20:03:34 -0700
+Processing by ProfessorsController#new as HTML
+  Rendered professors/_form.html.erb (4.8ms)
+  Rendered professors/new.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 78ms (Views: 76.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/professors" for ::1 at 2016-12-28 20:03:42 -0700
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SHrOUAVBNe3J56olsoM7CJnhsJSKwLv+kW0WDwHcjh7qeE/+wcFzqXAT2Y1OYsxAdA4xhPAn8jAJD5c5nbnp1A==", "professor"=>{"fullname"=>"James Blunt", "school"=>"FVG", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AHJ_Vuspz0oxPNBTDn1GVA9uutJ3WNNS3_sRz4VTyu9-55qDpwUEhwaWykJML9e_fEpSFcQudUq7VIPRsu2fbtTNauU6l66tUdkgFxAbBxkiDWNZ0hkAU8ZDGS20mN7UKft1HR1SdbwFA79Y2Odid8bOIMOd4K02dscgtsTMm3DatnfrGB5ZqDHqHB6Q_QGIt9dhKLMto2nD1m6qS8RNwJz6k6jgixRwcfzN5RBV3TYR4O2I2ruEBWBErM61OoP7Ui-FUI6l8L4ShrDZlxIIizFhTmpXPw0BIK3Ns-XrZUz8lfJQV_4nILG4k1B06adU_Wkg_FxKpZUTNOyKoLynmGfsoaFBc3XolOQYYaQBeQ4fiPEbpcy6qcOHirWYgr4_TyWTVvz9wgmIiKXKWz5ulXi5T7HvlVcWD0MU0xEkzzEbei4Ir-Vix1TdO1GOzvITveoUtKEvBQ45eL4xkK8D1Awwsq5BRIgDMVn48wb90cejmxzwh0TqAVhXNIQP3guqhz9o3PWWQPYS1L6jr5KTcbkvig1PzBVblLqg4nEuNBkSQDDUqVhMnHx-eWIwmN-aHDy5H1bfdafDFhhiqd2pzsyW3dCl-oMiS5Y5geCVZvNjbfa3wdBsHeJ6mqizXzc9j8kEFJZXdxXE3ELc3EJMQxnSy1UD9sxf147sRg1YRf_pqLi62W26i-3bgixn_6Pe-1bEAHVjFiV_x1qGGsWy3QZkRzzgMdp9P1WO6DxsifcSHVBSFgu0Xj8Uh2FLCAmbpsd7ZJgV8D1wnVSL_eAjaKu1sob4bfoomnDyJPXQxuqbDB28WPpIJe8q4rJRLQAKu4iZ7KHQbAuH", "commit"=>"Inserir"}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `id' for nil:NilClass):
+  app/controllers/professors_controller.rb:67:in `create'
+
+
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (89.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (67.9ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (147.9ms)
+
+
+Started POST "/professors" for ::1 at 2016-12-28 20:03:59 -0700
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SHrOUAVBNe3J56olsoM7CJnhsJSKwLv+kW0WDwHcjh7qeE/+wcFzqXAT2Y1OYsxAdA4xhPAn8jAJD5c5nbnp1A==", "professor"=>{"fullname"=>"James Blunt", "school"=>"FVG", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AHJ_Vuspz0oxPNBTDn1GVA9uutJ3WNNS3_sRz4VTyu9-55qDpwUEhwaWykJML9e_fEpSFcQudUq7VIPRsu2fbtTNauU6l66tUdkgFxAbBxkiDWNZ0hkAU8ZDGS20mN7UKft1HR1SdbwFA79Y2Odid8bOIMOd4K02dscgtsTMm3DatnfrGB5ZqDHqHB6Q_QGIt9dhKLMto2nD1m6qS8RNwJz6k6jgixRwcfzN5RBV3TYR4O2I2ruEBWBErM61OoP7Ui-FUI6l8L4ShrDZlxIIizFhTmpXPw0BIK3Ns-XrZUz8lfJQV_4nILG4k1B06adU_Wkg_FxKpZUTNOyKoLynmGfsoaFBc3XolOQYYaQBeQ4fiPEbpcy6qcOHirWYgr4_TyWTVvz9wgmIiKXKWz5ulXi5T7HvlVcWD0MU0xEkzzEbei4Ir-Vix1TdO1GOzvITveoUtKEvBQ45eL4xkK8D1Awwsq5BRIgDMVn48wb90cejmxzwh0TqAVhXNIQP3guqhz9o3PWWQPYS1L6jr5KTcbkvig1PzBVblLqg4nEuNBkSQDDUqVhMnHx-eWIwmN-aHDy5H1bfdafDFhhiqd2pzsyW3dCl-oMiS5Y5geCVZvNjbfa3wdBsHeJ6mqizXzc9j8kEFJZXdxXE3ELc3EJMQxnSy1UD9sxf147sRg1YRf_pqLi62W26i-3bgixn_6Pe-1bEAHVjFiV_x1qGGsWy3QZkRzzgMdp9P1WO6DxsifcSHVBSFgu0Xj8Uh2FLCAmbpsd7ZJgV8D1wnVSL_eAjaKu1sob4bfoomnDyJPXQxuqbDB28WPpIJe8q4rJRLQAKu4iZ7KHQbAuH", "commit"=>"Inserir"}
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `save' for nil:NilClass):
+  app/controllers/professors_controller.rb:67:in `block in create'
+  app/controllers/professors_controller.rb:66:in `create'
+
+
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (67.7ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (147.9ms)
+
+
+Started POST "/professors" for ::1 at 2016-12-28 20:04:24 -0700
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j/PEKvG7SUk48RxuhL+pG6h3AVgmaVS8BQ8SakrSGYkt8UWENTsPDYEFb8Z4Xl5TRZiASFyOHXKdbZNc1rd+Qw==", "professor"=>{"fullname"=>"James Blunt", "school"=>"FVG", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"", "commit"=>"Inserir"}
+  Rendered professors/_form.html.erb (2.9ms)
+  Rendered professors/edit.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 94ms (Views: 70.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/professors" for ::1 at 2016-12-28 20:04:29 -0700
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dq5cFVpqWOMugpD4bXMnAySF0h1cVQgm774rTMP6VLnUrN27nuoep5d241CRktBLyWpTDSayQeh33Kp6X58zcw==", "professor"=>{"fullname"=>"James Blunt!", "school"=>"FVG", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AHJ_VutIMTmYtvXax_Mjng7kKO3CFlO--tt3Y9cmW7SgM0dWsG9KLYtyJieRGBwQAFDbonXhfXmzA20RNQzPx2NfNKDQhPYPk6nwPfT4H38lI9GuyzSzqth-4OuuPm0red9gS5GJh3rF29NEB4Iuj5eXbtHpk-G7JF-7a0T-nfjgVDVNPAp_N4zXPUZVxfINv8Ik5j-DbHoCG0hRIxvJ763HjxG7meKRjsRFqnmLyhOPKWdEUaxxoPmryNWrkLK8b2IyMSe-vMuzRtNw87t76MCtZeKHBt7S19tCDd5eHur8kFzz-zPl9O7FFnwprBldKdXLahMXxWSQl5ftPps78dZE1Piwn4NsUG1SGsUBOrBRTldvy3O3LS9VI95kPzmsbtDhnwBO5cKwpCH2lwEx-LCj_v_ZJsAH5GVvNaoqJ6Fe10EkLNt4m0nbxxQQFYZUu9ocxjibmGW9U7AzsA9Bo3iwPeTeMlSaSeKiUy3N8InwkTAlA02KLb7nCjrrNRU9Eou98QLXQMAHh5mE66P14KcKFSw2cULxBcLAKAWX-KNdyL-CoBlpsNeQufFNkU5mC204aaufgg_WONAuqUwmVsTv86IYFrWT4d7o5szJcj57GpgEXdb_HNglfmZdXjfp0u3chcM8DX2O2Ny8YLfGfJzA6oa87XaIhVZpVta5FZhyEXNlMaywoPUk5EwqlCx8r6l8Xzjm7H3SH7xfUq9WBPRPK-S4pKvmBrE9PKmawFaZre7_nqq0XH_OBn0DF63nYPvnJo-kUszA1Qi8H9Yf0gts2AHp3jCUrsmIPXVIAzXLe6QcZjGmS3fR6kZCqaqMfzerIZNm6kYwIKMt7JvPHKE0iIQSozLbIQ", "commit"=>"Inserir"}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mProfessor Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "professors" WHERE ("professors"."fullname" = 'James Blunt!' AND "professors"."school" = 'FVG') LIMIT 1[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "professors" ("fullname", "school", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["fullname", "James Blunt!"], ["school", "FVG"], ["created_at", "2016-12-29 03:04:30.054962"], ["updated_at", "2016-12-29 03:04:30.054962"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[33mProfessor Store (67.2ms)[0m  {"id":6}
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" IS NULL
+Redirected to 
+Completed 500 Internal Server Error in 214ms (Searchkick: 67.2ms | ActiveRecord: 4.3ms)
+
+NoMethodError (undefined method `to_model' for #<ActiveRecord::Relation []>
+Did you mean?  to_xml):
+  app/controllers/professors_controller.rb:70:in `block (2 levels) in create'
+  app/controllers/professors_controller.rb:68:in `create'
+
+
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (83.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (76.8ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (159.8ms)
+
+
+Started GET "/" for ::1 at 2016-12-30 19:01:47 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/Users/tfantina/Documents/Code and Websites/Ruby & Rails Stuff/professor/app/helpers/application_helper.rb:7: syntax error, unexpected ')', expecting keyword_end
+      base_title + " - " + page)title
+                                ^):
+  app/helpers/application_helper.rb:7: syntax error, unexpected ')', expecting keyword_end
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/site_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.9ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (111.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (610.7ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (707.7ms)
+
+
+Started GET "/" for ::1 at 2016-12-30 19:02:05 -0700
+Processing by SiteController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT("professors"."id") FROM "professors"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "professors"[0m
+  [1m[35mProfessor Load (0.2ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 3
+  [1m[36mProfessor Load (0.8ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4[0m
+  Rendered site/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (32.5ms)
+  Rendered layouts/_google_analytics.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 732ms (Views: 688.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.self-b53651171cd58742fe869257bd494ef8cd0588401618f7b5c50546337843b742.css?body=1" for ::1 at 2016-12-30 19:02:06 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-12-30 19:02:06 -0700
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2016-12-30 19:02:06 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-12-30 19:02:06 -0700
+
+
+Started GET "/assets/professors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:02:06 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-12-30 19:02:06 -0700
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:02:06 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:02:06 -0700
+
+
+Started GET "/assets/jquery.raty.self-eb7045c9858acfa4797981589f870a37b0dc801327e96148473cad672c94b9b8.js?body=1" for ::1 at 2016-12-30 19:02:06 -0700
+
+
+Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7de48b64906430f7ea12ae6f.js?body=1" for ::1 at 2016-12-30 19:02:06 -0700
+
+
+Started GET "/" for ::1 at 2016-12-30 19:03:13 -0700
+Processing by SiteController#index as HTML
+  [1m[35m (2.8ms)[0m  SELECT COUNT("professors"."id") FROM "professors"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "professors"[0m
+  [1m[35mProfessor Load (0.3ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 2
+  [1m[36mProfessor Load (0.4ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4[0m
+  Rendered site/index.html.erb within layouts/application (5.4ms)
+  [1m[35mProfessor Load (0.4ms)[0m  SELECT  "professors".* FROM "professors" LIMIT 20 OFFSET 0
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 4.0ms)
+
+ActionView::Template::Error (undefined method `empty?' for #<#<Class:0x007f92d8c6a878>:0x007f92d5f1feb8>):
+    1: <!DOCTYPE html>
+    2: <html>
+    3: <head>
+    4:   <title><%= title(yield(:title)) %></title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+  app/helpers/application_helper.rb:4:in `title'
+  app/views/layouts/application.html.erb:4:in `_app_views_layouts_application_html_erb___44904766214882445_70134303155000'
+
+
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (96.9ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (72.9ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (163.3ms)
+
+
+Started GET "/" for ::1 at 2016-12-30 19:03:29 -0700
+Processing by SiteController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT("professors"."id") FROM "professors"[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "professors"
+  [1m[36mProfessor Load (0.3ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 3[0m
+  [1m[35mProfessor Load (0.4ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4
+  Rendered site/index.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 109ms (Views: 72.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.self-b53651171cd58742fe869257bd494ef8cd0588401618f7b5c50546337843b742.css?body=1" for ::1 at 2016-12-30 19:03:29 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-12-30 19:03:29 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-12-30 19:03:29 -0700
+
+
+Started GET "/assets/jquery.raty.self-eb7045c9858acfa4797981589f870a37b0dc801327e96148473cad672c94b9b8.js?body=1" for ::1 at 2016-12-30 19:03:29 -0700
+
+
+Started GET "/assets/professors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:03:29 -0700
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2016-12-30 19:03:29 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-12-30 19:03:29 -0700
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:03:29 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:03:29 -0700
+
+
+Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7de48b64906430f7ea12ae6f.js?body=1" for ::1 at 2016-12-30 19:03:29 -0700
+
+
+Started GET "/" for ::1 at 2016-12-30 19:03:30 -0700
+Processing by SiteController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT("professors"."id") FROM "professors"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "professors"
+  [1m[36mProfessor Load (0.1ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 4[0m
+  [1m[35mProfessor Load (0.3ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4
+  Rendered site/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_google_analytics.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 61.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-b53651171cd58742fe869257bd494ef8cd0588401618f7b5c50546337843b742.css?body=1" for ::1 at 2016-12-30 19:03:31 -0700
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2016-12-30 19:03:31 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-12-30 19:03:31 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-12-30 19:03:31 -0700
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:03:31 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-12-30 19:03:31 -0700
+
+
+Started GET "/assets/professors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:03:31 -0700
+
+
+Started GET "/assets/jquery.raty.self-eb7045c9858acfa4797981589f870a37b0dc801327e96148473cad672c94b9b8.js?body=1" for ::1 at 2016-12-30 19:03:31 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:03:31 -0700
+
+
+Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7de48b64906430f7ea12ae6f.js?body=1" for ::1 at 2016-12-30 19:03:31 -0700
+
+
+Started GET "/professors" for ::1 at 2016-12-30 19:05:22 -0700
+Processing by ProfessorsController#index as HTML
+  [1m[36mProfessor Load (0.5ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+  Rendered professors/index.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 92ms (Views: 88.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/professors" for ::1 at 2016-12-30 19:05:55 -0700
+Processing by ProfessorsController#index as HTML
+  [1m[35mProfessor Load (0.6ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY created_at DESC LIMIT 20 OFFSET 0
+  Rendered professors/index.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 92ms (Views: 79.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.self-b53651171cd58742fe869257bd494ef8cd0588401618f7b5c50546337843b742.css?body=1" for ::1 at 2016-12-30 19:05:56 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-12-30 19:05:56 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-12-30 19:05:56 -0700
+
+
+Started GET "/assets/jquery.raty.self-eb7045c9858acfa4797981589f870a37b0dc801327e96148473cad672c94b9b8.js?body=1" for ::1 at 2016-12-30 19:05:56 -0700
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2016-12-30 19:05:56 -0700
+
+
+Started GET "/assets/professors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:05:56 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-12-30 19:05:56 -0700
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:05:56 -0700
+
+
+Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7de48b64906430f7ea12ae6f.js?body=1" for ::1 at 2016-12-30 19:05:56 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:05:56 -0700
+
+
+Started GET "/professors" for ::1 at 2016-12-30 19:06:00 -0700
+Processing by ProfessorsController#index as HTML
+  [1m[36mProfessor Load (0.3ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
+  Rendered professors/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-b53651171cd58742fe869257bd494ef8cd0588401618f7b5c50546337843b742.css?body=1" for ::1 at 2016-12-30 19:06:00 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-12-30 19:06:01 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-12-30 19:06:01 -0700
+
+
+Started GET "/assets/jquery.raty.self-eb7045c9858acfa4797981589f870a37b0dc801327e96148473cad672c94b9b8.js?body=1" for ::1 at 2016-12-30 19:06:01 -0700
+
+
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:06:01 -0700
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2016-12-30 19:06:01 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-12-30 19:06:01 -0700
+
+
+Started GET "/assets/professors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:06:01 -0700
+
+
+Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7de48b64906430f7ea12ae6f.js?body=1" for ::1 at 2016-12-30 19:06:01 -0700
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-30 19:06:01 -0700
+
+
+Started GET "/professors/6" for ::1 at 2016-12-30 19:06:43 -0700
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mProfessor Load (0.9ms)[0m  SELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT 1[0m  [["professor_id", 6]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ?  ORDER BY created_at DESC  [["professor_id", 6]]
+  Rendered professors/show.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 273ms (Views: 137.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2016-12-30 19:06:46 -0700
+Processing by SiteController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT("professors"."id") FROM "professors"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "professors"
+  [1m[36mProfessor Load (0.2ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 1[0m
+  [1m[35mProfessor Load (0.3ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4
+  Rendered site/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 81ms (Views: 76.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-12-30 19:06:47 -0700
+Processing by SiteController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT("professors"."id") FROM "professors"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "professors"
+  [1m[36mProfessor Load (0.2ms)[0m  [1mSELECT  "professors".* FROM "professors"  ORDER BY "professors"."id" ASC LIMIT 1 OFFSET 1[0m
+  [1m[35mProfessor Load (0.3ms)[0m  SELECT  "professors".* FROM "professors"  ORDER BY RANDOM() LIMIT 4
+  Rendered site/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_google_analytics.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 76ms (Views: 72.2ms | ActiveRecord: 0.9ms)

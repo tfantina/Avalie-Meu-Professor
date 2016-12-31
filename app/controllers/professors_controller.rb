@@ -64,9 +64,10 @@ class ProfessorsController < ApplicationController
   def create
     @schooldef = ['FGV', 'other']
     @professor = Professor.new(professor_params)
+    @review = Review.where(professor_id: @professor.id)
     respond_to do |format|
       if verify_recaptcha(model: @professor) && @professor.save
-        format.html { redirect_to @professor, notice: 'Professor was successfully created.' }
+        format.html { redirect_to @review, notice: 'Professor was successfully created.' }
         format.json { render :show, status: :created, location: @professor }
       else
         format.html { render :edit, notice: 'Please fill out the captcha.' }
