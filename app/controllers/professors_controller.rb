@@ -16,8 +16,6 @@ class ProfessorsController < ApplicationController
      @professors = Professor.paginate(:page => params[:page], per_page: 20).order(sort_column + " " + sort_direction)
      @professor = Professor
     # @review = Review.where(professor_id: @professor.ids)
-
-
   end
 
   def schools
@@ -34,9 +32,6 @@ class ProfessorsController < ApplicationController
     if @review.exists?
       @avg_review = @review.average(:rating).round(1)
     end
-
-
-
   end
 
 
@@ -64,10 +59,10 @@ class ProfessorsController < ApplicationController
   def create
     @schooldef = ['FGV', 'other']
     @professor = Professor.new(professor_params)
-    @review = Review.where(professor_id: @professor.id)
+    @review = Review.new
     respond_to do |format|
       if verify_recaptcha(model: @professor) && @professor.save
-        format.html { redirect_to @review, notice: 'Professor was successfully created.' }
+        format.html { redirect_to controller: 'reviews', action: 'new', professor_id: @professor.id, notice: 'Professor was successfully created.' }
         format.json { render :show, status: :created, location: @professor }
       else
         format.html { render :edit, notice: 'Please fill out the captcha.' }
