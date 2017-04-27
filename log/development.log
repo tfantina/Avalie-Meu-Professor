@@ -7398,3 +7398,270 @@ Processing by ProfessorsController#show as HTML
   Rendered layouts/_google_analytics.html.erb (0.1ms)
   Rendered layouts/_footer.html.erb (0.2ms)
 Completed 200 OK in 73ms (Views: 66.3ms | ActiveRecord: 0.8ms)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/tfantina/Documents/Code and Websites/ROR/professor/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/tfantina/Documents/Code and Websites/ROR/professor/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/tfantina/Documents/Code and Websites/ROR/professor/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/tfantina/Documents/Code and Websites/ROR/professor/config/environment.rb:5)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/tfantina/Documents/Code and Websites/ROR/professor/config/environment.rb:5)
+Started GET "/" for ::1 at 2017-04-27 14:28:20 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SiteController#index as HTML
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 0..1)):
+  
+app/controllers/site_controller.rb:3:in `index'
+  Rendering /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (120.2ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendering /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendering /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers_tfantina__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___566612817804814510_70110652765720 at /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (568.2ms)
+  Rendering /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendering /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /Users/tfantina/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (684.2ms)
+Started GET "/" for ::1 at 2017-04-27 14:29:08 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT("professors"."id") FROM "professors"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 11]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (4.5ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/tfantina/Documents/Code and Websites/ROR/professor/app/assets/stylesheets/navigation.css.scss to /Users/tfantina/Documents/Code and Websites/ROR/professor/app/assets/stylesheets/navigation.scss. (called from _app_views_layouts_application_html_erb__1561486885613946547_70110655052140 at /Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/tfantina/Documents/Code and Websites/ROR/professor/app/assets/stylesheets/navigation.css.scss to /Users/tfantina/Documents/Code and Websites/ROR/professor/app/assets/stylesheets/navigation.scss. (called from _app_views_layouts_application_html_erb__1561486885613946547_70110655052140 at /Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/layouts/application.html.erb:5)
+  Rendered layouts/_header.html.erb (33.6ms)
+  Rendered layouts/_google_analytics.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 7353ms (Views: 7308.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/professors/new" for ::1 at 2017-04-27 14:29:39 -0600
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ProfessorsController> at /Users/tfantina/Documents/Code and Websites/ROR/professor/app/controllers/professors_controller.rb:4)
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (21.6ms)
+  Rendered professors/new.html.erb within layouts/application (25.7ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_google_analytics.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 125ms (Views: 98.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/professors" for ::1 at 2017-04-27 14:29:48 -0600
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s00MMk+ddzbfYrS+4AFKOdvRL0VTnqPyeqmmec4zEZJlQdWQQt7vP4dLQoOrWJdvygcQaFAfK5ZsTIZwZj3qTw==", "professor"=>{"fullname"=>"Test", "school"=>"FGV", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AIezHSZhdPvqTOamoTTNS07OgGgzQ7h4RfLIZ1HGvFthR7_5x39TLZhit95jOsdmiZ2qTu4pk7BtXyOEwFrtQ7SNmeM7XqJVSlyFK3wX7U9o6kSwUZSXc-evRnRcMynfUn8tEGEL_HzoKqRlntG06JX01cPSARTAn48QANSvDZIitQshDBMcye5GnZaRjlCVBHW8XE_h3eDjb-n324vBlh5yLIEslnXq7mKPidfMnSV9PJ0lLsGatPaa51p1Mf5TE3dg7wPmflMdYPur7XD9IZXVs4ofMNkuYmnVfLFWSsmQPwfFeMV3TOs", "commit"=>"Inserir"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfessor Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "professors" WHERE "professors"."fullname" = ? AND "professors"."school" = ? LIMIT ?[0m  [["fullname", "Test"], ["school", "FGV"], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "professors" ("fullname", "school", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fullname", "Test"], ["school", "FGV"], ["created_at", 2017-04-27 20:29:48 UTC], ["updated_at", 2017-04-27 20:29:48 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mProfessor Store (1305.8ms)[0m  {"id":16}
+Redirected to http://localhost:3000/professors/16/reviews/new?notice=Professor+was+successfully+created.
+Completed 302 Found in 1534ms (Searchkick: 1305.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/professors/16/reviews/new?notice=Professor+was+successfully+created." for ::1 at 2017-04-27 14:29:50 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"notice"=>"Professor was successfully created.", "professor_id"=>"16"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (6.5ms)
+  Rendered reviews/new.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_header.html.erb (4.5ms)
+  Rendered layouts/_google_analytics.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 91ms (Views: 83.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/professors/16/reviews" for ::1 at 2017-04-27 14:30:04 -0600
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e88uA3UhBmgrAqxkX7TTJ5GsdhQy4xoa1kBCQr0dSeKtw/eheGKeYXMrWlkU7Q5xgHpJOTFikn7ApWJLFROyPw==", "review"=>{"ease"=>"5", "interesting"=>"5", "helpfull"=>"4", "comment"=>"What?", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AIezHSZOrQngcXKiCGmvK8exa326Hd8PekQsAp4tZvZjAxxgyX_RoCKdwPdwNqevv8xgQ5JLGCy9nSniD_XqUswp3nopZkMjhBd6cAfJ4HMXtkYb2MFMg8pe-e2OnRG_ZIeUbFGF_Gnsyg8E6iYnOd9gp1eX_z_6l5kQbaAtjJJBTT8AvKTUEYkjyszdm-2sB3gZImdEI6DseLagzcChbDdQQwYAwg6_1X32jfDX3gTqJiF62GSeLWd1SBdal_3E9O-3PRWBnNiB2iUReRAtH9Rc1jhq91V2COpLZNPiN2a3GNJi9rnB8hs", "commit"=>"Inserir", "professor_id"=>"16"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "ease", "interesting", "helpfull", "comment", "created_at", "updated_at", "professor_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rating", 4], ["ease", 5], ["interesting", 5], ["helpfull", 4], ["comment", "What?"], ["created_at", 2017-04-27 20:30:04 UTC], ["updated_at", 2017-04-27 20:30:04 UTC], ["professor_id", 16]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/professors/16
+Completed 302 Found in 178ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/professors/16" for ::1 at 2017-04-27 14:30:04 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 16], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 16]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 16]]
+  Rendered professors/show.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_google_analytics.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 85ms (Views: 68.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 14:30:08 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT("professors"."id") FROM "professors"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 15]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (20.0ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_google_analytics.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 100ms (Views: 87.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/professors" for ::1 at 2017-04-27 14:30:10 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_google_analytics.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 92ms (Views: 82.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/professors/16" for ::1 at 2017-04-27 14:30:12 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 16], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 16]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 16]]
+  Rendered professors/show.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_header.html.erb (3.2ms)
+  Rendered layouts/_google_analytics.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 146ms (Views: 134.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/professors/16/reviews/4/flag" for ::1 at 2017-04-27 14:30:14 -0600
+Processing by ReviewsController#flag as JS
+  Parameters: {"professor_id"=>"16", "id"=>"4"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (3.4ms)[0m  [1m[33mUPDATE "reviews" SET "flag" = COALESCE("flag", 0) + 1 WHERE "reviews"."id" = ?[0m  [["id", 4]]
+  Rendering reviews/flag.js.erb
+  Rendered reviews/flag.js.erb (0.6ms)
+Completed 200 OK in 26ms (Views: 15.4ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/professors/16/reviews/4/flag" for ::1 at 2017-04-27 14:30:14 -0600
+Processing by ReviewsController#flag as JS
+  Parameters: {"professor_id"=>"16", "id"=>"4"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "reviews" SET "flag" = COALESCE("flag", 0) + 1 WHERE "reviews"."id" = ?[0m  [["id", 4]]
+  Rendering reviews/flag.js.erb
+  Rendered reviews/flag.js.erb (0.6ms)
+Completed 200 OK in 21ms (Views: 11.8ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/professors/16/reviews/4/flag" for ::1 at 2017-04-27 14:30:15 -0600
+Processing by ReviewsController#flag as JS
+  Parameters: {"professor_id"=>"16", "id"=>"4"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[33mUPDATE "reviews" SET "flag" = COALESCE("flag", 0) + 1 WHERE "reviews"."id" = ?[0m  [["id", 4]]
+  Rendering reviews/flag.js.erb
+  Rendered reviews/flag.js.erb (0.4ms)
+Completed 200 OK in 17ms (Views: 8.7ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/professors/16/reviews/4/flag" for ::1 at 2017-04-27 14:30:16 -0600
+Processing by ReviewsController#flag as JS
+  Parameters: {"professor_id"=>"16", "id"=>"4"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (2.4ms)[0m  [1m[33mUPDATE "reviews" SET "flag" = COALESCE("flag", 0) + 1 WHERE "reviews"."id" = ?[0m  [["id", 4]]
+  Rendering reviews/flag.js.erb
+  Rendered reviews/flag.js.erb (0.5ms)
+Completed 200 OK in 18ms (Views: 9.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 14:30:18 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT("professors"."id") FROM "professors"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (15.8ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_google_analytics.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 153ms (Views: 143.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-27 14:31:00 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT("professors"."id") FROM "professors"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 5]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_google_analytics.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 84ms (Views: 58.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/professors/1" for ::1 at 2017-04-27 14:39:13 -0600
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ProfessorsController> at /Users/tfantina/Documents/Code and Websites/ROR/professor/app/controllers/professors_controller.rb:4)
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfessor Load (1.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 1]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 1]]
+  Rendered professors/show.html.erb within layouts/application (46.8ms)
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_google_analytics.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 300ms (Views: 165.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-04-27 14:39:16 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (7.8ms)
+  Rendered reviews/new.html.erb within layouts/application (13.3ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_google_analytics.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 117ms (Views: 100.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/professors" for ::1 at 2017-04-27 14:39:18 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (18.1ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_google_analytics.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 118ms (Views: 101.8ms | ActiveRecord: 0.8ms)
+
+

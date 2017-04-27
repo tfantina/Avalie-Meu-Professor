@@ -8,6 +8,6 @@ end
 
 
 Recaptcha.configure do |config|
-  config.public_key = captcha_public
-  config.private_key = captcha_private
+  config.site_key = captcha_public
+  config.secret_key = captcha_private
 end
