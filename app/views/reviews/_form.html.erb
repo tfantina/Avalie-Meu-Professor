@@ -11,7 +11,30 @@
     </div>
   <% end %>
 
-  <!-- ratings -->
+
+    <div class="field" >
+
+      <strong>class:</strong><br>
+        <%= f.collection_select(:classe, Review.order(:classe), :id, :classe,
+                                :include_blank => "Other Class",
+                                :prompt => "Class") %>
+        <%= f.text_field :classe, class: "addClass", style: "visibility: hidden" %>
+   </div>
+
+<select id="age" name="age">
+  <option value="14">14-18</option>
+  <option value="19">19-24</option>
+  <option value="25">25 and older</option>
+    <option value="13">13 or younger</option>
+</select>
+<div id="parentPermission">
+    <p>Parents Name:
+      <input type="text" name="parent_name" />
+    </p>
+</div>
+
+
+    <!-- ratings -->
   <div class="field">
     <strong>Facilidade: </strong>
     <div id="star-ease"></div>
@@ -68,17 +91,32 @@
     path: 'http://dev.travisfantina.com/services/AvaliarMeuProfessor/stars/',
     scoreName: 'review[helpfull]'
   });
+/*
+$(document).ready(function()  {
+  toggleFields();
+  $("#age").change(function () {
+    toggleFields();
+  });
+});
 
+function toggleFields() {
+  if($("#age").val() == "13 or younger")
+  $("#parentPermission").show();
+  else {
+    $("#parentPermission").hide();
+  }
+}
+
+*/
 
   $(document).ready(function(){
 
-  $('#review_classe').change(function() {
-    if(this.value == "Other Class") {
-      $('.class-show').show();
-      $('.class-show').val('');
+  $('#age').change(function() {
+    if(this.value <= 13) {
+      $('#parentPermission').show();
     }else{
-      $('.class-show').hide();
-      $('.class-show').val(this.value);
+      $('#parentPermission').hide();
+
     }
   });
   });
