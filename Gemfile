@@ -22,6 +22,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+#devise for admin login
+gem 'devise', '~> 4.2', '>= 4.2.1'
 #paperclip for easy upload management
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 #bootstrap-sass
@@ -46,6 +48,7 @@ gem "recaptcha", :require => "recaptcha/rails"
 gem 'bonsai-elasticsearch-rails'
 #L18n
 gem 'rails-i18n', '~> 4.0.0'
+
 
 
 
