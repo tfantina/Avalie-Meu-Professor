@@ -7005,4 +7005,7 @@ Processing by ProfessorsController#show as HTML
   Rendered layouts/_google_analytics.html.erb (0.1ms)
   Rendered layouts/_footer.html.erb (0.2ms)
 Completed 200 OK in 73ms (Views: 66.3ms | ActiveRecord: 0.8ms)
+<<<<<<< HEAD
+>>>>>>> parent of d99d386... Upgrades to Rails 5 and all dependencies
+=======
 >>>>>>> parent of d99d386... Upgrades to Rails 5 and all dependencies
