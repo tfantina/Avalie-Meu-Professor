@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'dotenv-rails', :groups => [:development, :test]
 ruby '2.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0', '>= 5.0.2'
+gem 'rails', '4.2.5.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -41,7 +41,7 @@ gem 'cloudinary'
 #Paperclip forcloudinary
 gem 'paperclip-cloudinary'
 #recaptcha
-gem "recaptcha", :require => "recaptcha/rails"
+gem 'recaptcha', require: 'recaptcha/rails'
 #Elasticsearch
 gem 'bonsai-elasticsearch-rails'
 #L18n
