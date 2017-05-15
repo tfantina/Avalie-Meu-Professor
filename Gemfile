@@ -1,15 +1,16 @@
 source 'https://rubygems.org'
 
 gem 'dotenv-rails', :groups => [:development, :test]
-ruby '2.3.1'
+
+ruby '2.4.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '~> 5.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.2'
 #bcrypt for for encrpytion
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 #byebug
@@ -22,8 +23,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-#devise for admin login
-gem 'devise', '~> 4.2', '>= 4.2.1'
 #paperclip for easy upload management
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 #bootstrap-sass
