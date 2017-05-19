@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  devise_for :users
+
+  resources :users do
+    collection do
+      get 'search'
+    end
+    member do
+      patch 'admin'
+    end
+  end
+
   root 'site#index'
   get 'terms' => 'site#terms'
 
@@ -23,8 +34,13 @@ Rails.application.routes.draw do
 
   end
 
-  resources :reviews, only: [:destroy, :update, :edit]
+  resources :reviews, only: [:show, :destroy, :update, :edit]
 
+
+  resources :admins
+    get 'admin' => 'admin#index'
+
+=begin
 
   resources :users
   get 'signup' => 'users#new'
@@ -33,9 +49,7 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
 
 
-  resources :admins
-  get 'admin' => 'admin#index'
 
-
+=end
 
 end

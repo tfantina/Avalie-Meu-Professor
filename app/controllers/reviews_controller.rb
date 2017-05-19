@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_professor, :except => [:flag, :vote, :destroy]
+  before_action :set_professor, :except => [:show, :flag, :vote, :destroy]
 
 
 
@@ -15,6 +15,11 @@ class ReviewsController < ApplicationController
   # GET /reviews/1/edit
   def edit
   end
+
+  def show
+    @review = Review.find(params[:id])
+  end
+
 
   # POST /reviews
   # POST /reviews.jso

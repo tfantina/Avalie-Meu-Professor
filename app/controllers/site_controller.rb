@@ -1,6 +1,7 @@
 class SiteController < ApplicationController
+
    def index
-     @num = Professor.count('id', :distinct => true)
+     #@num = Professor.try.count('id')
      offset = rand(Professor.count)
      @rand = Professor.offset(offset).first
      @footer = Professor.limit(4).order("RANDOM()")

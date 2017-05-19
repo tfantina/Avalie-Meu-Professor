@@ -1,7 +1,7 @@
 class ProfessorsController < ApplicationController
   before_action :set_professor, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_with_http_digest, except: [:index, :show, :search]
-  before_filter :check_configuration
+  before_action :check_configuration
   before_action :admin_user, only: :destory
   helper_method :sort_column, :sort_direction
 

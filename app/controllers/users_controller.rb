@@ -1,52 +1,31 @@
 class UsersController < ApplicationController
-  def show
-    @user = User.find(params[:id])
-  #  @username = User.user_name.where(user_id: review.user_id)
-  end
-
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      log_in @user
-      flash[:success] = "Welcome!"
-      redirect_to @user
+before_action :user_is_admin
+  def search
+    @users = User.all
+    if params[:search]
+      @users = User.search(params[:search]).order("created_at DESC")
     else
-      render 'new'
+      @users = User.all.order('created_at DESC')
     end
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
 
-  def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      flash[:succes] = "Profile updated"
-      redirect_to @user
+  def admin
+    @user = User.find_by_id(params[:id])
+    if @user.update_attributes(:admin)
+      flash[:success]= "Made admin"
     else
-      render 'edit'
-    end
-  end
-  # DELETE /professors/1
-  # DELETE /professors/1.json
-  def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to user_url, notice: 'Professor was successfully destroyed.' }
-      format.json { head :no_content }
+      render 'search'
     end
   end
 
+private
 
-  private
 
-  def user_params
-    params.require(:user).permit(:user_name, :email, :password, :password_confirmation)
+  def user_is_admin
+    redirect_to root_url unless current_user.try(:admin?)
+    flash[:error] = "You must be logged in as Admin to come to this party"
   end
+
 
 end
