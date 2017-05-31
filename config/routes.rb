@@ -1,23 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
-
-  resources :users do
-    collection do
-      get 'search'
-    end
-    member do
-      patch 'admin'
-    end
-  end
 
   root 'site#index'
-  get 'terms' => 'site#terms'
+  get 'terms', to: 'site#terms'
 
+#all routes for professors
   resources :professors do
       collection do
         get 'search'
-      end
-      collection do
         get 'schools'
       end
       member do
@@ -27,29 +16,13 @@ Rails.application.routes.draw do
         member do
           post 'flag', 'vote', 'downvote',  :review
         end
-        resources :reviews, only: [:index, :create, :show]
-
-
       end
-
   end
 
-  resources :reviews, only: [:show, :destroy, :update, :edit]
+#all routes for administrators
+  devise_for :users
+  get 'users/search'
+  resources :admins, only: [:show]
 
-
-  resources :admins
-    get 'admin' => 'admin#index'
-
-=begin
-
-  resources :users
-  get 'signup' => 'users#new'
-  get 'login' => 'sessions#new'
-  post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
-
-
-
-=end
 
 end

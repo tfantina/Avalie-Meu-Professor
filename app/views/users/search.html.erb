@@ -1,7 +1,4 @@
 <% @users.each do |user| %>
   <%= user.email %>
-  <%= form_tag admin_user_path(user), :method => :patch do %>
-    <%= check_box "is_admin", user.admin %>
-    <%= submit_tag "Submit" %>
-    <% end %>
-  <% end %>
+
+<% end %>

@@ -23,8 +23,10 @@ private
 
 
   def user_is_admin
-    redirect_to root_url unless current_user.try(:admin?)
-    flash[:error] = "You must be logged in as Admin to come to this party"
+    unless current_user.try(:admin?)
+      redirect_to root_url
+      flash[:error] = "You must be logged in as Admin to come to this party"
+    end
   end
 
 
