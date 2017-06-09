@@ -19,6 +19,13 @@ before_action :user_is_admin
     end
   end
 
+  def toggle_admin
+    @user = User.find_by_id(params[:id])
+    @user.admin = true
+    @user.save
+    redirect_to users_search_path
+  end
+
 private
 
 

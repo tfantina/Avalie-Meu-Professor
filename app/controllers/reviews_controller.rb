@@ -118,10 +118,26 @@ class ReviewsController < ApplicationController
       @professor = Professor.find(params[:professor_id])
       end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    ####### These params allow various ratings #######
+    ## star ratings
+    # Overall rating
+    # how easy they were
+    # how helpful they were
+    # how intersting they were
+    ## About Professor
+    # Teach well (yes or no)
+    # Recmmend the professor (yes no)
+    # Generic comments
+    ## Generic info
+    # What class was taught?
+    # Major
+
+
     def review_params
 
-      params.require(:review).permit(:rating, :ease, :helpfull, :interesting, :classe, :comment, :terms_of_service)
+      params.require(:review).permit(:rating, :ease, :helpfull, :interesting,
+                                     :whatclass, :recommend,  :major, :teachwell,
+                                     :comment, :terms_of_service)
 
     end
 

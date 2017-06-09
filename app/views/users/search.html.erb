@@ -1,4 +1,10 @@
 <% @users.each do |user| %>
   <%= user.email %>
+  <% if user.admin == false %>
+  <%= link_to 'Make Admin', toggle_admin_path(user.id), method: :patch %>
+  <% else %>
+  User is Admin
+  <% end %>
+
 
 <% end %>

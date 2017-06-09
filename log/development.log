@@ -8948,3 +8948,2236 @@ Processing by SiteController#index as HTML
 Completed 200 OK in 64ms (Views: 58.6ms | ActiveRecord: 0.7ms)
 
 
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddWhatclassToReviews (20170531212518)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "reviews" ADD "whatclass" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170531212518"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRecommendToReviews (20170531223618)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "reviews" ADD "recommend" boolean[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170531223618"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddGradeRails (20170531223936)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170531223936"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddMajorToReviews (20170531224242)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "reviews" ADD "major" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170531224242"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTeachwellToReviews (20170531224410)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "reviews" ADD "teachwell" boolean[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170531224410"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 18:59:25 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (3.6ms)
+  Rendered reviews/new.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %if and nested within it.):
+    1: =form_for([@professor, @review]) do |f|
+    2:   %if @review.errors.any?
+    3:     .id="error_explanation"
+    4:       %h2= pluralize(@review.errors.count, "error")  prohibited this review from being saved:
+    5:         .ul
+    6:           =@review.errors.full_messages.each do |message|
+  
+app/views/reviews/_form.html.haml:3
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276818272600'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:00:22 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.7ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (3.3ms)
+  Rendered reviews/new.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %if and nested within it.):
+    1: =form_for([@professor, @review]) do |f|
+    2:   %if @review.errors.any?
+    3:     .id= error_explanation
+    4:       %h2= pluralize(@review.errors.count, "error")  prohibited this review from being saved:
+    5:         .ul
+    6:           =@review.errors.full_messages.each do |message|
+  
+app/views/reviews/_form.html.haml:3
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276772628680'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:00:51 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (8.4ms)
+  Rendered reviews/new.html.erb within layouts/application (15.9ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %id and nested within it.):
+    1: =form_for([@professor, @review]) do |f|
+    2:   %id= if @review.errors.any? error_explanation
+    3:       %h2= pluralize(@review.errors.count, "error")  prohibited this review from being saved:
+    4:         .ul
+    5:           =@review.errors.full_messages.each do |message|
+    6:             .li= message
+  
+app/views/reviews/_form.html.haml:3
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276804244780'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:01:51 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (19.7ms)
+  Rendered reviews/new.html.erb within layouts/application (30.0ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %h2 and nested within it.):
+    1: =form_for([@professor, @review]) do |f|
+    2:   %id= if @review.errors.any? error_explanation
+    3:   %h2= pluralize(@review.errors.count, "error")  prohibited this review from being saved:
+    4:     .ul
+    5:       =@review.errors.full_messages.each do |message|
+    6:         .li= message
+    7:       %end
+  
+app/views/reviews/_form.html.haml:4
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276803423400'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:02:14 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (39.3ms)
+  Rendered reviews/new.html.erb within layouts/application (42.5ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+rs.count, "error")  prohibited this review from being saved:
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ':', expecting ')'
+ this review from being saved:
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:4: syntax error, unexpected ';', expecting ')'
+)).to_s));).to_s);; _hamlout.buffer << (
+          ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+; end;; _hamlout.buffer << ((_hamlo
+     ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.u
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+ffer.upper if @haml_buffer;end;
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ':', expecting ')'
+app/views/reviews/_form.html.haml:4: syntax error, unexpected ';', expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276802458380'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:03:31 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (7.8ms)
+  Rendered reviews/new.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %id and nested within it.):
+    1: =form_for([@professor, @review]) do |f|
+    2:   %id= if @review.errors.any? error_explanation
+    3:     %h2= pluralize(@review.errors.count, "error")  prohibited this review from being saved:
+    4:   .ul
+    5:   =@review.errors.full_messages.each do |message|
+    6:     .li= message
+  
+app/views/reviews/_form.html.haml:3
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276813755020'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:03:42 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (5.0ms)
+  Rendered reviews/new.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+rs.count, "error")  prohibited this review from being saved:
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ':', expecting ')'
+ this review from being saved:
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:4: syntax error, unexpected ';', expecting ')'
+)).to_s));).to_s);; _hamlout.buffer << (
+          ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+; end;; _hamlout.buffer << ((_hamlo
+     ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.u
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+ffer.upper if @haml_buffer;end;
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ':', expecting ')'
+app/views/reviews/_form.html.haml:4: syntax error, unexpected ';', expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276772585560'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:05:14 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (30.4ms)
+  Rendered reviews/new.html.erb within layouts/application (42.3ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.u
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+ffer.upper if @haml_buffer;end;
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276781139820'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:07:02 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (12.3ms)
+  Rendered reviews/new.html.erb within layouts/application (17.1ms)
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+rs.count, 'error')  prohibited this review from being saved:
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ':', expecting ')'
+ this review from being saved:
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:4: syntax error, unexpected ';', expecting ')'
+)).to_s));).to_s);; _hamlout.buffer << (
+          ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+; end;; _hamlout.buffer << ((_hamlo
+     ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.u
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+ffer.upper if @haml_buffer;end;
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ':', expecting ')'
+app/views/reviews/_form.html.haml:4: syntax error, unexpected ';', expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276776179140'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:07:21 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (4.5ms)
+  Rendered reviews/new.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:10: syntax error, unexpected keyword_ensure, expecting ')'
+Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.u
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:10: syntax error, unexpected keyword_end, expecting ')'
+ffer.upper if @haml_buffer;end;
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:13: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:10: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/reviews/_form.html.haml:10: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:13: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276779586160'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:07:45 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (16.2ms)
+  Rendered reviews/new.html.erb within layouts/application (22.1ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:10: syntax error, unexpected keyword_ensure, expecting ')'
+Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.u
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:10: syntax error, unexpected keyword_end, expecting ')'
+ffer.upper if @haml_buffer;end;
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:13: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:10: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/reviews/_form.html.haml:10: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:13: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276778917380'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:08:48 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (8.2ms)
+  Rendered reviews/new.html.erb within layouts/application (14.4ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %id and nested within it.):
+    1: =form_for([@professor, @review]) do |f|
+    2:   %id= if @review.errors.any? error_explanation
+    3:     %h2
+    4:       ="#{pluralize(@review.errors.count, 'error')} prohibited this review from being saved:
+    5:   .ul
+    6:   =@review.errors.full_messages.each do |message|
+  
+app/views/reviews/_form.html.haml:3
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276801118620'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:08:59 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (1.7ms)
+  Rendered reviews/new.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %id and nested within it.):
+    1: =form_for([@professor, @review]) do |f|
+    2:   %id= if @review.errors.any? error_explanation
+    3:     %h2="#{pluralize(@review.errors.count, 'error')} prohibited this review from being saved:
+    4:   .ul
+    5:   =@review.errors.full_messages.each do |message|
+    6:     .li= message
+  
+app/views/reviews/_form.html.haml:3
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276804945140'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:09:09 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (40.1ms)
+  Rendered reviews/new.html.erb within layouts/application (43.7ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:4: unknown regexp options - dv
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:4: syntax error, unexpected $undefined
+</h2>\n<div class='ul'></div>\n".freeze);; 
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:6: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+hamlout.buffer << ("<div class='li'>".freeze);; _hamlout.buf
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: unknown regexp option - d
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: unmatched close parenthesis: /div>\n".freeze);; end;; _hamlout.buffer << ((_hamlout.fix_textareas!(::Haml::Helpers.html_escape((haml_temp).to_s));).to_s);; _hamlout.buffer << ("<end></
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: syntax error, unexpected $undefined
+mlout.buffer << ("<end></end>\n<end></end>\n".freeze);; 
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: unterminated regexp meets end of file):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:4: unknown regexp options - dv
+app/views/reviews/_form.html.haml:4: syntax error, unexpected $undefined
+app/views/reviews/_form.html.haml:6: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/reviews/_form.html.haml:7: unknown regexp option - d
+app/views/reviews/_form.html.haml:7: unmatched close parenthesis: /div>\n".freeze);; end;; _hamlout.buffer << ((_hamlout.fix_textareas!(::Haml::Helpers.html_escape((haml_temp).to_s));).to_s);; _hamlout.buffer << ("<end></
+app/views/reviews/_form.html.haml:7: syntax error, unexpected $undefined
+app/views/reviews/_form.html.haml:7: unterminated regexp meets end of file
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276779088560'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:09:16 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (3.0ms)
+  Rendered reviews/new.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:5: syntax error, unexpected $undefined, expecting ')'
+to_s);; _hamlout.buffer << ("\n</h2>\n<div class='ul'></div>
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:5: unknown regexp options - dv
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:5: syntax error, unexpected $undefined
+</h2>\n<div class='ul'></div>\n".freeze);; 
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+hamlout.buffer << ("<div class='li'>".freeze);; _hamlout.buf
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:8: unknown regexp option - d
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:8: unmatched close parenthesis: /div>\n".freeze);; end;; _hamlout.buffer << ((_hamlout.fix_textareas!(::Haml::Helpers.html_escape((haml_temp).to_s));).to_s);; _hamlout.buffer << ("<end></
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:8: syntax error, unexpected $undefined
+mlout.buffer << ("<end></end>\n<end></end>\n".freeze);; 
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:8: unterminated regexp meets end of file):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:5: syntax error, unexpected $undefined, expecting ')'
+app/views/reviews/_form.html.haml:5: unknown regexp options - dv
+app/views/reviews/_form.html.haml:5: syntax error, unexpected $undefined
+app/views/reviews/_form.html.haml:7: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/reviews/_form.html.haml:8: unknown regexp option - d
+app/views/reviews/_form.html.haml:8: unmatched close parenthesis: /div>\n".freeze);; end;; _hamlout.buffer << ((_hamlout.fix_textareas!(::Haml::Helpers.html_escape((haml_temp).to_s));).to_s);; _hamlout.buffer << ("<end></
+app/views/reviews/_form.html.haml:8: syntax error, unexpected $undefined
+app/views/reviews/_form.html.haml:8: unterminated regexp meets end of file
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276787756580'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:10:00 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (4.2ms)
+  Rendered reviews/new.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:5: syntax error, unexpected $undefined, expecting ')'
+to_s);; _hamlout.buffer << ("\n<div class='ul'></div>\n".fre
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+mlout.buffer << ("\n<div class='ul'></div>\n".freeze);; 
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:5: syntax error, unexpected '<'
+uffer << ("\n<div class='ul'></div>\n".freeze);; 
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:8: unknown regexp options - dv
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:8: unmatched close parenthesis: /div>\n".freeze);; 
+haml_temp = @review.errors.full_messages.each do |message|
+; _hamlout.buffer << ("<div class='li'>".freeze);; _hamlout.buffer << ((_hamlout.fix_textareas!(::Haml::Helpers.html_escape(((message
+)).to_s));).to_s);; _hamlout.buffer << ("</i
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:8: syntax error, unexpected $undefined
+; _hamlout.buffer << ("</div>\n".freeze);; end;; _hamlout.bu
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:8: syntax error, unexpected keyword_end
+s);; _hamlout.buffer << ("<end></end>\n<end></end>\n".freeze
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:8: unknown regexp option - d
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:8: syntax error, unexpected $undefined
+<< ("<end></end>\n<end></end>\n".freeze);; 
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:8: unterminated string meets end of file
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:8: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:5: syntax error, unexpected $undefined, expecting ')'
+app/views/reviews/_form.html.haml:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/reviews/_form.html.haml:5: syntax error, unexpected '<'
+app/views/reviews/_form.html.haml:8: unknown regexp options - dv
+app/views/reviews/_form.html.haml:8: unmatched close parenthesis: /div>\n".freeze);; 
+app/views/reviews/_form.html.haml:8: syntax error, unexpected $undefined
+app/views/reviews/_form.html.haml:8: syntax error, unexpected keyword_end
+app/views/reviews/_form.html.haml:8: unknown regexp option - d
+app/views/reviews/_form.html.haml:8: syntax error, unexpected $undefined
+app/views/reviews/_form.html.haml:8: unterminated string meets end of file
+app/views/reviews/_form.html.haml:8: syntax error, unexpected end-of-input, expecting ')'
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276804502900'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:10:09 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (7.6ms)
+  Rendered reviews/new.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Illegal element: classes and ids must have values.):
+    1: =form_for([@professor, @review]) do |f|
+    2:   %id= if @review.errors.any? error_explanation
+    3:   %h2."#{pluralize(@review.errors.count, 'error')} prohibited this review from being saved:
+    4:   .ul
+    5:   =@review.errors.full_messages.each do |message|
+    6:     .li= message
+  
+app/views/reviews/_form.html.haml:3
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276777529380'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:10:19 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (3.4ms)
+  Rendered reviews/new.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:4: unknown regexp options - dv
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:4: syntax error, unexpected $undefined
+</h2>\n<div class='ul'></div>\n".freeze);; 
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:6: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+hamlout.buffer << ("<div class='li'>".freeze);; _hamlout.buf
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: unknown regexp option - d
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: unmatched close parenthesis: /div>\n".freeze);; end;; _hamlout.buffer << ((_hamlout.fix_textareas!(::Haml::Helpers.html_escape((haml_temp).to_s));).to_s);; _hamlout.buffer << ("<end></
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: syntax error, unexpected $undefined
+mlout.buffer << ("<end></end>\n<end></end>\n".freeze);; 
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: unterminated regexp meets end of file):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:4: unknown regexp options - dv
+app/views/reviews/_form.html.haml:4: syntax error, unexpected $undefined
+app/views/reviews/_form.html.haml:6: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/reviews/_form.html.haml:7: unknown regexp option - d
+app/views/reviews/_form.html.haml:7: unmatched close parenthesis: /div>\n".freeze);; end;; _hamlout.buffer << ((_hamlout.fix_textareas!(::Haml::Helpers.html_escape((haml_temp).to_s));).to_s);; _hamlout.buffer << ("<end></
+app/views/reviews/_form.html.haml:7: syntax error, unexpected $undefined
+app/views/reviews/_form.html.haml:7: unterminated regexp meets end of file
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276804667240'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:12:24 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (20.1ms)
+  Rendered reviews/new.html.erb within layouts/application (25.9ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.u
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+ffer.upper if @haml_buffer;end;
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276802994180'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:12:52 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (9.9ms)
+  Rendered reviews/new.html.erb within layouts/application (19.1ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.u
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+ffer.upper if @haml_buffer;end;
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276818241160'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:14:48 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (14.4ms)
+  Rendered reviews/new.html.erb within layouts/application (21.1ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+eview.errors.count) prohibited this review from being saved:
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ':', expecting ')'
+ this review from being saved:"
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:4: unknown regexp options - dv
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:4: syntax error, unexpected $undefined
+</h2>\n<div class='ul'></div>\n".freeze);; 
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:6: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+hamlout.buffer << ("<div class='li'>".freeze);; _hamlout.buf
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: unknown regexp option - d
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: unmatched close parenthesis: /div>\n".freeze);; end;; _hamlout.buffer << ((_hamlout.fix_textareas!(::Haml::Helpers.html_escape((haml_temp).to_s));).to_s);; _hamlout.buffer << ("<end></
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: syntax error, unexpected $undefined
+mlout.buffer << ("<end></end>\n".freeze);; end;; _hamlout.bu
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: syntax error, unexpected keyword_end
+s);; _hamlout.buffer << ("<end></end>\n".freeze);; 
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: unterminated regexp meets end of file):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ':', expecting ')'
+app/views/reviews/_form.html.haml:4: unknown regexp options - dv
+app/views/reviews/_form.html.haml:4: syntax error, unexpected $undefined
+app/views/reviews/_form.html.haml:6: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/reviews/_form.html.haml:7: unknown regexp option - d
+app/views/reviews/_form.html.haml:7: unmatched close parenthesis: /div>\n".freeze);; end;; _hamlout.buffer << ((_hamlout.fix_textareas!(::Haml::Helpers.html_escape((haml_temp).to_s));).to_s);; _hamlout.buffer << ("<end></
+app/views/reviews/_form.html.haml:7: syntax error, unexpected $undefined
+app/views/reviews/_form.html.haml:7: syntax error, unexpected keyword_end
+app/views/reviews/_form.html.haml:7: unterminated regexp meets end of file
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276803924780'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:15:08 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (3.0ms)
+  Rendered reviews/new.html.erb within layouts/application (6.7ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+eview.errors.count) prohibited this review from being saved:
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ':', expecting ')'
+ this review from being saved:
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:4: syntax error, unexpected ';', expecting ')'
+)).to_s));).to_s);; _hamlout.buffer << (
+          ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:7: syntax error, unexpected keyword_end, expecting ')'
+("<end></end>\n".freeze);; end;; _hamlout.buffer << ((_hamlo
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.u
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+ffer.upper if @haml_buffer;end;
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ':', expecting ')'
+app/views/reviews/_form.html.haml:4: syntax error, unexpected ';', expecting ')'
+app/views/reviews/_form.html.haml:7: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276786764220'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-05-31 19:15:17 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.haml (3.0ms)
+  Rendered reviews/new.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+)).to_s));).to_s);; _hamlout.bu
+ ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.u
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+ffer.upper if @haml_buffer;end;
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/reviews/_form.html.haml:3: syntax error, unexpected ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/reviews/_form.html.haml:9: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/_form.html.haml:12: syntax error, unexpected keyword_end, expecting ')'
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276803574980'
+Started GET "/professors/" for ::1 at 2017-06-01 11:14:51 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (19.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (187.6ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/tfantina/Documents/Code and Websites/ROR/professor/app/assets/stylesheets/navigation.css.scss to /Users/tfantina/Documents/Code and Websites/ROR/professor/app/assets/stylesheets/navigation.scss. (called from _app_views_layouts_application_html_erb___4487088975275097902_70276818000240 at /Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/tfantina/Documents/Code and Websites/ROR/professor/app/assets/stylesheets/navigation.css.scss to /Users/tfantina/Documents/Code and Websites/ROR/professor/app/assets/stylesheets/navigation.scss. (called from _app_views_layouts_application_html_erb___4487088975275097902_70276818000240 at /Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/layouts/application.html.erb:5)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (166.9ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 16943ms (Views: 16747.8ms | ActiveRecord: 23.5ms)
+
+
+Started GET "/professors/1" for ::1 at 2017-06-01 11:15:16 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfessor Load (1.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 1], ["LIMIT", 1]]
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 1]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (1.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered professors/show.html.erb within layouts/application (58.3ms)
+  Rendered layouts/_header.html.erb (18.0ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.7ms) [cache miss]
+Completed 200 OK in 444ms (Views: 384.0ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:15:19 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (97.0ms)
+  Rendered reviews/new.html.erb within layouts/application (101.8ms)
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `text_box' for #<ActionView::Helpers::FormBuilder:0x007fd52d626650>
+Did you mean?  text_area):
+    13: 
+    14:   <div class="field">
+    15:     <strong> Matéria que o professor lecionou?</strong>
+    16:     <%= f.text_box :whatclass %>
+    17:   </div>
+    18: 
+    19:   <!-- ratings -->
+  
+app/views/reviews/_form.html.erb:16:in `block in _app_views_reviews__form_html_erb___2562243921211623050_70276819538480'
+app/views/reviews/_form.html.erb:2:in `_app_views_reviews__form_html_erb___2562243921211623050_70276819538480'
+app/views/reviews/new.html.erb:4:in `_app_views_reviews_new_html_erb___391107195598503611_70276783013420'
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:15:44 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.7ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (103.3ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (129.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (16.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.1ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 489ms (Views: 304.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:23:24 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (14.8ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (39.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (11.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 235ms (Views: 195.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/professors/1/reviews" for ::1 at 2017-06-01 11:24:39 -0600
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ev5fHK0mv/JuwFA5gWo7u2W7QDcMs7fCkzsr19/dyteDRdU+i/1SEosd8OtWXJgLed95Ytlld/SONt526FNnKQ==", "review"=>{"whatclass"=>"Econ", "ease"=>"4", "interesting"=>"4", "helpfull"=>"2", "teachwell"=>"0", "recommend"=>"1", "comment"=>"Yes sir ", "major"=>"Maybe", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AOPBWq_zk_CzxTLjFRIC7qsNKZ_ZKya3pnmkegLYfmKyOQjR2fQ8neY-6Nq-2w2JiWvN0aq_w5TgonCvjLR6jzAJUYvtThaxyUkRQw_k6UYC2ehQfdQDWVY8PHWsiAm11bTIQsTM2QNU23Y9ppNMFwRos5jca0CUBsaWrKAMVjMCGC3OR7GatiMqs16n-aCvfzTpUMt_CwceNa2gUOgYbh77HYHF5SUWHd3H4aG39MuXOiH49wRLh1OOrLKuwfV2bs8RNfbHesSV2_jx7fiphTFu3I1YDw53AHZcDvdn9rig71DDYe03MG0", "commit"=>"Inserir", "professor_id"=>"1"}
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "ease", "interesting", "helpfull", "comment", "created_at", "updated_at", "professor_id", "whatclass", "recommend", "major", "teachwell") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rating", 3], ["ease", 4], ["interesting", 4], ["helpfull", 2], ["comment", "Yes sir "], ["created_at", "2017-06-01 17:24:40.159216"], ["updated_at", "2017-06-01 17:24:40.159216"], ["professor_id", 1], ["whatclass", "Econ"], ["recommend", "t"], ["major", "Maybe"], ["teachwell", "f"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/professors/1
+Completed 302 Found in 283ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/professors/1" for ::1 at 2017-06-01 11:24:40 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 1]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered professors/show.html.erb within layouts/application (19.8ms)
+  Rendered layouts/_header.html.erb (5.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.1ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 310ms (Views: 288.3ms | ActiveRecord: 1.4ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:29:32 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (4.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (6.9ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (12.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (49.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.0ms) [cache miss]
+Completed 200 OK in 313ms (Views: 183.8ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:29:57 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (26.3ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (38.0ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (28.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (2.2ms) [cache miss]
+Completed 200 OK in 392ms (Views: 362.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:30:38 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (16.7ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (24.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (19.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 283ms (Views: 242.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:30:47 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (18.6ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (27.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (14.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 213ms (Views: 189.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:33:52 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (46.0ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (55.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (30.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 327ms (Views: 290.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:34:08 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (40.6ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (52.9ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (26.9ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (4.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.0ms) [cache miss]
+Completed 200 OK in 440ms (Views: 402.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:34:43 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (26.0ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (36.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (18.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 321ms (Views: 285.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:35:00 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (25.3ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (39.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (103.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 471ms (Views: 429.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:35:48 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (2.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (20.0ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (37.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (19.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 254ms (Views: 225.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:43:45 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (3.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (45.9ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (69.3ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (33.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 556ms (Views: 507.1ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:44:12 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.7ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (43.3ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (63.0ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (34.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.1ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 536ms (Views: 505.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:45:08 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (41.1ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (54.3ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (16.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 340ms (Views: 302.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:45:31 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (2.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (41.6ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (83.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (35.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (3.6ms) [cache miss]
+Completed 200 OK in 586ms (Views: 536.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:45:58 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (26.6ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (41.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (26.0ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (2.1ms) [cache miss]
+Completed 200 OK in 345ms (Views: 315.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:46:27 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (22.3ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (35.9ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (17.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.3ms) [cache miss]
+  Rendered layouts/_footer.html.erb (3.3ms) [cache miss]
+Completed 200 OK in 400ms (Views: 344.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:46:55 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (22.1ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (33.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (12.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 257ms (Views: 221.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:48:18 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (29.6ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (37.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (18.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (4.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 304ms (Views: 276.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:48:36 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (34.2ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (50.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (10.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 548ms (Views: 512.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:50:41 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (18.5ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (26.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (12.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 217ms (Views: 189.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:52:02 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (19.2ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (27.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (14.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (3.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (2.9ms) [cache miss]
+Completed 200 OK in 190ms (Views: 168.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 11:54:05 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (15.1ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (30.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (16.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 217ms (Views: 193.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-01 12:02:11 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (1.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (23.9ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (40.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (14.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 242ms (Views: 214.3ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/professors/1/reviews" for ::1 at 2017-06-01 12:02:33 -0600
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gYGuKLeYW8TA4glNHjxBzhNan3+7E6+WP82XYI8oeZ4QOiQKkUO2JCU/qZ/JCuJ+Dz6mKm7Fb6AiwGLBuKbUYA==", "review"=>{"whatclass"=>"Test", "ease"=>"4", "interesting"=>"4", "helpfull"=>"4", "teachwell"=>"1", "recommend"=>"1", "comment"=>"Nah", "major"=>"Bro?", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AOPBWq_kEmngLvjZAwle8aaYXYpexKx_2MckgaM-8Rn53OsHrW_aQzhB-63kuSKGyCQoqU_mS93HD5q8T3_oZYbKenZ7UJ7DnmuV_ULtoNTXDlAL2FOWPWWsp47dVVWqJh-QfA1KspAaIW_nVefRFIiS6pLeXPpy0rJrGLhLKiqyV59N8bYyZuujBt_wGlKY2lcvwrG2rMXLI-DDAPJNcb7Hg08HH7Ieh3jMEhydTOtOA_8AxHTz7coy1b58Fb_QYdcJSF89RpKKUuFmhwNGYoP_EjvbrNW5uuHTERbEZf-9iUs1eQKte7M", "commit"=>"Inserir", "professor_id"=>"1"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "ease", "interesting", "helpfull", "comment", "created_at", "updated_at", "professor_id", "whatclass", "recommend", "major", "teachwell") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rating", 4], ["ease", 4], ["interesting", 4], ["helpfull", 4], ["comment", "Nah"], ["created_at", "2017-06-01 18:02:33.744308"], ["updated_at", "2017-06-01 18:02:33.744308"], ["professor_id", 1], ["whatclass", "Test"], ["recommend", "t"], ["major", "Bro?"], ["teachwell", "t"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/professors/1
+Completed 302 Found in 357ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/professors/1" for ::1 at 2017-06-01 12:02:33 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 1]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered professors/show.html.erb within layouts/application (23.3ms)
+  Rendered layouts/_header.html.erb (4.9ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 163ms (Views: 143.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-06-01 12:02:42 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_header.html.erb (3.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 138ms (Views: 123.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/professors/1/reviews/7/flag" for ::1 at 2017-06-01 12:02:46 -0600
+Processing by ReviewsController#flag as JS
+  Parameters: {"professor_id"=>"1", "id"=>"7"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (4.4ms)[0m  [1m[33mUPDATE "reviews" SET "flag" = COALESCE("flag", 0) + 1 WHERE "reviews"."id" = ?[0m  [["id", 7]]
+  Rendering reviews/flag.js.erb
+  Rendered reviews/flag.js.erb (0.5ms)
+Completed 200 OK in 38ms (Views: 15.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-06-01 12:02:47 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_header.html.erb (3.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.5ms) [cache miss]
+Completed 200 OK in 255ms (Views: 243.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/professors/7/reviews/1/edit" for ::1 at 2017-06-01 12:02:51 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"7", "id"=>"1"}
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:114:in `set_review'
+Started GET "/professors/7/reviews/edit" for ::1 at 2017-06-01 12:03:02 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"7", "id"=>"edit"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=edit):
+  
+app/controllers/reviews_controller.rb:114:in `set_review'
+Started GET "/admins/1" for ::1 at 2017-06-01 12:03:14 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_header.html.erb (2.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 89ms (Views: 81.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/professors/2/reviews/1/edit" for ::1 at 2017-06-01 12:03:22 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"2", "id"=>"1"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:114:in `set_review'
+Started GET "/professors/2/reviews/7/edit" for ::1 at 2017-06-01 12:03:26 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"2", "id"=>"7"}
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 8ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Professor with 'id'=2):
+  
+app/controllers/reviews_controller.rb:118:in `set_professor'
+Started GET "/professors/2/reviews/5/edit" for ::1 at 2017-06-01 12:03:33 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"2", "id"=>"5"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProfessor Load (0.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Professor with 'id'=2):
+  
+app/controllers/reviews_controller.rb:118:in `set_professor'
+Started GET "/professors/1/reviews/5/edit" for ::1 at 2017-06-01 12:03:41 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"1", "id"=>"5"}
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (7.2ms) [cache miss]
+  Rendered reviews/edit.html.erb within layouts/application (11.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 151ms (Views: 144.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2017-06-02 10:47:34 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (4.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (234.7ms)
+  Rendered layouts/_header.html.erb (74.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (2.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 1531ms (Views: 1301.7ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/assets/application.self-c6cc60d69f3765b0932322f5a295e171c57ddc88596d8ef73ebdef94479e6173.css?body=1" for ::1 at 2017-06-02 10:47:37 -0600
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2017-06-02 10:47:37 -0600
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2017-06-02 10:47:37 -0600
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for ::1 at 2017-06-02 10:47:37 -0600
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2017-06-02 10:47:37 -0600
+Started GET "/assets/professors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-02 10:47:37 -0600
+Started GET "/assets/jquery.raty.self-eb7045c9858acfa4797981589f870a37b0dc801327e96148473cad672c94b9b8.js?body=1" for ::1 at 2017-06-02 10:47:37 -0600
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-02 10:47:37 -0600
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-02 10:47:37 -0600
+Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7de48b64906430f7ea12ae6f.js?body=1" for ::1 at 2017-06-02 10:47:37 -0600
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-02 10:47:37 -0600
+Started GET "/users/5" for ::1 at 2017-06-04 11:01:52 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users/5"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/" for ::1 at 2017-06-05 15:04:13 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (22.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 542ms (Views: 497.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.self-c6cc60d69f3765b0932322f5a295e171c57ddc88596d8ef73ebdef94479e6173.css?body=1" for ::1 at 2017-06-05 15:04:14 -0600
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-05 15:04:14 -0600
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2017-06-05 15:04:14 -0600
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2017-06-05 15:04:14 -0600
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2017-06-05 15:04:14 -0600
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for ::1 at 2017-06-05 15:04:14 -0600
+Started GET "/assets/jquery.raty.self-eb7045c9858acfa4797981589f870a37b0dc801327e96148473cad672c94b9b8.js?body=1" for ::1 at 2017-06-05 15:04:14 -0600
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-05 15:04:14 -0600
+Started GET "/assets/professors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-05 15:04:14 -0600
+Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7de48b64906430f7ea12ae6f.js?body=1" for ::1 at 2017-06-05 15:04:14 -0600
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-05 15:04:14 -0600
+Started GET "/professors" for ::1 at 2017-06-05 15:05:07 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.7ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (2.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 106ms (Views: 92.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/professors/1" for ::1 at 2017-06-05 15:05:09 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 1]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 1]]
+  Rendered professors/show.html.erb within layouts/application (29.6ms)
+  Rendered layouts/_header.html.erb (3.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 151ms (Views: 106.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/professors/1/reviews/new" for ::1 at 2017-06-05 15:05:10 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"1"}
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (13.3ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (23.1ms)
+  Rendered layouts/_header.html.erb (3.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 110ms (Views: 97.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/5" for ::1 at 2017-06-05 16:41:48 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users/5"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/apple-touch-icon-precomposed.png" for ::1 at 2017-06-05 16:41:53 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/apple-touch-icon.png" for ::1 at 2017-06-05 16:41:55 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/apple-touch-icon-precomposed.png" for ::1 at 2017-06-05 16:42:00 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/apple-touch-icon.png" for ::1 at 2017-06-05 16:42:04 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/users/5" for ::1 at 2017-06-05 16:42:22 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users/5"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/apple-touch-icon-precomposed.png" for ::1 at 2017-06-05 16:42:24 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/apple-touch-icon.png" for ::1 at 2017-06-05 16:42:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/apple-touch-icon-precomposed.png" for ::1 at 2017-06-05 16:42:26 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/apple-touch-icon.png" for ::1 at 2017-06-05 16:42:28 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/users/5" for ::1 at 2017-06-05 16:46:04 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users/5"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/apple-touch-icon-precomposed.png" for ::1 at 2017-06-05 16:46:08 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/apple-touch-icon.png" for ::1 at 2017-06-05 16:46:11 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/apple-touch-icon-precomposed.png" for ::1 at 2017-06-05 16:46:14 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon-precomposed.png"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/apple-touch-icon.png" for ::1 at 2017-06-05 16:46:18 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/apple-touch-icon.png"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/" for ::1 at 2017-06-08 13:13:17 -0600
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_header.html.erb (39.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 790ms (Views: 718.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/application.self-c6cc60d69f3765b0932322f5a295e171c57ddc88596d8ef73ebdef94479e6173.css?body=1" for ::1 at 2017-06-08 13:13:18 -0600
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2017-06-08 13:13:18 -0600
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2017-06-08 13:13:18 -0600
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2017-06-08 13:13:18 -0600
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for ::1 at 2017-06-08 13:13:18 -0600
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-08 13:13:18 -0600
+Started GET "/assets/jquery.raty.self-eb7045c9858acfa4797981589f870a37b0dc801327e96148473cad672c94b9b8.js?body=1" for ::1 at 2017-06-08 13:13:18 -0600
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-08 13:13:18 -0600
+Started GET "/assets/professors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-08 13:13:18 -0600
+Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7de48b64906430f7ea12ae6f.js?body=1" for ::1 at 2017-06-08 13:13:18 -0600
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-06-08 13:13:18 -0600
+Started GET "/professors/new" for ::1 at 2017-06-08 13:15:13 -0600
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (724.7ms) [cache miss]
+  Rendered professors/new.html.erb within layouts/application (731.9ms)
+  Rendered layouts/_header.html.erb (4.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 828ms (Views: 806.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/professors" for ::1 at 2017-06-08 13:15:21 -0600
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y/0NsOUC3ygs6tE4hTlqfGt84AOVteXCNr3Nid4pu9h7xtFnpHovlEWbadN3roUZm0kSX5AYlPzuNEzy9YjoyA==", "professor"=>{"fullname"=>"Jim Kirk", "school"=>"FGV", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"", "commit"=>"Inserir"}
+  Rendering professors/edit.html.erb within layouts/application
+  Rendered professors/_form.html.erb (4.8ms) [cache miss]
+  Rendered professors/edit.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_header.html.erb (2.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 135ms (Views: 86.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/professors" for ::1 at 2017-06-08 13:15:28 -0600
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S1UXfaEO8GZdzQ2xNhzwtf9S4B7pwYTwUYfFCfwnHQ5Tbsuq4HYA2jS8tVrEix/QD2cSQuxs9c6JDkRy14ZOHg==", "professor"=>{"fullname"=>"Jim Kirk", "school"=>"FGV", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AOPBWq9Mr9uhHgye5KTAAsiuA5r06dpxsm26gvugxNWVwavqVgAsbumXbxl-VXeuP2Kk6j28l30OwusDiSeRJovxLtKYcOtZEZdKeV4MRe82WGBHSZ84qhuUo4tr0XMCWCv_qnfQ8k3FOdI9qGY1zRyVzCqPjjD2Y2j9h9t49n-6oFii1XCwd_SalyLQl-Fne8QDu4QN7qNXKr3TYabC9vcQJcsRm-1b8uaIAKss652z-lrWOsYg-Q6QvRipHnwhdtBNA29KCrfUFHVZyJcwCdID-vG9RfxPRQ1HIZ5tJ4bPrPyuzaclALY", "commit"=>"Inserir"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfessor Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "professors" WHERE "professors"."fullname" = ? AND "professors"."school" = ? LIMIT ?[0m  [["fullname", "Jim Kirk"], ["school", "FGV"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering professors/edit.html.erb within layouts/application
+  Rendered professors/_form.html.erb (5.4ms) [cache miss]
+  Rendered professors/edit.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_header.html.erb (2.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 464ms (Views: 72.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/professors" for ::1 at 2017-06-08 13:15:33 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (29.0ms)
+  Rendered layouts/_header.html.erb (4.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 198ms (Views: 178.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/professors/new" for ::1 at 2017-06-08 13:16:31 -0600
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (96.3ms) [cache miss]
+  Rendered professors/new.html.erb within layouts/application (103.5ms)
+  Rendered layouts/_header.html.erb (5.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 206ms (Views: 188.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/professors" for ::1 at 2017-06-08 13:16:44 -0600
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BPNim6v7g90V6QaOl7HU9heyEZyyrJjt3jxHO+r8Y+wcyL5M6oNzYXyYvmVlJjuT54fjwLcB6dMGtcZAwV0w/A==", "professor"=>{"fullname"=>"TRAVIS FANTINA", "school"=>"BYU", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AOPBWq_VCSLn_tlGATvnr14R7fXiiyUYvhbhixiU2o2wW2LMuHVwWZAmkiQmMK-BRoFJjw_pCLwkwhfyy4rtZKwqthftgkFwLjweV5_GBNe2RAQ2RLbaesiBbOhuF4GbKTLEHbLT5Y-e0cFuU7Z1Uh4ui-DeTfEpjzKuCSI0qExuOwcAWX72qoYvvnVdVWH_lACbPGM5ySbBUXBZK7TBjpJWWDbAZGBNOVYGdqyLzVdU-ItsBpxgdkiRNuwQuROONtqdRTTa6Q9bLeiKn9VkR1GXCtK2I8jRxeV0KQ77LHlKzdxYdymG19U", "commit"=>"Inserir"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProfessor Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "professors" WHERE "professors"."fullname" = ? AND "professors"."school" = ? LIMIT ?[0m  [["fullname", "TRAVIS FANTINA"], ["school", "BYU"], ["LIMIT", 1]]
+  [1m[35mSQL (752.0ms)[0m  [1m[32mINSERT INTO "professors" ("fullname", "school", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["fullname", "TRAVIS FANTINA"], ["school", "BYU"], ["created_at", "2017-06-08 19:16:45.065180"], ["updated_at", "2017-06-08 19:16:45.065180"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mProfessor Store (1542.8ms)[0m  {"id":2}
+Redirected to http://localhost:3000/professors/2/reviews/new?notice=Professor+was+successfully+created.
+Completed 302 Found in 2473ms (Searchkick: 1542.8ms | ActiveRecord: 753.5ms)
+
+
+Started GET "/professors/2/reviews/new?notice=Professor+was+successfully+created." for ::1 at 2017-06-08 13:16:47 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"notice"=>"Professor was successfully created.", "professor_id"=>"2"}
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (6.7ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_header.html.erb (2.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 88ms (Views: 77.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/professors/2/reviews" for ::1 at 2017-06-08 13:17:07 -0600
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"igVkSf6mOhm4a/995m69SCAXd6zJ01aNRoU3iQGLlRySPriev97KpdEaR5YU+VIt0CKF8Mx+J7OeDLbyKirGDA==", "review"=>{"whatclass"=>"Good", "ease"=>"5", "interesting"=>"5", "helpfull"=>"5", "teachwell"=>"1", "recommend"=>"1", "comment"=>"His name is travis", "major"=>"yes", "terms_of_service"=>"1"}, "g-recaptcha-response"=>"03AOPBWq-VAy9nWmRFw4CfJlPSMHZDf5JpQSQIVpYh9wcMKI1BUh81sgv2o3MyXCI2n7Lbn_aQHLDYI3AwbqZUAlWnD0UkC7Z4kCt1hmnnAZNukpkQGox5dh4v_vuWNdSfYgEMyiQ1xhnkcC2_O-GeeQm13rU-raml0-qWfkOj24hdLTWd06Hy0P-f6g4sHijSnbAS3Urz_-WRahCyD_xqYX9A5Xlrph2c6fsgMcm6fs_VCnkMAXSUqPk5VjHFTzVDOSyXtqcfkdVguGStlUNCZjep8gDskfLht32pkpECSx04kH89Tve_s3Q", "commit"=>"Inserir", "professor_id"=>"2"}
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "ease", "interesting", "helpfull", "comment", "created_at", "updated_at", "professor_id", "whatclass", "recommend", "major", "teachwell") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["ease", 5], ["interesting", 5], ["helpfull", 5], ["comment", "His name is travis"], ["created_at", "2017-06-08 19:17:08.046919"], ["updated_at", "2017-06-08 19:17:08.046919"], ["professor_id", 2], ["whatclass", "Good"], ["recommend", "t"], ["major", "yes"], ["teachwell", "t"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/professors/2
+Completed 302 Found in 252ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/professors/2" for ::1 at 2017-06-08 13:17:08 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 2]]
+  Rendered professors/show.html.erb within layouts/application (27.4ms)
+  Rendered layouts/_header.html.erb (9.9ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (2.3ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.1ms) [cache miss]
+Completed 200 OK in 284ms (Views: 262.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2017-06-08 19:05:30 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_header.html.erb (25.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 683ms (Views: 624.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2017-06-08 19:07:12 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_header.html.erb (10.9ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 206ms (Views: 170.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/professors" for ::1 at 2017-06-08 19:07:16 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_header.html.erb (3.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 176ms (Views: 163.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/professors" for ::1 at 2017-06-08 19:09:08 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (19.8ms)
+  Rendered layouts/_header.html.erb (6.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 120ms (Views: 101.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/professors" for ::1 at 2017-06-08 19:09:23 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.7ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_header.html.erb (2.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 70ms (Views: 66.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/professors" for ::1 at 2017-06-08 19:09:27 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_header.html.erb (2.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 67ms (Views: 63.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/professors" for ::1 at 2017-06-08 19:09:34 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.html.erb (2.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 64ms (Views: 60.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/professors" for ::1 at 2017-06-08 19:10:01 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_header.html.erb (2.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 74ms (Views: 69.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-06-09 13:32:28 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_header.html.erb (28.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 600ms (Views: 552.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/professors/new" for ::1 at 2017-06-09 13:32:38 -0600
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+Started GET "/professors" for ::1 at 2017-06-09 13:32:38 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (20.6ms)
+  Rendered layouts/_header.html.erb (3.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 153ms (Views: 101.6ms | ActiveRecord: 0.3ms)
+
+
+  Rendered professors/_form.html.erb (696.3ms) [cache miss]
+  Rendered professors/new.html.erb within layouts/application (701.7ms)
+  Rendered layouts/_header.html.erb (2.0ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 799ms (Views: 793.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/professors/2" for ::1 at 2017-06-09 13:32:40 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 2]]
+  Rendered professors/show.html.erb within layouts/application (26.0ms)
+  Rendered layouts/_header.html.erb (3.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 142ms (Views: 107.8ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/professors/2" for ::1 at 2017-06-09 13:33:57 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfessor Load (2.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 2]]
+  Rendered professors/show.html.erb within layouts/application (19.6ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/tfantina/Documents/Code and Websites/ROR/professor/app/assets/stylesheets/navigation.css.scss to /Users/tfantina/Documents/Code and Websites/ROR/professor/app/assets/stylesheets/navigation.scss. (called from _app_views_layouts_application_html_erb__3826879887315698786_70270121250240 at /Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /Users/tfantina/Documents/Code and Websites/ROR/professor/app/assets/stylesheets/navigation.css.scss to /Users/tfantina/Documents/Code and Websites/ROR/professor/app/assets/stylesheets/navigation.scss. (called from _app_views_layouts_application_html_erb__3826879887315698786_70270121250240 at /Users/tfantina/Documents/Code and Websites/ROR/professor/app/views/layouts/application.html.erb:5)
+  Rendered layouts/_header.html.erb (4.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 2697ms (Views: 2653.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.self-d7977135c2c422e2eaec753569fc98a00663e4576daf3dd601328c0eee667a3f.css?body=1" for ::1 at 2017-06-09 13:33:59 -0600

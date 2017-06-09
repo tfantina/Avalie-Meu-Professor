@@ -11,6 +11,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+# Use haml on really big and ugly erb files.
+gem 'haml', '~> 5.0', '>= 5.0.1'
 #bcrypt for for encrpytion
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 #byebug
