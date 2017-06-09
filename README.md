@@ -6,7 +6,7 @@
  This app was created by Travis Fantina in 2016, all this code and stuff belongs
  to Learning Made Better.
  ******************************************************************************
-  Release 1.1.0
+  Release 1.2.0
    Features professor rating system
    Admin controls
 
