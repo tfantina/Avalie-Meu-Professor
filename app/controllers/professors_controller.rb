@@ -6,6 +6,7 @@ class ProfessorsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
 
+
   def check_configuration
     #render 'configuration_missing' if Cloudinary.config.api_key.blank?
   end
@@ -14,7 +15,7 @@ class ProfessorsController < ApplicationController
   # GET /professors.json
   def index
      @professors = Professor.paginate(:page => params[:page], per_page: 20).order(sort_column + " " + sort_direction)
-     @professor = Professor
+     #@professor = Professor
     # @review = Review.where(professor_id: @professor.ids)
   end
 
@@ -31,6 +32,8 @@ class ProfessorsController < ApplicationController
       #@user = User.where(user_id: @review.user_id)   <===== uncomment when showing users.
     if @review.exists?
       @avg_review = @review.average(:rating).round(1)
+      
+
     end
   end
 
@@ -39,19 +42,6 @@ class ProfessorsController < ApplicationController
   def new
     @professor = Professor.new
     # Replace above with: @professor = current_user.professors.build  when implementing user model
-  end
-
-  def search
-    if params[:search].present?
-        @professors = Professor.search(params[:search])
-    else
-        @professors = Professor.all
-    end
-  end
-
-  # GET /professors/1/edit
-  def edit
-
   end
 
   # POST /professors
@@ -85,6 +75,20 @@ class ProfessorsController < ApplicationController
     end
   end
 
+
+    def search
+      if params[:search].present?
+          @professors = Professor.search(params[:search])
+      else
+          @professors = Professor.all
+      end
+    end
+
+    # GET /professors/1/edit
+    def edit
+
+    end
+
   # DELETE /professors/1
   # DELETE /professors/1.json
   def destroy
@@ -112,6 +116,7 @@ class ProfessorsController < ApplicationController
     def set_professor
       @professor = Professor.find(params[:id])
     end
+
 
     #may be used for image uploads
     def local_image_path(name)

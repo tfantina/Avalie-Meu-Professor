@@ -20,11 +20,18 @@ before_action :user_is_admin
   end
 
   def toggle_admin
-    @user = User.find_by_id(params[:id])
-    @user.admin = true
-    @user.save
-    redirect_to users_search_path
+    @user = User.find(params[:id])
+    if !@user.admin?
+        @user.admin = true
+        @user.save
+        flash.now[:notice] = "User is now admin!"
+    else
+      @user.admin = false
+      @user.save
+      flash.now[:notice] = "User is not admin"
+    end
   end
+
 
 private
 

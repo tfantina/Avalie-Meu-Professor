@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531224410) do
+ActiveRecord::Schema.define(version: 20170616180450) do
 
   create_table "professors", force: :cascade do |t|
     t.string "fullname"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170531224410) do
     t.boolean "recommend"
     t.string "major"
     t.boolean "teachwell"
+    t.float "grade"
   end
 
   create_table "users", force: :cascade do |t|

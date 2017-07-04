@@ -1,105 +1,174 @@
 <% provide(:title, "#{@professor.fullname}") %>
-<div class="center-block">
-<div class="panel panel-default">
 
-  <div class="pannel-body">
 
-    <!-- professor top info -->
-    <div class="row">
+
+      <!-- professor top info -->
+      <div class="row">
+
+        <div class="col-md-6">
+          <h1 class="review_title"> <%= @professor.fullname %> </h1>
+          <ul class="list-unstyled">
+            <% if @review.present? %>
+            <li> <strong>Média do professor: </strong>
+              <div class="star-rating" data-score='<%= @avg_review %>'> </div>
+              <%= @avg_review %> stars. </li>
+              <li><strong>Escola: </strong><%= @professor.school %></li>
+              <li><strong><%= "Review".pluralize(@review.length) %>:
+                <%= @review.length %></strong></li>
+                <li><div class="progress">
+                  <div class="progress-bar progress-bar-success"
+                       role="progressbar"
+                       aria-value-now="<%= @professor.teachwell %>"
+                       aria-valuemin="0" aria-valuemax="100"
+                       style="width:<%= @professor.teachwell %>%">
+                  <span><%= @professor.teachwell %>% of reviewers say this professor teaches well</span>
+                </div>
+              </div></li>
+              <li><div class="progress">
+                <div class="progress-bar progress-bar-success"
+                     role="progressbar"
+                     aria-value-now="<%= @professor.recomend %>"
+                     aria-valuemin="0" aria-valuemax="100"
+                     style="width:<%= @professor.recomend %>%">
+                <span><%= @professor.recomend %>% of reviewers recomend this professor</span>
+              </div>
+            </div></li>
+              </ul>
+            </div>
 
             <div class="col-md-6">
-                <h1 class="review_title"> <%= @professor.fullname %> </h1>
-                <ul class="list-unstyled">
-                  <% if !@review.blank? %>
-                  <li> <strong>Média do professor: </strong><div class="star-rating" data-score='<%= @avg_review %>'> </div>  <%= @avg_review %> stars. </li>
-                  <% end %>
-
-                  <li><strong>Escola: </strong><%= @professor.school %></li>
-                  <li><%= "#{@review.length}" " Review".pluralize(@review.length)%></li>
-                </ul>
+              <%= link_to "Avalie este professor",
+              new_professor_review_path(@professor), class: "btn btn-primary"%>
             </div>
-      <div class="col-md-2">
-
-          </br>
-          </br>
-          <% if !@review.blank? %>
-            <%= link_to "Avalie este professor", new_professor_review_path(@professor), class: "btn btn-primary"%>
+          </div>
           <% end %>
+        </div>
+  <!-- end top info -->
+
+
+  <!-- start reviews -->
+  <!-- if the review is blank -->
+  <% if @review.blank? %>
+  <h3> This professor is not yet reviewed would you like to review: </h3>
+  <center><%= link_to "Review Now!", new_professor_review_path(@professor),
+              class: "btn btn-danger btn-lg" %></center>
+  <% else %>
+    <!-- if review is not blank -->
+  <% @review.each do |review| %>
+  <div class="row">
+    <div class="review-box-sm">
+      <div class="row">
+        <div class="col-xs-3">
+          <strong>Review from:</strong> <%= review.created_at.strftime("%b %e, %Y") %>
+        </div>
+        <div class="col-xs-4">
+          Média: <div class="star-rating" data-score="<%= review.rating %>"></div>
+        </div>
       </div>
     </div>
-    <br>
-    <!-- end top info -->
 
-
-    <!-- start reviews -->
-    <!-- what if the review is blank -->
-
-          <% if @review.blank? %>
-            <h3> This professor is not yet reviewed would you like to review: </h3>
-            <center><%= link_to "Review Now!", new_professor_review_path(@professor), class: "btn btn-danger btn-lg" %></center>
-    <!-- for every other review -->
-          <% else %>
-          <!-- reviews start -->
-            <% @review.each do |review| %>
-            <div class="row review">
-
-              <div class="col-sm-2 review-panl">
-                  <div class="star-rating" data-score="<%= review.rating %>"></div>
-                Review from:
-                <br>
-                <%= review.created_at.strftime("%b %e, %Y") %>
-                    <div class="row">
-
-
-                  </div>
-                  <div class="row">
-
-                    <%= link_to flag_professor_review_path(@professor, review), method: :post, class: "flag_link", :remote => true do %>
-                    <span class="glyphicon glyphicon-flag has-tooltip", title="Flag as inappropriate or irrelevent"></span>
-                    <% end %>
-                  </div>
-            </div>
-            <div class="col-md-5">
-                <strong>Comentários: </strong> <%= review.comment %>
-            </div>
-
-
-            <div class="col-md-4">
-              <h4>Professor é</h4>
-              <table>
-                <tr>
-                  <td align='right'><strong>fácil:</strong> </td>
-                  <td><div class="star-rating" data-score="<%= review.ease %>"></div></td>
-                </tr>
-                <tr>
-                  <td align='right'><strong>intressante:</strong></td>
-                  <td><div class="star-rating" data-score="<%= review.interesting %>"></div></td>
-                </tr>
-                <tr>
-                  <td align='right'><strong> prestativo:</strong></td>
-                  <td><div class="star-rating" data-score="<%= review.helpfull %>"> </div></td>
-                </tr>
-              </table>
-            </div>
-
-          </div>
-
-          <br>
-          <% end %>
-          <% end %>
+    <div class="review-box-dark">
+      <div class="review-box-light">
+    <!-- left panel -->
+    <div class="box-dark col-lg-3">
+      <strong>Review from:</strong> <%= review.created_at.strftime("%b %e, %Y") %>
+      <table>
+        <tr>
+          <td align='right'>Média:</td>
+          <td><div class="star-rating" data-score="<%= review.rating %>"></div>
+          </td>
+          <tr>
+            <td align='right'>Fácil: </td>
+            <td><div class="star-rating" data-score="<%= review.ease %>"></div>
+            </td>
+          </tr>
+          <tr>
+            <td align='right'>Intressante:</td>
+            <td><div class="star-rating" data-score="<%= review.interesting %>">
+                </div></td>
+          </tr>
+          <tr>
+            <td align='right'>Prestativo:</td>
+            <td><div class="star-rating" data-score="<%= review.helpfull %>">
+                </div></td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td>
+              <%= link_to flag_professor_review_path(@professor, review),
+                  method: :post, class: "flag-#{review.id}", :remote => true do %>
+                  <span class="glyphicon glyphicon-flag has-tooltip",
+                            title="Flag as inappropriate or irrelevent"></span>
+              <% end %>
+            </td>
+          </tr>
+        </table>
       </div>
-      <% if user_signed_in? && current_user.admin? %>
-      <%= link_to 'Edit', edit_professor_path(@professor) %> |
-      <%= link_to 'Delete', @professor, method: :delete, data: {confirm: "Are you sure you want to delete this professor?"} %> |
-      <% end %>
+      <!-- right panel -->
+      <div class="box-light col-lg-9">
+        <strong>Comentários: </strong>
+        <hr />
+         <%= review.comment %>
 
-      <%= link_to 'Contra', flag_professor_path(@professor), method: :post, class: "flag_link", :remote => true %> |
-      <%= link_to 'Voltar', professors_path %>
+         <div class="row aditional-info">
+           <% if review.major.present? %>
+            <div class="col-sm-3">
+             Graduação:
+              <%= review.major %>
+            </div>
+           <% end %>
+
+           <% if review.grade.present? %>
+            <div class="col-sm-3">
+              Nota:
+              <%= review.grade%>
+            </div>
+           <% end %>
+         </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- closes each review -->
+
+
+
+  <% end %>
+  <% end %>
+  <br />
+
+<div class="row">
+
+
+<% if user_signed_in? && current_user.admin? %>
+<%= link_to 'Edit', edit_professor_path(@professor) %> |
+<%= link_to 'Delete', @professor, method: :delete,
+    data: {confirm: "Are you sure you want to delete this professor?"} %> |
+<% end %>
+
+<%= link_to 'Contra', flag_professor_path(@professor), method: :post,
+    class: "flag_link", :remote => true %> |
+<%= link_to 'Voltar', professors_path %>
 
 </div>
+
+<div class="bottom-fixed">
+  <%= link_to "Avalie este professor", new_professor_review_path(@professor),
+      class: "btn btn-primary  text-center"%>
 </div>
 
 <script>
+
+$(window).width(function(){
+  if($(this).width() < 992) {
+    $('.review-box-sm').show();
+    $('.box-dark').hide();
+  } else {
+    $('.review-box-sm').hide();
+    $('.box-dark').show()
+  }
+
+});
+
   $('.star-rating').raty({
       path: 'http://dev.travisfantina.com/services/AvaliarMeuProfessor/stars/',
       readOnly: true, score: function(){

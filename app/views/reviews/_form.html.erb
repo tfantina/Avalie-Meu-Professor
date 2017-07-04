@@ -2,7 +2,7 @@
 <%= form_for([@professor, @review]) do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+      <h2><%= pluralize(@review.errors.count, "erro") %>  proibiram que este avalie fosse salvo:</h2>
       <ul>
         <% @review.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -10,75 +10,78 @@
       </ul>
     </div>
   <% end %>
-  <div class="row">
+
+
+
+    <div class="field">
+      The following are required to save review:
+    </div>
+    <!-- ratings -->
+    <div class="table-responsive">
+      <table class="table col-sm-4">
+        <tr>
+          <td class="col-md-4">Facilidade: </td>
+          <td class="col-sm-2"><div id="star-ease"></div></td>
+        </tr>
+        <tr>
+          <td class="col-md-4">Seu interesse na matéria:</td>
+          <td class="col-sm-2"><div id="star-interesting"></div></td>
+        </tr>
+        <tr>
+          <td class="col-md-4">O professor importou-se com seu aprendizado?</td>
+          <td class="col-sm-2"><div id="star-helpfull"></div></td>
+        </tr>
+      </table>
+    </div>
+    <div class="field" >
+      Comentários:
+      <br/>
+      <%= f.text_area :comment, cols: "60", rows: "5" %>
+    </div>
+
+
+    <!-- about professor -->
+    These questions are optional.
+    <div class="field">
+      Boa didática? Sim?
+      <%= f.check_box :teachwell %>
+    </div>
+
+    <div class="field">
+      Recomendaria esse professor? Sim?
+      <%= f.check_box :recommend %>
+    </div>
+    <!-- generic student information -->
     <div class="field">
       Matéria que o professor lecionou? <%= f.text_field :whatclass %>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <!-- ratings -->
-      <div class="table-responsive">
-        <table class="table col-md-4">
-          <tr>
-            <td class="col-md-4">Facilidade: </td>
-            <td class="col-md-2"><div id="star-ease"></div></td>
-          </tr>
-          <tr>
-            <td class="col-md-4">Seu interesse na matéria:</td>
-            <td class="col-md-2"><div id="star-interesting"></div></td>
-          </tr>
-          <tr>
-            <td class="col-md-4">O professor importou-se com seu aprendizado?</td>
-            <td class="col-md-2"><div id="star-helpfull"></div></td>
-          </tr>
-        </table>
-      </div>
+    <div class="field">
+      Qual sua graduação?
+      <%= f.text_field :major %>
     </div>
-    <div class="col-md-6">
-      <!-- about professor -->
-
-      <div class="field">
-        Boa didática? Sim?
-        <%= f.check_box :teachwell %>
-      </div>
-
-      <div class="field">
-        Recomendaria esse professor? Sim?
-        <%= f.check_box :recommend %>
-      </div>
-
-      <div class="field" >
-        Comentários:
-        <br/>
-        <%= f.text_area :comment, cols: "60", rows: "5" %>
-      </div>
-      <!-- generic student information -->
-      <div class="field">
-        Qual sua graduação?
-        <%= f.text_field :major %>
-      </div>
+    <div class="field">
+      Nota recebida?  0-10
+      <%= f.select :grade, [10,9,8,7,6,5,4,3,2,1], include_blank: true %>
     </div>
-  </div>
 
-  <!-- terms of service & captcha -->
 
-  <div class="row">
-    <span></span>
-    <div class="col-xs-4 col-xs-offset-4">
-      <div class="field">
-        <%= f.check_box :terms_of_service %>  I agree to the website's <%= link_to "terms & conditions", terms_path %>
-      </div>
 
-      <%= raw recaptcha_tags %>
+    <!-- terms of service & captcha -->
 
-      <div class="actions">
-        <%= f.submit "Inserir", class: "btn btn-primary"%>
-      </div>
+    <div class="field">
+      <%= f.check_box :terms_of_service %>  I agree to the website's
+      <%= link_to "terms & conditions", terms_path %>
+    </div>
+
+    <%= raw recaptcha_tags %>
+
+    <div class="btn-submit text-center">
+       <%= f.submit "Inserir", class: "btn btn-primary"%>
 
     </div>
-  </div>
-  <% end %>
+
+
+<% end %>
 
 
 

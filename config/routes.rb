@@ -22,7 +22,13 @@ Rails.application.routes.draw do
 #all routes for administrators
   devise_for :users
   get 'users/search'
-  get '/toggle-admin', to: 'users#toggle_admin', as: 'toggle_admin'
+#  patch '/toggle-admin/', to: 'users#toggle_admin', as: 'toggle_admin'
+  resources :users do
+    member do
+     patch 'toggle_admin', :users
+   end
+ end
+
   resources :admins, only: [:show]
 
 

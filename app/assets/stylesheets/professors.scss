@@ -1,3 +1,134 @@
 // Place all the styles related to the Professors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* most of these styles have to do with the way that professor
+reviews are formatted */
+
+
+
+.review-box-dark {
+  float: left;
+  width: 100%;
+  background-color: $dark-grey;
+  overflow: hidden;
+  position: relative;
+
+//  overflow: scroll;
+//  padding-top: 0px;
+//  padding-bottom: 0px;
+//  margin-bottom: 0px;
+//  border-color: $dark-grey;
+//  border-width: thin;
+//  min-height: 160px;
+}
+
+.review-box-light {
+  float: left;
+  width: 100%;
+  background-color: $grey;
+  position: inherit;
+  left: 18%;
+}
+
+.box-dark {
+  color: $navbar-blue;
+  width: 18%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  float: left;
+  position: relative;
+  right: 18%;
+  display: inherit !important;
+
+}
+
+.box-light {
+  width: 82%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  float: left;
+  position: relative;
+  right: 18%;
+
+}
+
+.review-box-sm {
+  width: 100%;
+  background-color: $dark-grey;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: $navbar-blue;
+  display: none !important;
+}
+
+
+@media screen and (max-width: 992px) {
+  .review-box-dark {
+    background-color: $grey;
+  }
+  .review-box-light {
+    width: 100%;
+  }
+  .box-dark {
+    display: none !important;
+  }
+  .review-box-sm {
+      width: 100%;
+      background-color: $dark-grey;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      color: $navbar-blue;
+      display: inherit !important;
+
+  }
+}
+
+/*
+@media (max-width: 992px) {
+    .box-dark, .review-box-dark {
+      visibility: hidden;
+    }
+}
+*/
+
+
+.aditional-info {
+  padding-top: 20px;
+  font-weight: 300;
+
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  border-top: 1px solid #eeeeee;
+}
+@media screen and (max-width: 992px) {
+  hr {
+    border-top: 0px;
+  }
+}
+
+.bottom-fixed {
+  position: fixed;
+  bottom: 25px;
+  z-index: 10000;
+  left: 50%;
+  margin-left: -7%;
+  width: 100%;
+}
+
+.bottom-fixed > .btn-primary {
+  box-shadow: 0px 20px 40px #1b1b1b
+
+}
+
+
+.progress span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  color: black;
+}

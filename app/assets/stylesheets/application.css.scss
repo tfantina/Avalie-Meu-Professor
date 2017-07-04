@@ -1,13 +1,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "navigation";
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,800');
 
-
+//Global theme colors
 $white: rgba(255,255, 255, 1);
+$off-white: rgb(255, 226, 232);
 $black: rgba(0, 0, 0, 1);
 $linkblue: rgba(78, 203, 255, 1);
+$navbar-blue: rgb(71, 133, 255);
 $global-bg: rgb(236, 243, 255);
+$grey: rgb(177, 177, 177);
+$dark-grey: rgb(62, 62, 62);
+
+
+//Other style sheets imported (after global theme colors)
+@import "navigation";
+@import "professors";
+@import "reviews";
 
 html {
   position: relative;
@@ -23,26 +32,12 @@ body {
 
 /* site content */
 
-.center-block {
-  padding: 0px;
-  margin: 0px;
-
-}
-
 .jumbotron {
   background-image: url("http://dev.travisfantina.com/services/AvaliarMeuProfessor/jumbo-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.center-block {
-  background-color: $white;
-  border-radius: 10px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 40px;
-  padding-bottom: 30px;
-}
 
 .intro {
   width: 60%;
@@ -72,6 +67,34 @@ body {
   font-weight: 800;
   font-size: 30px;
 }
+
+@media (min-width: 768px) {
+    .container {
+      width: 100%;
+      padding: 0px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+      width: 976px;
+
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+      width: 1176px;
+
+    }
+}
+
+.center-block {
+  padding: 40px;
+
+}
+
 .review_title {
   margin: 0 0 20px 0;
 }
@@ -81,9 +104,6 @@ body {
   padding-bottom: 10px;
   margin-top: -5px;
   border-bottom: 1px solid hsl(213, 27%, 62%);
-  .star-rating {
-    padding-bottom: 6px;
-  }
 }
 
 .row {
@@ -91,11 +111,18 @@ body {
   margin-right: 0px;
 }
 
-.col-md-4 img {
-  margin-top: 10px;
-}
 .col-md-6 {
   margin-top: 10px;
+}
+
+.star-rating {
+  padding-bottom: 0px;
+  padding-left: 5px;
+  display: inline-block;
+}
+.star-rating img {
+  margin-top: -5px;
+
 }
 
 /* Footer */
@@ -188,12 +215,10 @@ input {
 
 
 
-span.glyphicon {
-    font-size: 2em;
-}
 
+/*
 a.flag_link_visit:active{
   color: rgb(255, 0, 0);
   text-decoration: none;
 
-}
+} */

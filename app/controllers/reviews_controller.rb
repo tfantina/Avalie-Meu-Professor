@@ -136,8 +136,8 @@ class ReviewsController < ApplicationController
     def review_params
 
       params.require(:review).permit(:rating, :ease, :helpfull, :interesting,
-                                     :whatclass, :recommend,  :major, :teachwell,
-                                     :comment, :terms_of_service)
+                                     :whatclass, :recommend,  :major, :grade,
+                                     :teachwell, :comment, :terms_of_service)
 
     end
 
