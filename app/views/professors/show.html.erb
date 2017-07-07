@@ -1,59 +1,71 @@
 <% provide(:title, "#{@professor.fullname}") %>
-
-
-
-      <!-- professor top info -->
-      <div class="row">
-
-        <div class="col-md-6">
-          <h1 class="review_title"> <%= @professor.fullname %> </h1>
-          <ul class="list-unstyled">
-            <% if @review.present? %>
-            <li> <strong>Média do professor: </strong>
-              <div class="star-rating" data-score='<%= @avg_review %>'> </div>
-              <%= @avg_review %> stars. </li>
-              <li><strong>Escola: </strong><%= @professor.school %></li>
-              <li><strong><%= "Review".pluralize(@review.length) %>:
-                <%= @review.length %></strong></li>
-                <li><div class="progress">
-                  <div class="progress-bar progress-bar-success"
-                       role="progressbar"
-                       aria-value-now="<%= @professor.teachwell %>"
-                       aria-valuemin="0" aria-valuemax="100"
-                       style="width:<%= @professor.teachwell %>%">
-                  <span><%= @professor.teachwell %>% of reviewers say this professor teaches well</span>
-                </div>
-              </div></li>
-              <li><div class="progress">
-                <div class="progress-bar progress-bar-success"
-                     role="progressbar"
-                     aria-value-now="<%= @professor.recomend %>"
-                     aria-valuemin="0" aria-valuemax="100"
-                     style="width:<%= @professor.recomend %>%">
-                <span><%= @professor.recomend %>% of reviewers recomend this professor</span>
-              </div>
-            </div></li>
-              </ul>
-            </div>
-
-            <div class="col-md-6">
-              <%= link_to "Avalie este professor",
-              new_professor_review_path(@professor), class: "btn btn-primary"%>
-            </div>
+<!-- professor info -->
+<div class="row">
+  <div class="col-md-6">
+    <h1 class="review_title"> <%= @professor.fullname %> </h1>
+    <ul class="list-unstyled">
+      <!-- if review is present -->
+      <% if @review.present? %>
+      <li> <strong>Média do professor: </strong>
+        <div class="star-rating" data-score='<%= @avg_review %>'> </div>
+        <%= @avg_review %> stars. </li>
+        <li><strong>Escola: </strong><%= @professor.school %></li>
+        <li><strong><%= "Review".pluralize(@review.length) %>:
+          <%= @review.length %></strong></li>
+          <li><div class="progress">
+            <div class="progress-bar progress-bar-success"
+            role="progressbar"
+            aria-value-now="<%= @professor.teachwell %>"
+            aria-valuemin="0" aria-valuemax="100"
+            style="width:<%= @professor.teachwell %>%">
+            <span><%= @professor.teachwell %>% of reviewers say this professor teaches well</span>
           </div>
-          <% end %>
+        </div></li>
+        <li><div class="progress">
+          <div class="progress-bar progress-bar-success"
+          role="progressbar"
+          aria-value-now="<%= @professor.recomend %>"
+          aria-valuemin="0" aria-valuemax="100"
+          style="width:<%= @professor.recomend %>%">
+          <span><%= @professor.recomend %>% of reviewers recomend this professor</span>
         </div>
-  <!-- end top info -->
+      </div></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+      <%= link_to "Avalie este professor",
+          new_professor_review_path(@professor), class: "btn btn-primary"%>
+    </div>
+    <div class="row">
+
+        <%= collection_select(:professor, :id, Review.where(professor_id: @professor.id).uniq, :id, :whatclass,  {:multiple =>false}) %>
+
+    </div>
+  </div>
+
+  <% end %>
 
 
-  <!-- start reviews -->
   <!-- if the review is blank -->
   <% if @review.blank? %>
-  <h3> This professor is not yet reviewed would you like to review: </h3>
-  <center><%= link_to "Review Now!", new_professor_review_path(@professor),
-              class: "btn btn-danger btn-lg" %></center>
+  <strong>Escola: </strong><%= @professor.school %>
+  </div>
+</div>
+  <div class="row">
+      <center><h3> This professor is not yet reviewed would you like to review: </h3>
+      <%= link_to "Avalie Este Professor", new_professor_review_path(@professor),
+      class: "btn btn-primary btn-lg" %></center>
+
+  </div>
+
   <% else %>
+  </div>
+
     <!-- if review is not blank -->
+      <!-- end info -->
+      <!-- start reviews -->
+
   <% @review.each do |review| %>
   <div class="row">
     <div class="review-box-sm">
@@ -96,9 +108,11 @@
           <tr>
             <td>
               <%= link_to flag_professor_review_path(@professor, review),
-                  method: :post, class: "flag-#{review.id}", :remote => true do %>
-                  <span class="glyphicon glyphicon-flag has-tooltip",
-                            title="Flag as inappropriate or irrelevent"></span>
+                  method: :post, class: "flag-#{review.id}", data: { confirm:
+                  "Are you sure you wish to flag this review? (Reviews are
+                  flagged if they are inappropriate or irrelevent)." },
+                   remote: true do %>
+                  <span class="glyphicon glyphicon-flag"></span>
               <% end %>
             </td>
           </tr>
@@ -146,7 +160,10 @@
 <% end %>
 
 <%= link_to 'Contra', flag_professor_path(@professor), method: :post,
-    class: "flag_link", :remote => true %> |
+    class: "flag_link",  data: { confirm:
+    "Are you sure you wish to flag this review? (Reviews are
+    flagged if they are inappropriate or irrelevent)." },
+     remote: true %> |
 <%= link_to 'Voltar', professors_path %>
 
 </div>

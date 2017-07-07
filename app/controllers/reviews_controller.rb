@@ -1,10 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_professor, :except => [:show, :flag, :vote, :destroy]
-
-
-
-
+  before_action :set_professor, except: [:show, :edit, :flag, :vote, :destroy]
+  before_action :set_user, only: [:destory]
 
   # GET /reviews/new
   def new
@@ -12,18 +9,9 @@ class ReviewsController < ApplicationController
 
   end
 
-  # GET /reviews/1/edit
-  def edit
-  end
-
   def show
     @review = Review.find(params[:id])
   end
-
-
-  # POST /reviews
-  # POST /reviews.jso
-
 
   #---------------The user login system has been disabled for everyone except admins
   # in the future we may add user login functionality but at the moment it seems
@@ -53,6 +41,11 @@ class ReviewsController < ApplicationController
   end
 
 
+  # GET /reviews/1/edit
+  def edit
+  end
+
+
   # PATCH/PUT /reviews/1
   # PATCH/PUT /reviews/1.json
   def update
@@ -72,7 +65,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     respond_to do |format|
-      format.html { redirect_to professors_url notice: 'Review was successfully destroyed.' }
+      format.html { redirect_to professors_path, notice: 'Review was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -86,6 +79,8 @@ class ReviewsController < ApplicationController
       end
   end
 
+
+  # Currently voting has no function
   def vote
     @review = Review.find(params[:id])
     @review.increment!(:useful)
@@ -116,7 +111,11 @@ class ReviewsController < ApplicationController
 
     def set_professor
       @professor = Professor.find(params[:professor_id])
-      end
+    end
+
+    def set_user
+      @user = User.find(params[:id])
+    end
 
     ####### These params allow various ratings #######
     ## star ratings
@@ -134,7 +133,6 @@ class ReviewsController < ApplicationController
 
 
     def review_params
-
       params.require(:review).permit(:rating, :ease, :helpfull, :interesting,
                                      :whatclass, :recommend,  :major, :grade,
                                      :teachwell, :comment, :terms_of_service)

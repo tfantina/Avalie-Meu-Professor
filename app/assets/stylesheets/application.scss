@@ -4,13 +4,16 @@
 
 //Global theme colors
 $white: rgba(255,255, 255, 1);
-$off-white: rgb(255, 226, 232);
+$off-white: rgb(255, 250, 250);
 $black: rgba(0, 0, 0, 1);
 $linkblue: rgba(78, 203, 255, 1);
-$navbar-blue: rgb(71, 133, 255);
-$global-bg: rgb(236, 243, 255);
-$grey: rgb(177, 177, 177);
-$dark-grey: rgb(62, 62, 62);
+$navbar-blue: rgb(63, 118, 201);
+$global-bg: rgb(180, 196, 227);
+$skyblue: rgb(82, 148, 255);
+$oceanblue: rgb(63, 118, 201);
+$pinkberry: rgb(218, 125, 233);
+$pinkberry-dark: rgb(177, 88, 191);
+
 
 
 //Other style sheets imported (after global theme colors)
@@ -27,6 +30,32 @@ body {
   margin-bottom: 40px;
 }
 
+.btn-primary {
+  color: $white;
+  background-color:$pinkberry;
+  border-color: $pinkberry-dark;
+}
+.btn-primary:hover {
+  color: $white;
+  background-color:$pinkberry-dark;
+  border-color: $pinkberry-dark;
+}
+.btn-primary:visited {
+  color: $white;
+  background-color:$pinkberry-dark;
+  border-color: $pinkberry-dark;
+}
+
+
+//Never figured this out
+.btn-danger {
+  color: $white;
+  a:hover, a:visited, a:active {
+    color: $white !important;
+  }
+}
+
+
 
 // navbar
 
@@ -36,6 +65,7 @@ body {
   background-image: url("http://dev.travisfantina.com/services/AvaliarMeuProfessor/jumbo-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  margin-bottom: 0px;
 }
 
 
@@ -68,6 +98,21 @@ body {
   font-size: 30px;
 }
 
+a {
+  color: $pinkberry;
+  text-decoration: none;
+}
+a:hover, a:active {
+  color: $pinkberry-dark;
+  text-decoration: none;
+}
+
+a:visited {
+  color: $pinkberry-dark;
+  text-decoration: none;
+}
+
+
 @media (min-width: 768px) {
     .container {
       width: 100%;
@@ -92,7 +137,30 @@ body {
 
 .center-block {
   padding: 40px;
+}
 
+.panel {
+  background-color: $off-white;
+
+}
+
+.list-group-item {
+  background-color: $off-white;
+}
+
+a.list-group-item:hover {
+  background-color: $global-bg;
+}
+
+.thumbnail {
+  background-color: rgba(255, 250, 250, 0.86);
+  &:hover {
+      background-color: $global-bg;
+      border: none;
+  }
+  &:link, &:active, &:visited {
+    border: none;
+  }
 }
 
 .review_title {
@@ -128,18 +196,26 @@ body {
 /* Footer */
 
 footer {
+  background-color: $oceanblue;
   position: absolute;
-  color: $linkblue;
+  color: $black;
   bottom: 0;
   width: 100%;
   height: 40px;
   margin-top: 25px;
   padding-left: 20px;
   padding-top: 10px;
+  a:link {
+    color: $white
+  }
+  a:hover,a:visited, a:active {
+    color: $white;
+  }
+
 }
-footer a:link {
-  color: $linkblue;
-}
+
+
+
 
 .far-left {
   position: absolute;

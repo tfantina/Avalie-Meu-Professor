@@ -1,5 +1,6 @@
 <!-- form for ratings -->
-<%= form_for([@professor, @review]) do |f| %>
+
+<%= form_for @review  do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "erro") %>  proibiram que este avalie fosse salvo:</h2>

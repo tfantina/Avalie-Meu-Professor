@@ -23224,3 +23224,2759 @@ Processing by ProfessorsController#index as HTML
 Completed 200 OK in 302ms (Views: 288.3ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for ::1 at 2017-07-07 11:40:51 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 408ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$navbar-blue".):
+    2: <html>
+    3: <head>
+    4:   <title><%= title(yield(:title)) %></title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  
+app/assets/stylesheets/navigation.scss:7
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___3877496463893956735_70129207365020'
+Started GET "/" for ::1 at 2017-07-07 11:41:13 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 6]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$navbar-blue".):
+    2: <html>
+    3: <head>
+    4:   <title><%= title(yield(:title)) %></title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  
+app/assets/stylesheets/navigation.scss:7
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___3877496463893956735_70129243312000'
+Started GET "/" for ::1 at 2017-07-07 11:41:51 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (22.9ms)
+Completed 500 Internal Server Error in 4158ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (Undefined variable: "$navbar-blue".):
+    2: <html>
+    3: <head>
+    4:   <title><%= title(yield(:title)) %></title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  
+app/assets/stylesheets/navigation.scss:7
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___3877496463893956735_70129238643740'
+Started GET "/" for ::1 at 2017-07-07 11:42:10 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (15.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (70.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 3209ms (Views: 3168.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/application.self-ebb40d573c73b4392f13df71e12d87a0287f5a1d622c6e3d6bd028a8b81ccbd1.css?body=1" for ::1 at 2017-07-07 11:42:14 -0600
+Started GET "/professors/new" for ::1 at 2017-07-07 11:51:43 -0600
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (899.9ms) [cache miss]
+  Rendered professors/new.html.erb within layouts/application (909.6ms)
+Started GET "/professors/new" for ::1 at 2017-07-07 11:51:45 -0600
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (5.2ms) [cache miss]
+  Rendered professors/new.html.erb within layouts/application (10.6ms)
+Started GET "/professors/new" for ::1 at 2017-07-07 11:51:47 -0600
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (3.2ms) [cache miss]
+  Rendered professors/new.html.erb within layouts/application (52.2ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 7005ms (Views: 6988.1ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 6631ms (Views: 6625.0ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (7.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 5001ms (Views: 4952.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/professors/new" for ::1 at 2017-07-07 11:51:52 -0600
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (4.8ms) [cache miss]
+  Rendered professors/new.html.erb within layouts/application (8.2ms)
+Started GET "/assets/application.self-504044ffd30ad17ed28b1ca41bfb6cabb01ac8337149d8f2c8467671ffc0851d.css?body=1" for ::1 at 2017-07-07 11:51:52 -0600
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 177ms (Views: 174.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/professors" for ::1 at 2017-07-07 11:51:54 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (10.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 86ms (Views: 79.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/professors/11" for ::1 at 2017-07-07 11:51:56 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 11], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered professors/show.html.erb within layouts/application (40.7ms)
+  Rendered layouts/_header.html.erb (1.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 142ms (Views: 93.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/professors/11/reviews/new" for ::1 at 2017-07-07 11:52:56 -0600
+Processing by ReviewsController#new as HTML
+  Parameters: {"professor_id"=>"11"}
+  [1m[36mProfessor Load (2.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (41.2ms) [cache miss]
+  Rendered reviews/new.html.erb within layouts/application (47.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (13.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 197ms (Views: 176.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2017-07-07 11:57:52 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.7ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (19.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 372ms (Views: 342.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2017-07-07 13:03:52 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (2.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (3.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (24.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (9.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.3ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 3732ms (Views: 3681.1ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/assets/application.self-803fa940040f45862536b81ffdf7550867c37c7b0f0345dd2f00569899716806.css?body=1" for ::1 at 2017-07-07 13:03:56 -0600
+Started GET "/" for ::1 at 2017-07-07 13:05:36 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.7ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 5]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (27.9ms)
+Completed 500 Internal Server Error in 243ms (ActiveRecord: 3.8ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "    $off-white": expected ":", was "}"):
+    2: <html>
+    3: <head>
+    4:   <title><%= title(yield(:title)) %></title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  
+app/assets/stylesheets/application.scss:158
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___3877496463893956735_70129260840540'
+Started GET "/" for ::1 at 2017-07-07 13:05:48 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (27.5ms)
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "  outline": expected "{", was "}"):
+    2: <html>
+    3: <head>
+    4:   <title><%= title(yield(:title)) %></title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  
+app/assets/stylesheets/application.scss:164
+app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___3877496463893956735_70129262527360'
+Started GET "/" for ::1 at 2017-07-07 13:08:11 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (12.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (7.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 2698ms (Views: 2671.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.self-8ee47fd9bf8b583cda09a924ca7f33ec315c2342c4a952384311fa8598e860f6.css?body=1" for ::1 at 2017-07-07 13:08:14 -0600
+Started GET "/" for ::1 at 2017-07-07 13:09:18 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 5]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 2529ms (Views: 2521.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.self-a18b9adca26b9cf267b2eec4337b72900cbdff562d5f6e9b97cecae56ce352f3.css?body=1" for ::1 at 2017-07-07 13:09:21 -0600
+Started GET "/" for ::1 at 2017-07-07 13:09:47 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.8ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (28.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (8.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 2921ms (Views: 2884.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/application.self-5c45e8214caaa783b34d6823c88cb2a76c64827162e9fbcddcf0bf0031019993.css?body=1" for ::1 at 2017-07-07 13:09:50 -0600
+Started GET "/" for ::1 at 2017-07-07 13:10:03 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 6]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 2492ms (Views: 2484.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.self-398967ce73c4b022e6a412c1401ccb06692204d855d8e4155932ff152954cd72.css?body=1" for ::1 at 2017-07-07 13:10:05 -0600
+Started GET "/" for ::1 at 2017-07-07 13:10:35 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.0ms) [cache miss]
+Completed 200 OK in 2428ms (Views: 2419.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-d5da71360c5b85af528a363c7743eae5e2a650be1ac741b75c5c9978f7791301.css?body=1" for ::1 at 2017-07-07 13:10:37 -0600
+Started GET "/" for ::1 at 2017-07-07 13:11:11 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 5]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (12.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 2581ms (Views: 2553.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.self-ab68ca12502d010a7f1ef16aafa2a9d1e5888b1b1b868564046f04e1981c65a9.css?body=1" for ::1 at 2017-07-07 13:11:13 -0600
+Started GET "/" for ::1 at 2017-07-07 13:11:26 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 2456ms (Views: 2447.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.self-a032b2898729aa56acc3c211f59d8863b0ad8b2648e15838e0776665baed04b4.css?body=1" for ::1 at 2017-07-07 13:11:28 -0600
+Started GET "/" for ::1 at 2017-07-07 13:11:52 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 2497ms (Views: 2486.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.self-971d842957de104db397031ef1dc20104a9abe63067f6f95f72a57f4e259bd5e.css?body=1" for ::1 at 2017-07-07 13:11:55 -0600
+Started GET "/" for ::1 at 2017-07-07 13:12:01 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.9ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 2411ms (Views: 2403.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.self-aa8360f16e3b0728390c013f295c5ff62a34eb9d3d756771a491750b460573ea.css?body=1" for ::1 at 2017-07-07 13:12:04 -0600
+Started GET "/" for ::1 at 2017-07-07 13:12:14 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 2571ms (Views: 2560.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.self-dddca04591fdba95dc4918efd748055c2c6448a4a878186ff8c394b38f83bda9.css?body=1" for ::1 at 2017-07-07 13:12:17 -0600
+Started GET "/" for ::1 at 2017-07-07 13:12:30 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 2464ms (Views: 2455.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-effbda0695a207513f68a516a7cc917900c88ad39939b761ae7c784349068400.css?body=1" for ::1 at 2017-07-07 13:12:32 -0600
+Started GET "/" for ::1 at 2017-07-07 13:12:38 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 2473ms (Views: 2466.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-cfa5688adc626258e75f681626ecb01d6773980c20731d92d74a6c71720dbccc.css?body=1" for ::1 at 2017-07-07 13:12:40 -0600
+Started GET "/" for ::1 at 2017-07-07 13:12:49 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.9ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 2470ms (Views: 2461.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.self-f6056cf50745b4c7f871fa553520773cc7fc89293c7c86f9c2981ab1d6c8ac9c.css?body=1" for ::1 at 2017-07-07 13:12:52 -0600
+Started GET "/" for ::1 at 2017-07-07 13:14:02 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 5]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (21.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (8.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.1ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 3115ms (Views: 3082.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/application.self-d4217acbf7823c229bbabdef19f2c0abf477e11b81866ee9ebec1a4c12b9e8f0.css?body=1" for ::1 at 2017-07-07 13:14:05 -0600
+Started GET "/" for ::1 at 2017-07-07 13:14:33 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.7ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (17.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (8.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 3120ms (Views: 3078.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.self-93a500b735e4d882994dc0d337667da8ea5dbeef5c37266077252acbd8937fb8.css?body=1" for ::1 at 2017-07-07 13:14:37 -0600
+Started GET "/" for ::1 at 2017-07-07 13:15:42 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (15.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (7.9ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (2.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 3314ms (Views: 3266.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/application.self-0f83aa29731a259e0cef66741450c557f87a780f9ac3b3176a41a263eb73fe88.css?body=1" for ::1 at 2017-07-07 13:15:46 -0600
+Started GET "/" for ::1 at 2017-07-07 13:16:35 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (1.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (19.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.9ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 226ms (Views: 184.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2017-07-07 13:16:40 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 5]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 114ms (Views: 104.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2017-07-07 13:17:14 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (5.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (7.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 2803ms (Views: 2787.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.self-32225796e1181a852ebfc9a8b80bf23d9bb42625957ca81586a0fe986452e312.css?body=1" for ::1 at 2017-07-07 13:17:17 -0600
+Started GET "/" for ::1 at 2017-07-07 13:17:38 -0600
+Processing by SiteController#index as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (9.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 2722ms (Views: 2710.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.self-87459baf3f250497f2dc3c56deeab878caeeeea8992f5280c958378be090a9fe.css?body=1" for ::1 at 2017-07-07 13:17:41 -0600
+Started GET "/admins/1" for ::1 at 2017-07-07 13:18:09 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (30.2ms)
+  Rendered layouts/_header.html.erb (4.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 211ms (Views: 167.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:19:15 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (46.4ms)
+  Rendered layouts/_header.html.erb (7.0ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.0ms) [cache miss]
+Completed 200 OK in 230ms (Views: 192.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:19:23 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_header.html.erb (3.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 110ms (Views: 93.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/professors" for ::1 at 2017-07-07 13:19:26 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (11.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (7.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 97ms (Views: 91.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:20:15 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (40.0ms)
+  Rendered layouts/_header.html.erb (14.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 340ms (Views: 322.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/professors" for ::1 at 2017-07-07 13:20:57 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (9.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 257ms (Views: 249.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:21:10 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_header.html.erb (3.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 175ms (Views: 162.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/professors/2/edit" for ::1 at 2017-07-07 13:21:16 -0600
+Processing by ProfessorsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering professors/edit.html.erb within layouts/application
+  Rendered professors/_form.html.erb (15.6ms) [cache miss]
+  Rendered professors/edit.html.erb within layouts/application (19.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 104ms (Views: 96.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/professors/2/edit" for ::1 at 2017-07-07 13:21:39 -0600
+Processing by ProfessorsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering professors/edit.html.erb within layouts/application
+  Rendered professors/_form.html.erb (11.1ms) [cache miss]
+  Rendered professors/edit.html.erb within layouts/application (15.6ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (8.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.1ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 121ms (Views: 111.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:21:44 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_header.html.erb (4.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 105ms (Views: 91.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/professors/%23%3CProfessor::ActiveRecord_Relation:0x007f907c8d3ce0%3E/reviews/13" for ::1 at 2017-07-07 13:21:48 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"#<Professor::ActiveRecord_Relation:0x007f907c8d3ce0>", "id"=>"13"}
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 88ms (Views: 78.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/professors/%23%3CProfessor::ActiveRecord_Relation:0x007f907c8d3ce0%3E/reviews/13" for ::1 at 2017-07-07 13:21:54 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"#<Professor::ActiveRecord_Relation:0x007f907c8d3ce0>", "id"=>"13"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.2ms) [cache miss]
+  Rendered layouts/_footer.html.erb (2.4ms) [cache miss]
+Completed 200 OK in 126ms (Views: 115.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/professors/%23%3CProfessor::ActiveRecord_Relation:0x007f907c8d3ce0%3E/reviews/13" for ::1 at 2017-07-07 13:22:23 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"#<Professor::ActiveRecord_Relation:0x007f907c8d3ce0>", "id"=>"13"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.2ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 148ms (Views: 137.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/professors/13/reviews/1/edit" for ::1 at 2017-07-07 13:22:36 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"1"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:114:in `set_review'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:23:04 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (44.9ms)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `fullname' for #<Review:0x007f907b159060>):
+    27: <div class="list-group">
+    28:   <ul class="list-unstyled">
+    29:   <% @review.each do |prof| %>
+    30:       <li class="list-group-item">  <%= prof.fullname %> has been flagged <%= pluralize(prof.flag, 'time') %>.
+    31:           <%= link_to 'View', prof %>
+    32:             <%= link_to 'Edit', edit_professor_path(prof) %>
+    33:            <%= link_to 'Delete', prof, method: :delete, data: {confirm: "Are you sure you want to delete this professor?"} %> </li>
+  
+app/views/admins/show.html.erb:30:in `block in _app_views_admins_show_html_erb___2687543211668091975_70129258615800'
+app/views/admins/show.html.erb:29:in `_app_views_admins_show_html_erb___2687543211668091975_70129258615800'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:23:15 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (31.9ms)
+  Rendered layouts/_header.html.erb (5.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 168ms (Views: 153.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:23:59 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (25.6ms)
+  Rendered layouts/_header.html.erb (3.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 171ms (Views: 135.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/professors/%23%3CProfessor::ActiveRecord_Relation:0x007f9073db7710%3E/reviews/1" for ::1 at 2017-07-07 13:24:01 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"#<Professor::ActiveRecord_Relation:0x007f9073db7710>", "id"=>"1"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:114:in `set_review'
+Started GET "/professors/%23%3CProfessor::ActiveRecord_Relation:0x007f9073db7710%3E/reviews/1" for ::1 at 2017-07-07 13:24:07 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"#<Professor::ActiveRecord_Relation:0x007f9073db7710>", "id"=>"1"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:114:in `set_review'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:24:09 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (40.4ms)
+  Rendered layouts/_header.html.erb (5.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 236ms (Views: 224.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:26:27 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (72.4ms)
+  Rendered layouts/_header.html.erb (3.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 239ms (Views: 157.0ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:26:56 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (104.6ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `review_professor_review' for #<#<Class:0x007f907e080ac8>:0x007f907d971a48>
+Did you mean?  review_professor_review_url
+               review_professor_review_path):
+    48:     <ul class="list-unstyled">
+    49:     <% @review.each do |review| %>
+    50:         <li class="list-group-item">  <%= review.comment %> Review Flagged:
+    51:           <%= pluralize(review.flag, 'time') %>.   <%= link_to 'View', review_professor_review(@professor, review) %>
+    52:            <%= link_to 'Edit', edit_professor_review_path(review) %>
+    53:            <%= link_to 'Delete',  professor_review_path(review), method: :delete, data: {confirm: "Are you sure you want to delete this review?"} %> </li>
+    54:         <% end %>
+  
+app/views/admins/show.html.erb:51:in `block in _app_views_admins_show_html_erb___2687543211668091975_70129279537900'
+app/views/admins/show.html.erb:49:in `_app_views_admins_show_html_erb___2687543211668091975_70129279537900'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:27:06 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (18.4ms)
+  Rendered layouts/_header.html.erb (7.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.1ms) [cache miss]
+Completed 200 OK in 182ms (Views: 157.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/professors/13/reviews/1/edit" for ::1 at 2017-07-07 13:27:12 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"1"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 7ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started GET "/professors/8/reviews/1/edit" for ::1 at 2017-07-07 13:27:48 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"8", "id"=>"1"}
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 12ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:27:50 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (28.3ms)
+  Rendered layouts/_header.html.erb (11.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (2.5ms) [cache miss]
+Completed 200 OK in 251ms (Views: 229.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/professors/13/reviews/1/edit" for ::1 at 2017-07-07 13:28:38 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"1"}
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 9ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started GET "/professors/13/reviews/3/edit" for ::1 at 2017-07-07 13:28:42 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"3"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Professor with 'id'=13):
+  
+app/controllers/reviews_controller.rb:112:in `set_professor'
+Started GET "/professors/13/reviews/2/edit" for ::1 at 2017-07-07 13:28:49 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"2"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Professor with 'id'=13):
+  
+app/controllers/reviews_controller.rb:112:in `set_professor'
+Started GET "/professors" for ::1 at 2017-07-07 13:28:58 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.7ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (10.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 97ms (Views: 90.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/professors/new" for ::1 at 2017-07-07 13:29:00 -0600
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (9.4ms) [cache miss]
+  Rendered professors/new.html.erb within layouts/application (16.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 129ms (Views: 120.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/professors/new" for ::1 at 2017-07-07 13:29:01 -0600
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (11.2ms) [cache miss]
+  Rendered professors/new.html.erb within layouts/application (18.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 185ms (Views: 180.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/professors" for ::1 at 2017-07-07 13:29:02 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (7.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 112ms (Views: 105.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/professors/2" for ::1 at 2017-07-07 13:29:06 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 2], ["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered professors/show.html.erb within layouts/application (26.2ms)
+  Rendered layouts/_header.html.erb (2.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 112ms (Views: 89.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:29:14 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (15.8ms)
+  Rendered layouts/_header.html.erb (2.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 93ms (Views: 82.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/professors/%23%3CProfessor::ActiveRecord_Relation:0x007f907e21ae10%3E/reviews/15/review" for ::1 at 2017-07-07 13:29:16 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/professors/%23%3CProfessor::ActiveRecord_Relation:0x007f907e21ae10%3E/reviews/15/review"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/professors/13/reviews/1/edit" for ::1 at 2017-07-07 13:29:36 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"1"}
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 13ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started GET "/professors/1/reviews/6/edit" for ::1 at 2017-07-07 13:29:42 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"1", "id"=>"6"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (10.0ms) [cache miss]
+  Rendered reviews/edit.html.erb within layouts/application (16.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 111ms (Views: 103.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/professors" for ::1 at 2017-07-07 13:29:53 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 85ms (Views: 77.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:29:54 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (18.3ms)
+  Rendered layouts/_header.html.erb (2.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 109ms (Views: 98.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:30:08 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (16.3ms)
+  Rendered layouts/_header.html.erb (3.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 110ms (Views: 100.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:30:28 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.7ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_header.html.erb (3.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 97ms (Views: 87.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:30:40 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (10.4ms)
+  Rendered layouts/_header.html.erb (2.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 105ms (Views: 94.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/professors/13/reviews/1/review" for ::1 at 2017-07-07 13:30:53 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/professors/13/reviews/1/review"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:31:13 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (141.0ms)
+Completed 500 Internal Server Error in 174ms (ActiveRecord: 3.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `professor_review' for #<#<Class:0x007f907e080ac8>:0x007f907ace0c90>
+Did you mean?  professor_review_url):
+    48:     <ul class="list-unstyled">
+    49:     <% @review.each do |review| %>
+    50:         <li class="list-group-item">  <%= review.comment %> Review Flagged:
+    51:           <%= pluralize(review.flag, 'time') %>.   <%= link_to 'View', professor_review(review) %>
+    52:            <%= link_to 'Edit', edit_professor_review_path(review) %>
+    53:            <%= link_to 'Delete',  professor_review_path(review), method: :delete, data: {confirm: "Are you sure you want to delete this review?"} %> </li>
+    54:         <% end %>
+  
+app/views/admins/show.html.erb:51:in `block in _app_views_admins_show_html_erb___2687543211668091975_70129256172540'
+app/views/admins/show.html.erb:49:in `_app_views_admins_show_html_erb___2687543211668091975_70129256172540'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:31:20 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (13.4ms)
+  Rendered layouts/_header.html.erb (4.9ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 127ms (Views: 117.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/professors/13/reviews/1" for ::1 at 2017-07-07 13:31:24 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"1"}
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:31:44 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_header.html.erb (5.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 137ms (Views: 117.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/professors/13/reviews/1" for ::1 at 2017-07-07 13:31:53 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"1"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:32:04 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (21.0ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Class:0x007f907c5e5768>
+Did you mean?  ids):
+    48:     <ul class="list-unstyled">
+    49:     <% @review.each do |review| %>
+    50:         <li class="list-group-item">  <%= review.comment %> Review Flagged:
+    51:           <%= pluralize(review.flag, 'time') %>.   <%= link_to 'View', professor_review_url(Review.id) %>
+    52:            <%= link_to 'Edit', edit_professor_review_path(review) %>
+    53:            <%= link_to 'Delete',  professor_review_path(review), method: :delete, data: {confirm: "Are you sure you want to delete this review?"} %> </li>
+    54:         <% end %>
+  
+app/views/admins/show.html.erb:51:in `block in _app_views_admins_show_html_erb___2687543211668091975_70129279324540'
+app/views/admins/show.html.erb:49:in `_app_views_admins_show_html_erb___2687543211668091975_70129279324540'
+Started GET "/professors" for ::1 at 2017-07-07 13:32:26 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.1ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (29.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (11.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 198ms (Views: 178.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:32:28 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (14.4ms)
+  Rendered layouts/_header.html.erb (3.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 111ms (Views: 97.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/professors/13/reviews/1" for ::1 at 2017-07-07 13:32:31 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"1"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:33:44 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (80.9ms)
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Review::ActiveRecord_Relation:0x007f907c977660>
+Did you mean?  ids):
+    48:     <ul class="list-unstyled">
+    49:     <% @review.each do |review| %>
+    50:         <li class="list-group-item">  <%= review.comment %> Review Flagged:
+    51:           <%= pluralize(review.flag, 'time') %>.   <%= link_to 'View', professor_review_url(@review.id) %>
+    52:            <%= link_to 'Edit', edit_professor_review_path(review) %>
+    53:            <%= link_to 'Delete',  professor_review_path(review), method: :delete, data: {confirm: "Are you sure you want to delete this review?"} %> </li>
+    54:         <% end %>
+  
+app/views/admins/show.html.erb:51:in `block in _app_views_admins_show_html_erb___2687543211668091975_70129271156920'
+app/views/admins/show.html.erb:49:in `_app_views_admins_show_html_erb___2687543211668091975_70129271156920'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:33:53 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_header.html.erb (4.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 125ms (Views: 114.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/professors/13%2F15%2F8%2F11%2F12%2F9%2F2%2F7/reviews/1" for ::1 at 2017-07-07 13:33:57 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"13/15/8/11/12/9/2/7", "id"=>"1"}
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:34:14 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (24.9ms)
+  Rendered layouts/_header.html.erb (5.0ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 168ms (Views: 129.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:34:24 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_header.html.erb (3.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 106ms (Views: 94.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:35:04 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (29.4ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Professor::ActiveRecord_Relation:0x007f907b189378>
+Did you mean?  ids):
+    48:     <ul class="list-unstyled">
+    49:     <% @review.each do |review| %>
+    50:         <li class="list-group-item">  <%= review.comment %> Review Flagged:
+    51:           <%= pluralize(review.flag, 'time') %>.   <%= link_to 'View', professor_review_url(@professor.id, review.id) %>
+    52:            <%= link_to 'Edit', edit_professor_review_path(review) %>
+    53:            <%= link_to 'Delete',  professor_review_path(review), method: :delete, data: {confirm: "Are you sure you want to delete this review?"} %> </li>
+    54:         <% end %>
+  
+app/views/admins/show.html.erb:51:in `block in _app_views_admins_show_html_erb___2687543211668091975_70129258600680'
+app/views/admins/show.html.erb:49:in `_app_views_admins_show_html_erb___2687543211668091975_70129258600680'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:35:27 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_header.html.erb (3.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 121ms (Views: 113.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:35:41 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_header.html.erb (3.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 98ms (Views: 89.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:36:15 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_header.html.erb (3.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 103ms (Views: 94.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/professors/%23%3CProfessor::ActiveRecord_Relation:0x007f9078a03830%3E/reviews.13" for ::1 at 2017-07-07 13:36:19 -0600
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ReviewsController):
+  
+actionpack (5.1.1) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:36:45 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_header.html.erb (3.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 105ms (Views: 94.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:36:57 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (119.8ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `professor' for #<#<Class:0x007f907e080ac8>:0x007f907ea79e08>
+Did you mean?  @professor):
+    48:     <ul class="list-unstyled">
+    49:     <% @review.each do |review| %>
+    50:         <li class="list-group-item">  <%= review.comment %> Review Flagged:
+    51:           <%= pluralize(review.flag, 'time') %>.   <%= link_to 'View',   professor_review_path(professor, review) %>
+    52:            <%= link_to 'Edit', edit_professor_review_path(review) %>
+    53:            <%= link_to 'Delete',  professor_review_path(review), method: :delete, data: {confirm: "Are you sure you want to delete this review?"} %> </li>
+    54:         <% end %>
+  
+app/views/admins/show.html.erb:51:in `block in _app_views_admins_show_html_erb___2687543211668091975_70129288467560'
+app/views/admins/show.html.erb:49:in `_app_views_admins_show_html_erb___2687543211668091975_70129288467560'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:37:03 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_header.html.erb (2.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 97ms (Views: 85.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/professors/%23%3CProfessor::ActiveRecord_Relation:0x007f9078a03830%3E/reviews.13" for ::1 at 2017-07-07 13:37:17 -0600
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ReviewsController):
+  
+actionpack (5.1.1) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.1) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.1) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.1) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.1) lib/action_dispatch/routing/route_set.rb:832:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/tfantina/.rvm/rubies/ruby-2.4.1/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:37:19 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_header.html.erb (2.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.0ms) [cache miss]
+Completed 200 OK in 86ms (Views: 79.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/professors/15/reviews/15" for ::1 at 2017-07-07 13:37:23 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"15", "id"=>"15"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 86ms (Views: 74.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/professors/13/reviews/13" for ::1 at 2017-07-07 13:37:27 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"13"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 79ms (Views: 70.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/professors/13/reviews/13" for ::1 at 2017-07-07 13:38:04 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"13"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (32.6ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `content' for #<Review:0x007f907db45dd8>
+Did you mean?  comment):
+    1: <%= @review.content %>
+  
+app/views/reviews/show.html.erb:1:in `_app_views_reviews_show_html_erb__1751393280396769087_70129280492740'
+Started GET "/professors/13/reviews/13" for ::1 at 2017-07-07 13:38:16 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"13"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 113ms (Views: 107.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:38:18 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (25.6ms)
+  Rendered layouts/_header.html.erb (3.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 107ms (Views: 96.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/professors/15/reviews/15" for ::1 at 2017-07-07 13:38:20 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"15", "id"=>"15"}
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (8.9ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (4.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 133ms (Views: 122.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/professors/8/reviews/8" for ::1 at 2017-07-07 13:38:24 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"8", "id"=>"8"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE Review Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 81ms (Views: 71.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:38:35 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_header.html.erb (4.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 104ms (Views: 93.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/professors/8/reviews/1" for ::1 at 2017-07-07 13:38:37 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"8", "id"=>"1"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:38:48 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_header.html.erb (5.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 129ms (Views: 112.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/professors/8/reviews/8" for ::1 at 2017-07-07 13:38:57 -0600
+Processing by ReviewsController#show as HTML
+  Parameters: {"professor_id"=>"8", "id"=>"8"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (7.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 99ms (Views: 91.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/professors/15/reviews/1/edit" for ::1 at 2017-07-07 13:39:11 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"15", "id"=>"1"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started GET "/professors/15/reviews/1/edit" for ::1 at 2017-07-07 13:39:22 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"15", "id"=>"1"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:39:28 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.7ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (16.8ms)
+  Rendered layouts/_header.html.erb (6.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 157ms (Views: 143.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:39:35 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_header.html.erb (2.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 82ms (Views: 73.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/professors/15/reviews/15/edit" for ::1 at 2017-07-07 13:39:37 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"15", "id"=>"15"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Professor with 'id'=15):
+  
+app/controllers/reviews_controller.rb:112:in `set_professor'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:39:53 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.7ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (16.3ms)
+  Rendered layouts/_header.html.erb (5.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 135ms (Views: 113.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/professors/15/reviews/15/edit" for ::1 at 2017-07-07 13:39:58 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"15", "id"=>"15"}
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Professor with 'id'=15):
+  
+app/controllers/reviews_controller.rb:112:in `set_professor'
+Started GET "/professors/15/reviews/15/edit" for ::1 at 2017-07-07 13:40:29 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"15", "id"=>"15"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (73.1ms)
+  Rendered reviews/edit.html.erb within layouts/application (78.8ms)
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f907bb0a118>:0x007f907bb03890>
+Did you mean?  view_paths):
+    1: <!-- form for ratings -->
+    2: <%= form_for([@professor, @review]) do |f| %>
+    3:   <% if @review.errors.any? %>
+    4:     <div id="error_explanation">
+    5:       <h2><%= pluralize(@review.errors.count, "erro") %>  proibiram que este avalie fosse salvo:</h2>
+  
+app/views/reviews/_form.html.erb:2:in `_app_views_reviews__form_html_erb___2232698839515206940_70129263544460'
+app/views/reviews/edit.html.erb:4:in `_app_views_reviews_edit_html_erb__1032811439690056950_70129263597100'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:40:34 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (23.0ms)
+  Rendered layouts/_header.html.erb (2.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 132ms (Views: 95.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/professors/13/reviews/13/edit" for ::1 at 2017-07-07 13:40:36 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"13"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (54.7ms)
+  Rendered reviews/edit.html.erb within layouts/application (59.1ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f907bb0a118>:0x007f9073f65c38>
+Did you mean?  view_paths):
+    1: <!-- form for ratings -->
+    2: <%= form_for([@professor, @review]) do |f| %>
+    3:   <% if @review.errors.any? %>
+    4:     <div id="error_explanation">
+    5:       <h2><%= pluralize(@review.errors.count, "erro") %>  proibiram que este avalie fosse salvo:</h2>
+  
+app/views/reviews/_form.html.erb:2:in `_app_views_reviews__form_html_erb___2232698839515206940_70129253768540'
+app/views/reviews/edit.html.erb:4:in `_app_views_reviews_edit_html_erb__1032811439690056950_70129198773180'
+Started GET "/professors/13/reviews/13/edit" for ::1 at 2017-07-07 13:41:12 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"13"}
+  [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (55.9ms)
+  Rendered reviews/edit.html.erb within layouts/application (64.2ms)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f907bb0a118>:0x007f9073c8f9a0>
+Did you mean?  view_paths):
+    1: <!-- form for ratings -->
+    2: <%= form_for(@review) do |f| %>
+    3:   <% if @review.errors.any? %>
+    4:     <div id="error_explanation">
+    5:       <h2><%= pluralize(@review.errors.count, "erro") %>  proibiram que este avalie fosse salvo:</h2>
+  
+app/views/reviews/_form.html.erb:2:in `_app_views_reviews__form_html_erb___2232698839515206940_70129242492160'
+app/views/reviews/edit.html.erb:4:in `_app_views_reviews_edit_html_erb__1032811439690056950_70129197294280'
+Started GET "/professors/13/reviews/13/edit" for ::1 at 2017-07-07 13:41:56 -0600
+Processing by ReviewsController#edit as HTML
+  Parameters: {"professor_id"=>"13", "id"=>"13"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (54.9ms)
+  Rendered reviews/edit.html.erb within layouts/application (58.9ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `review_path' for #<#<Class:0x007f907bb0a118>:0x007f907e19b2f0>
+Did you mean?  view_paths):
+    1: <!-- form for ratings -->
+    2: 
+    3: <%= form_for @review  do |f| %>
+    4:   <% if @review.errors.any? %>
+    5:     <div id="error_explanation">
+    6:       <h2><%= pluralize(@review.errors.count, "erro") %>  proibiram que este avalie fosse salvo:</h2>
+  
+app/views/reviews/_form.html.erb:3:in `_app_views_reviews__form_html_erb___2232698839515206940_70129283776700'
+app/views/reviews/edit.html.erb:4:in `_app_views_reviews_edit_html_erb__1032811439690056950_70129283817260'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:42:12 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_header.html.erb (4.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 126ms (Views: 112.1ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/professors/15/reviews/1" for ::1 at 2017-07-07 13:42:17 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QAjLjzV/AaLpHzGvfllQ3LEPtDqh54UbXmqvA1Y9r71F31a8qmEDVNJGC0+/433FLbp4wJZYwUGt0xS/VEVwMQ==", "professor_id"=>"15", "id"=>"1"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=1):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:43:30 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (1.1ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (27.1ms)
+  Rendered layouts/_header.html.erb (8.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (2.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 218ms (Views: 170.8ms | ActiveRecord: 3.9ms)
+
+
+Started DELETE "/professors/13/reviews/13" for ::1 at 2017-07-07 13:43:34 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Ba4cazp2qF6J8ZvfSzRqBfCK+UvKJlsBPus+XJkeL1oAeYFYpWiqqLKooT+KjkccbD81sf2ZH1vNUoXgm2bw1g==", "professor_id"=>"13", "id"=>"13"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 13]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/professors?notice=Review+was+successfully+destroyed.
+Completed 302 Found in 16ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/professors?notice=Review+was+successfully+destroyed." for ::1 at 2017-07-07 13:43:34 -0600
+Processing by ProfessorsController#index as HTML
+  Parameters: {"notice"=>"Review was successfully destroyed."}
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (9.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 107ms (Views: 99.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:43:36 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_header.html.erb (3.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 112ms (Views: 102.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:44:06 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (57.3ms)
+  Rendered layouts/_header.html.erb (3.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 180ms (Views: 125.1ms | ActiveRecord: 5.6ms)
+
+
+Started DELETE "/professors/8/reviews/8" for ::1 at 2017-07-07 13:44:13 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4GCEDKg6McLvUVvUCxQ0xfJDvqseIMbiCreVryLQuDDltxk/NyQzNNQIYTTKrhncbvZyUSmfgrj5Di4TIKhnvA==", "professor_id"=>"8", "id"=>"8"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 8]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admins/8?notice=Review+was+successfully+destroyed.
+Completed 302 Found in 10ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/admins/8?notice=Review+was+successfully+destroyed." for ::1 at 2017-07-07 13:44:13 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"notice"=>"Review was successfully destroyed.", "id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=8):
+  
+app/controllers/admins_controller.rb:10:in `show'
+Started DELETE "/professors/8/reviews/8" for ::1 at 2017-07-07 13:44:32 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4GCEDKg6McLvUVvUCxQ0xfJDvqseIMbiCreVryLQuDDltxk/NyQzNNQIYTTKrhncbvZyUSmfgrj5Di4TIKhnvA==", "professor_id"=>"8", "id"=>"8"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=8):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started DELETE "/professors/8/reviews/8" for ::1 at 2017-07-07 13:45:12 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4GCEDKg6McLvUVvUCxQ0xfJDvqseIMbiCreVryLQuDDltxk/NyQzNNQIYTTKrhncbvZyUSmfgrj5Di4TIKhnvA==", "professor_id"=>"8", "id"=>"8"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 404 Not Found in 19ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=8):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started DELETE "/professors/8/reviews/8" for ::1 at 2017-07-07 13:45:24 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4GCEDKg6McLvUVvUCxQ0xfJDvqseIMbiCreVryLQuDDltxk/NyQzNNQIYTTKrhncbvZyUSmfgrj5Di4TIKhnvA==", "professor_id"=>"8", "id"=>"8"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 404 Not Found in 12ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=8):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started DELETE "/professors/8/reviews/8" for ::1 at 2017-07-07 13:45:38 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4GCEDKg6McLvUVvUCxQ0xfJDvqseIMbiCreVryLQuDDltxk/NyQzNNQIYTTKrhncbvZyUSmfgrj5Di4TIKhnvA==", "professor_id"=>"8", "id"=>"8"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=8):
+  
+app/controllers/reviews_controller.rb:108:in `set_review'
+Started DELETE "/professors/15/reviews/15" for ::1 at 2017-07-07 13:45:48 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4GCEDKg6McLvUVvUCxQ0xfJDvqseIMbiCreVryLQuDDltxk/NyQzNNQIYTTKrhncbvZyUSmfgrj5Di4TIKhnvA==", "professor_id"=>"15", "id"=>"15"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 15]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/professors?notice=Review+was+successfully+destroyed.
+Completed 302 Found in 42ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/professors?notice=Review+was+successfully+destroyed." for ::1 at 2017-07-07 13:45:48 -0600
+Processing by ProfessorsController#index as HTML
+  Parameters: {"notice"=>"Review was successfully destroyed."}
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.7ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (19.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (33.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.1ms) [cache miss]
+Completed 200 OK in 151ms (Views: 137.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:45:52 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_header.html.erb (3.0ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 79ms (Views: 69.6ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/professors/2/reviews/2" for ::1 at 2017-07-07 13:46:01 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"H30cFXiaYSEU00g7paGK05E7s/aKcGk1fgGSbgstju8aqoEm54Rj1y+KcttkG6fKDY5/DL3PLW+NuCnSCVVRYw==", "professor_id"=>"2", "id"=>"2"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 2]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/professors?notice=Review+was+successfully+destroyed.
+Completed 302 Found in 12ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/professors?notice=Review+was+successfully+destroyed." for ::1 at 2017-07-07 13:46:01 -0600
+Processing by ProfessorsController#index as HTML
+  Parameters: {"notice"=>"Review was successfully destroyed."}
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.7ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (8.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.9ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 78ms (Views: 73.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:46:14 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (98.5ms)
+  Rendered layouts/_header.html.erb (3.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 230ms (Views: 174.1ms | ActiveRecord: 4.9ms)
+
+
+Started DELETE "/professors/7/reviews/7" for ::1 at 2017-07-07 13:46:18 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CuKq3/ZAqrJlgcOuMZx0inCioqUJqOcZNcf6Bci8KU8PNTfsaV6oRF7Y+U7wJlmT7BduXz4Xo0PGfkG5ysT2ww==", "professor_id"=>"7", "id"=>"7"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 7]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admins/7?notice=Review+was+successfully+destroyed.
+Completed 302 Found in 11ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/admins/7?notice=Review+was+successfully+destroyed." for ::1 at 2017-07-07 13:46:18 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"notice"=>"Review was successfully destroyed.", "id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=7):
+  
+app/controllers/admins_controller.rb:10:in `show'
+Started DELETE "/professors/7/reviews/7" for ::1 at 2017-07-07 13:46:43 -0600
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/controllers/reviews_controller.rb:67: syntax error, unexpected tLABEL, expecting '}'
+_to admin_url(User.id) notice: 'Review was successfully dest
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/controllers/reviews_controller.rb:67: syntax error, unexpected '}', expecting keyword_end
+was successfully destroyed.' }
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/controllers/reviews_controller.rb:138: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/reviews_controller.rb:67: syntax error, unexpected tLABEL, expecting '}'
+app/controllers/reviews_controller.rb:67: syntax error, unexpected '}', expecting keyword_end
+app/controllers/reviews_controller.rb:138: syntax error, unexpected keyword_end, expecting end-of-input
+Started DELETE "/professors/7/reviews/7" for ::1 at 2017-07-07 13:46:50 -0600
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/controllers/reviews_controller.rb:67: syntax error, unexpected tLABEL, expecting '}'
+_to admin_url(User.id) notice: 'Review was successfully dest
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/controllers/reviews_controller.rb:67: syntax error, unexpected '}', expecting keyword_end
+was successfully destroyed.' }
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/controllers/reviews_controller.rb:138: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/reviews_controller.rb:67: syntax error, unexpected tLABEL, expecting '}'
+app/controllers/reviews_controller.rb:67: syntax error, unexpected '}', expecting keyword_end
+app/controllers/reviews_controller.rb:138: syntax error, unexpected keyword_end, expecting end-of-input
+Started DELETE "/professors/11/reviews/11" for ::1 at 2017-07-07 13:46:55 -0600
+  
+SyntaxError (/Users/tfantina/Documents/Code and Websites/ROR/professor/app/controllers/reviews_controller.rb:67: syntax error, unexpected tLABEL, expecting '}'
+_to admin_url(User.id) notice: 'Review was successfully dest
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/controllers/reviews_controller.rb:67: syntax error, unexpected '}', expecting keyword_end
+was successfully destroyed.' }
+                              ^
+/Users/tfantina/Documents/Code and Websites/ROR/professor/app/controllers/reviews_controller.rb:138: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/reviews_controller.rb:67: syntax error, unexpected tLABEL, expecting '}'
+app/controllers/reviews_controller.rb:67: syntax error, unexpected '}', expecting keyword_end
+app/controllers/reviews_controller.rb:138: syntax error, unexpected keyword_end, expecting end-of-input
+Started DELETE "/professors/11/reviews/11" for ::1 at 2017-07-07 13:47:08 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CuKq3/ZAqrJlgcOuMZx0inCioqUJqOcZNcf6Bci8KU8PNTfsaV6oRF7Y+U7wJlmT7BduXz4Xo0PGfkG5ysT2ww==", "professor_id"=>"11", "id"=>"11"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 11]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admins/11?notice=Review+was+successfully+destroyed.
+Completed 302 Found in 45ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/admins/11?notice=Review+was+successfully+destroyed." for ::1 at 2017-07-07 13:47:08 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"notice"=>"Review was successfully destroyed.", "id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 404 Not Found in 30ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=11):
+  
+app/controllers/admins_controller.rb:10:in `show'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:49:08 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (81.5ms)
+  Rendered layouts/_header.html.erb (3.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.0ms) [cache miss]
+Completed 200 OK in 363ms (Views: 284.6ms | ActiveRecord: 7.5ms)
+
+
+Started DELETE "/professors/12/reviews/12" for ::1 at 2017-07-07 13:49:13 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8yGoAqRkiHnK6h6vh4Ud8aZPLoTGyXMl5K4MUVsqLz/29jUxO3qKj/GzJE9GPzDoOvrifvF2N38XF7ftWVLwsw==", "professor_id"=>"12", "id"=>"12"}
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+app/controllers/reviews_controller.rb:68:in `block (2 levels) in destroy'
+app/controllers/reviews_controller.rb:67:in `destroy'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:49:57 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (83.5ms)
+  Rendered layouts/_header.html.erb (7.0ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.1ms) [cache miss]
+Completed 200 OK in 279ms (Views: 194.5ms | ActiveRecord: 5.5ms)
+
+
+Started DELETE "/professors/9/reviews/9" for ::1 at 2017-07-07 13:50:03 -0600
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KtQSrImB6Bp+9IWiY95LKuBzn1m3RL/rH2dmjpJwmIcvA4+fFp/q7EWtv0KiZGYzfMZTo4D7+7Hs3t0ykAhHCw==", "professor_id"=>"9", "id"=>"9"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 9]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"admins", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/reviews_controller.rb:68:in `block (2 levels) in destroy'
+app/controllers/reviews_controller.rb:67:in `destroy'
+Started GET "/admins/1" for ::1 at 2017-07-07 13:50:07 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_header.html.erb (3.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 83ms (Views: 75.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/professors" for ::1 at 2017-07-07 13:50:20 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (8.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 110ms (Views: 102.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/professors/11" for ::1 at 2017-07-07 13:50:22 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 11], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered professors/show.html.erb within layouts/application (22.9ms)
+  Rendered layouts/_header.html.erb (4.0ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 114ms (Views: 92.4ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/professors/11/reviews/16/flag" for ::1 at 2017-07-07 13:50:27 -0600
+Processing by ReviewsController#flag as JS
+  Parameters: {"professor_id"=>"11", "id"=>"16"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "reviews" SET "flag" = COALESCE("flag", 0) + 1 WHERE "reviews"."id" = ?[0m  [["id", 16]]
+  Rendering reviews/flag.js.erb
+  Rendered reviews/flag.js.erb (0.8ms)
+Completed 200 OK in 32ms (Views: 20.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:50:29 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_header.html.erb (3.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.3ms) [cache miss]
+Completed 200 OK in 110ms (Views: 98.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:50:34 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (3.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 80ms (Views: 72.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/professors/new" for ::1 at 2017-07-07 13:50:36 -0600
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (8.1ms) [cache miss]
+  Rendered professors/new.html.erb within layouts/application (14.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 93ms (Views: 86.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:50:37 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (18.5ms)
+  Rendered layouts/_header.html.erb (3.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.0ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 160ms (Views: 146.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/professors/new" for ::1 at 2017-07-07 13:50:38 -0600
+Processing by ProfessorsController#new as HTML
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (7.1ms) [cache miss]
+  Rendered professors/new.html.erb within layouts/application (12.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.1ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 120ms (Views: 114.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/professors" for ::1 at 2017-07-07 13:50:38 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (15.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 142ms (Views: 126.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/professors/11" for ::1 at 2017-07-07 13:50:40 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 11], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 11]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered professors/show.html.erb within layouts/application (24.4ms)
+  Rendered layouts/_header.html.erb (2.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.2ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 106ms (Views: 95.3ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/professors/11/flag" for ::1 at 2017-07-07 13:50:44 -0600
+Processing by ProfessorsController#flag as JS
+  Parameters: {"id"=>"11"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (2.1ms)[0m  [1m[33mUPDATE "professors" SET "flag" = COALESCE("flag", 0) + 1 WHERE "professors"."id" = ?[0m  [["id", 11]]
+  Rendering professors/flag.js.erb
+  Rendered professors/flag.js.erb (0.6ms)
+Completed 200 OK in 30ms (Views: 18.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/admins/1" for ::1 at 2017-07-07 13:50:45 -0600
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (19.4ms)
+  Rendered layouts/_header.html.erb (3.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 121ms (Views: 110.5ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/professors/11" for ::1 at 2017-07-07 13:50:49 -0600
+Processing by ProfessorsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"q1R9eAkfthMR4BBdRbugnq8UKNRpG0T4XHEeuEgnHOOug+BLlgG05Sq5Kr2EAY2HM6HkLl6kAKKvyKUESl/Dbw==", "id"=>"11"}
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "professors" WHERE "professors"."id" = ?[0m  [["id", 11]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[33mProfessor Remove (669.8ms)[0m  {"id":11}
+Redirected to http://localhost:3000/professors
+Completed 302 Found in 679ms (Searchkick: 669.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/professors" for ::1 at 2017-07-07 13:50:49 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.8ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 102ms (Views: 97.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-07-07 15:09:25 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (44.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 803ms (Views: 751.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/professors" for ::1 at 2017-07-07 15:09:30 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (11.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (7.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 120ms (Views: 105.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/professors/10" for ::1 at 2017-07-07 15:09:32 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 10], ["LIMIT", 1]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 10]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered professors/show.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_header.html.erb (4.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 131ms (Views: 110.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/professors" for ::1 at 2017-07-07 15:09:34 -0600
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.0ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (12.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 148ms (Views: 139.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/professors/2" for ::1 at 2017-07-07 15:09:35 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 2]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered professors/show.html.erb within layouts/application (89.2ms)
+  Rendered layouts/_header.html.erb (3.3ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.3ms) [cache miss]
+Completed 200 OK in 169ms (Views: 153.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/professors/2" for ::1 at 2017-07-07 15:10:23 -0600
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."professor_id" = ? LIMIT ?[0m  [["professor_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mReview Load (1.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ? ORDER BY created_at DESC[0m  [["professor_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."teachwell" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ? AND "reviews"."recommend" = 't'[0m  [["professor_id", 2]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."professor_id" = ?[0m  [["professor_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered professors/show.html.erb within layouts/application (40.4ms)
+  Rendered layouts/_header.html.erb (3.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 177ms (Views: 158.8ms | ActiveRecord: 5.0ms)
+
+

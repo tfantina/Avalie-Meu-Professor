@@ -11,7 +11,7 @@ reviews are formatted */
 .review-box-dark {
   float: left;
   width: 100%;
-  background-color: $dark-grey;
+  background-color: $oceanblue;
   overflow: hidden;
   position: relative;
 
@@ -27,13 +27,13 @@ reviews are formatted */
 .review-box-light {
   float: left;
   width: 100%;
-  background-color: $grey;
+  background-color: $skyblue;
   position: inherit;
   left: 18%;
 }
 
 .box-dark {
-  color: $navbar-blue;
+  color: $white;
   width: 18%;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -56,7 +56,7 @@ reviews are formatted */
 
 .review-box-sm {
   width: 100%;
-  background-color: $dark-grey;
+  background-color: $oceanblue;
   padding-top: 15px;
   padding-bottom: 15px;
   color: $navbar-blue;
@@ -66,7 +66,7 @@ reviews are formatted */
 
 @media screen and (max-width: 992px) {
   .review-box-dark {
-    background-color: $grey;
+    background-color: $skyblue;
   }
   .review-box-light {
     width: 100%;
@@ -76,7 +76,7 @@ reviews are formatted */
   }
   .review-box-sm {
       width: 100%;
-      background-color: $dark-grey;
+      background-color: $oceanblue;
       padding-top: 15px;
       padding-bottom: 15px;
       color: $navbar-blue;

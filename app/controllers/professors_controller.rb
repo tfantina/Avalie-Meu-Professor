@@ -32,7 +32,7 @@ class ProfessorsController < ApplicationController
       #@user = User.where(user_id: @review.user_id)   <===== uncomment when showing users.
     if @review.exists?
       @avg_review = @review.average(:rating).round(1)
-      
+
 
     end
   end
@@ -130,11 +130,12 @@ class ProfessorsController < ApplicationController
 
     #logic for sorting options that users will get, sanatized
     def sort_column
-       %w[fullname created_at].include?(params[:sort]) ? params[:sort]: "created_at"
+       %w[fullname school].include?(params[:sort]) ? params[:sort]: "created_at"
     end
     def sort_direction
         %w[asc desc].include?(params[:direction]) ? params[:direction]: "DESC"
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def professor_params
