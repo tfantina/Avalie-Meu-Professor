@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :set_professor, except: [:show, :edit, :flag, :vote, :destroy]
   before_action :set_user, only: [:destory]
+  
 
   # GET /reviews/new
   def new
@@ -31,10 +32,10 @@ class ReviewsController < ApplicationController
       #@review.rating = (:ease + :interest + :helpful)/3
       respond_to do |format|
       if verify_recaptcha(model: @review) && @review.save
-        format.html{ redirect_to @professor, notice: 'Review was successfully created.' }
+        format.html{ redirect_to @professor, notice: 'A avaliação foi criada com sucesso.' }
         format.json { render @professor, status: :created, location: @review }
       else
-        format.html { render :edit, notice: 'Please fill out the captcha.'}
+        format.html { render :edit, notice: 'Por favor, preencha o captcha.'}
         format.json { render json: @review.errors, status: :unprocessable_entity}
       end
    end

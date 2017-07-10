@@ -1,10 +1,14 @@
-<% @users.each do |user| %>
-  <%= user.email %>
-  <% if user.admin == false %>
-  <%= link_to 'Make Admin', toggle_admin_user_path(user.id), method: :patch, remote: true %>
-  <% else %>
-  User is Admin:   <%= link_to 'Unmake Admin', toggle_admin_user_path(user.id), method: :patch, remote: true %>
-  <% end %>
 
+<% if @user.present? %>
+  <% @users.each do |user| %>
+    <%= user.email %>
+    <% if user.admin == false %>
+      <%= link_to 'Make Admin', toggle_admin_user_path(user.id), method: :patch, remote: true %>
+    <% else %>
+    User is Admin:   <%= link_to 'Unmake Admin', toggle_admin_user_path(user.id), method: :patch, remote: true %>
+    <% end %>
+  <% end %>
+<% else %>
+  Could not find that user
 
 <% end %>

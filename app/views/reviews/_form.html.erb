@@ -1,6 +1,6 @@
 <!-- form for ratings -->
 
-<%= form_for @review  do |f| %>
+<%= form_for([@professor, @review]) do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "erro") %>  proibiram que este avalie fosse salvo:</h2>
@@ -70,8 +70,9 @@
     <!-- terms of service & captcha -->
 
     <div class="field">
-      <%= f.check_box :terms_of_service %>  I agree to the website's
-      <%= link_to "terms & conditions", terms_path %>
+      <%= f.check_box :terms_of_service %>  Aceito os
+        <%= link_to "termos e condições ", terms_path %> do site
+
     </div>
 
     <%= raw recaptcha_tags %>

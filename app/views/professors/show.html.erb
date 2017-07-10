@@ -1,3 +1,4 @@
+
 <% provide(:title, "#{@professor.fullname}") %>
 <!-- professor info -->
 <div class="row">
@@ -8,7 +9,7 @@
       <% if @review.present? %>
       <li> <strong>Média do professor: </strong>
         <div class="star-rating" data-score='<%= @avg_review %>'> </div>
-        <%= @avg_review %> stars. </li>
+        <%= @avg_review %> estrelas. </li>
         <li><strong>Escola: </strong><%= @professor.school %></li>
         <li><strong><%= "Review".pluralize(@review.length) %>:
           <%= @review.length %></strong></li>
@@ -18,7 +19,8 @@
             aria-value-now="<%= @professor.teachwell %>"
             aria-valuemin="0" aria-valuemax="100"
             style="width:<%= @professor.teachwell %>%">
-            <span><%= @professor.teachwell %>% of reviewers say this professor teaches well</span>
+              <!-- reviewers say this professor teaches well -->
+            <span><%= @professor.teachwell %>% os avaliadores dizem que este professor ensina bem</span>
           </div>
         </div></li>
         <li><div class="progress">
@@ -27,7 +29,9 @@
           aria-value-now="<%= @professor.recomend %>"
           aria-valuemin="0" aria-valuemax="100"
           style="width:<%= @professor.recomend %>%">
-          <span><%= @professor.recomend %>% of reviewers recomend this professor</span>
+          <!-- reviewers recomend this professor -->
+          <span><%= @professor.recomend %>% os avaliadores recomendam este professor
+</span>
         </div>
       </div></li>
     </ul>
@@ -39,8 +43,18 @@
     </div>
     <div class="row">
 
-        <%= collection_select(:professor, :id, Review.where(professor_id: @professor.id).uniq, :id, :whatclass,  {:multiple =>false}) %>
+     <%= collection_select(:professor, :id,
+                              Review.where(professor_id: @professor.id).select('distinct(whatclass)'),
+                              :id, :whatclass, {include_blank: "Select a class"},
+                                {onchange: "chooseClass();" }) %>
 
+    <%= sort_subject "whatclass"%>
+    <%= form_for professors_path, :method => 'get' do %>
+     <p>
+        <%= text_field :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+     </p>
+     <% end %>
     </div>
   </div>
 
@@ -53,7 +67,7 @@
   </div>
 </div>
   <div class="row">
-      <center><h3> This professor is not yet reviewed would you like to review: </h3>
+      <center><h3> Este professor ainda não tem sido avaliado, você gostaria de avaliá-lo para estudantes no futuro? </h3>
       <%= link_to "Avalie Este Professor", new_professor_review_path(@professor),
       class: "btn btn-primary btn-lg" %></center>
 
@@ -67,11 +81,11 @@
       <!-- start reviews -->
 
   <% @review.each do |review| %>
-  <div class="row">
+  <div class="row <%= review.whatclass %>">
     <div class="review-box-sm">
       <div class="row">
         <div class="col-xs-3">
-          <strong>Review from:</strong> <%= review.created_at.strftime("%b %e, %Y") %>
+          <strong>Avaliação de:</strong> <%= review.created_at.strftime("%b %e, %Y") %>
         </div>
         <div class="col-xs-4">
           Média: <div class="star-rating" data-score="<%= review.rating %>"></div>
@@ -82,7 +96,7 @@
     <div class="review-box-dark">
       <div class="review-box-light">
     <!-- left panel -->
-    <div class="box-dark col-lg-3">
+    <div class="box-dark col-xs-4">
       <strong>Review from:</strong> <%= review.created_at.strftime("%b %e, %Y") %>
       <table>
         <tr>
@@ -96,7 +110,7 @@
           </tr>
           <tr>
             <td align='right'>Intressante:</td>
-            <td><div class="star-rating" data-score="<%= review.interesting %>">
+            <td><div class="star-rating" width="50px;" data-score="<%= review.interesting %>">
                 </div></td>
           </tr>
           <tr>
@@ -138,6 +152,13 @@
               <%= review.grade%>
             </div>
            <% end %>
+
+           <% if review.whatclass.present? %>
+            <div class="col-sm-3">
+              Nota:
+              <%= review.whatclass%>
+            </div>
+           <% end %>
          </div>
       </div>
     </div>
@@ -173,6 +194,8 @@
       class: "btn btn-primary  text-center"%>
 </div>
 
+</div>
+
 <script>
 
 $(window).width(function(){
@@ -192,4 +215,28 @@ $(window).width(function(){
           return $(this).attr('data-score');
       }
   });
+
+
+function chooseClass() {
+  var select = document.getElementById('professor_id');
+  var allOptions = [];
+  for (i = 0; i < select.options.length; i++) {
+    allOptions.push(select.options[i].text);
+  };
+
+  var selection = select.options[select.selectedIndex].text;
+  console.log(selection + " " + allOptions);
+
+  $('.'+ allOptions).show();
+
+  for(i=0; i < allOptions.length; i++) {
+    if(selection != allOptions[i]) {
+      $('.' + allOptions[i]).hide();
+    }
+  }
+
+//  $('.'+ selection).hide();
+  //divHide.style.display="none";
+
+ }
   </script>

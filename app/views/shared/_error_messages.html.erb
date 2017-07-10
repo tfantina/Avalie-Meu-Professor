@@ -1,7 +1,7 @@
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      Please fix the following <%= pluralize(@user.errors.count, "error") %>/
+      Por favor corrija o seguinte <%= pluralize(@user.errors.count, "error") %>/
     </div>
     <ul>
       <% @user.errors.full_messages.each do |msg| %>

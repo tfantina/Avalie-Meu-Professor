@@ -10,6 +10,13 @@ class Review < ActiveRecord::Base
     self.rating = (ease + interesting + helpfull)/3
   end
 
+  def self.search(search)
+    if search
+      where('whatclass LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
 
 
 end

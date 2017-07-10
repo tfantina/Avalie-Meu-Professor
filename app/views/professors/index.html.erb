@@ -1,6 +1,6 @@
 <% provide(:title, "Professors") %>
 
-<div class="center-block">
+
 <div class="row">
 
 Classifica: <%= sortable "fullname", "Nome" %> | <%= sortable "school", "School" %>
@@ -22,4 +22,3 @@ Classifica: <%= sortable "fullname", "Nome" %> | <%= sortable "school", "School"
 </div>
     </div>
  <%= will_paginate @professors %>
-</div>

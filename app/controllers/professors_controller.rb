@@ -3,7 +3,7 @@ class ProfessorsController < ApplicationController
   before_action :authenticate_with_http_digest, except: [:index, :show, :search]
   before_action :check_configuration
   before_action :admin_user, only: :destory
-  helper_method :sort_column, :sort_direction
+  helper_method :sort_column, :sort_direction, :sort_class
 
 
 
@@ -11,12 +11,10 @@ class ProfessorsController < ApplicationController
     #render 'configuration_missing' if Cloudinary.config.api_key.blank?
   end
 
-  # GET /professors
-  # GET /professors.json
+
   def index
      @professors = Professor.paginate(:page => params[:page], per_page: 20).order(sort_column + " " + sort_direction)
-     #@professor = Professor
-    # @review = Review.where(professor_id: @professor.ids)
+
   end
 
   def schools
@@ -24,16 +22,20 @@ class ProfessorsController < ApplicationController
     @school = Professor.where(school: @professors.ids)
   end
 
-  # GET /professors/1
-  # GET /professors/1.json
+
 
   def show
-      @review = Review.where(professor_id: @professor.id).order("created_at DESC")
-      #@user = User.where(user_id: @review.user_id)   <===== uncomment when showing users.
+    #  @review = Review.where(professor_id: @professor.id).order("created_at DESC")
+      # @review = Review.where(professor_id: @professor.id).select(sort_class)
+
+       if params[:search].present?
+           @review = Review.search(params[:search])
+       else
+           @review = Review.where(professor_id: @professor.id)
+       end
+       
     if @review.exists?
       @avg_review = @review.average(:rating).round(1)
-
-
     end
   end
 
@@ -41,7 +43,7 @@ class ProfessorsController < ApplicationController
   # GET /professors/new
   def new
     @professor = Professor.new
-    # Replace above with: @professor = current_user.professors.build  when implementing user model
+
   end
 
   # POST /professors
@@ -52,10 +54,10 @@ class ProfessorsController < ApplicationController
     @review = Review.new
     respond_to do |format|
       if verify_recaptcha(model: @professor) && @professor.save
-        format.html { redirect_to controller: 'reviews', action: 'new', professor_id: @professor.id, notice: 'Professor was successfully created.' }
+        format.html { redirect_to controller: 'reviews', action: 'new', professor_id: @professor.id, notice: 'O professor foi criado com sucesso.' }
         format.json { render :show, status: :created, location: @professor }
       else
-        format.html { render :edit, notice: 'Please fill out the captcha.' }
+        format.html { render :edit, notice: 'Por favor, preencha o captcha.' }
         format.json { render json: @professor.errors, status: :unprocessable_entity }
       end
     end
@@ -134,6 +136,10 @@ class ProfessorsController < ApplicationController
     end
     def sort_direction
         %w[asc desc].include?(params[:direction]) ? params[:direction]: "DESC"
+    end
+
+    def sort_class
+    #  %w[fullname].include?(params[:sort]) ? params[:sort]: "created_at"
     end
 
 

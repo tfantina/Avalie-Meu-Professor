@@ -29,28 +29,28 @@ reviews are formatted */
   width: 100%;
   background-color: $skyblue;
   position: inherit;
-  left: 18%;
+  left: 22%;
 }
 
 .box-dark {
   color: $white;
-  width: 18%;
+  width: 22%;
   padding-top: 15px;
   padding-bottom: 15px;
   float: left;
   position: relative;
-  right: 18%;
+  right: 22%;
   display: inherit !important;
 
 }
 
 .box-light {
-  width: 82%;
+  width: 78%;
   padding-top: 15px;
   padding-bottom: 15px;
   float: left;
   position: relative;
-  right: 18%;
+  right: 22%;
 
 }
 
@@ -79,7 +79,7 @@ reviews are formatted */
       background-color: $oceanblue;
       padding-top: 15px;
       padding-bottom: 15px;
-      color: $navbar-blue;
+      color: $white;
       display: inherit !important;
 
   }
