@@ -1,7 +1,14 @@
 
 <h1>Editing Review</h1>
 
-<%= render 'form' %>
+
+<%= form_for([Professor, @review]) do |review| %>
+
+    <%= review.text_area :comment, cols: "60", rows: "5" %>
+    <%= review.submit "Submit Edits",  class: "btn btn-primary" %>
+<% end %>
 
 
-<%= link_to 'Back', professor_path(@professor) %>
+
+
+<%= link_to 'Back', professors_path %>

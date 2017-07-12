@@ -41,21 +41,7 @@
       <%= link_to "Avalie este professor",
           new_professor_review_path(@professor), class: "btn btn-primary"%>
     </div>
-    <div class="row">
 
-     <%= collection_select(:professor, :id,
-                              Review.where(professor_id: @professor.id).select('distinct(whatclass)'),
-                              :id, :whatclass, {include_blank: "Select a class"},
-                                {onchange: "chooseClass();" }) %>
-
-    <%= sort_subject "whatclass"%>
-    <%= form_for professors_path, :method => 'get' do %>
-     <p>
-        <%= text_field :search, params[:search] %>
-        <%= submit_tag "Search", :name => nil %>
-     </p>
-     <% end %>
-    </div>
   </div>
 
   <% end %>
@@ -130,26 +116,5 @@ $(window).width(function(){
   });
 
 
-function chooseClass() {
-  var select = document.getElementById('professor_id');
-  var allOptions = [];
-  for (i = 0; i < select.options.length; i++) {
-    allOptions.push(select.options[i].text);
-  };
 
-  var selection = select.options[select.selectedIndex].text;
-  console.log(selection + " " + allOptions);
-
-  $('.'+ allOptions).show();
-
-  for(i=0; i < allOptions.length; i++) {
-    if(selection != allOptions[i]) {
-      $('.' + allOptions[i]).hide();
-    }
-  }
-
-//  $('.'+ selection).hide();
-  //divHide.style.display="none";
-
- }
   </script>
