@@ -12,9 +12,9 @@ class Review < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where('whatclass LIKE ?', "%#{search}%")
+      where('comment LIKE ?', "%#{search}%")
     else
-      scoped
+      self.all
     end
   end
 

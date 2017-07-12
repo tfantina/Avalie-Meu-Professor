@@ -27,13 +27,13 @@ class ProfessorsController < ApplicationController
   def show
     #  @review = Review.where(professor_id: @professor.id).order("created_at DESC")
       # @review = Review.where(professor_id: @professor.id).select(sort_class)
-
+      @review = Review.where(professor_id: @professor.id)
        if params[:search].present?
-           @review = Review.search(params[:search])
+           @review = Review.search(params[:search]).where(professor_id: @professor.id)
        else
            @review = Review.where(professor_id: @professor.id)
        end
-       
+
     if @review.exists?
       @avg_review = @review.average(:rating).round(1)
     end
