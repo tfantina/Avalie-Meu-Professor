@@ -66,7 +66,95 @@
       <!-- end info -->
       <!-- start reviews -->
 
-  <%= render partial: 'reviews' %>
+      <% @review.each do |review| %>
+      <div class="row <%= review.whatclass %>">
+        <div class="review-box-sm">
+          <div class="row">
+            <div class="col-xs-3">
+              <strong>Avaliação de:</strong> <%= review.created_at.strftime("%b %e, %Y") %>
+            </div>
+            <div class="col-xs-4">
+              Média: <div class="star-rating" data-score="<%= review.rating %>"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-box-dark">
+          <div class="review-box-light">
+        <!-- left panel -->
+        <div class="box-dark col-xs-4">
+          <strong>Review from:</strong> <%= review.created_at.strftime("%b %e, %Y") %>
+          <table>
+            <tr>
+              <td align='right'>Média:</td>
+              <td><div class="star-rating" data-score="<%= review.rating %>"></div>
+              </td>
+              <tr>
+                <td align='right'>Fácil: </td>
+                <td><div class="star-rating" data-score="<%= review.ease %>"></div>
+                </td>
+              </tr>
+              <tr>
+                <td align='right'>Intressante:</td>
+                <td><div class="star-rating" width="50px;" data-score="<%= review.interesting %>">
+                    </div></td>
+              </tr>
+              <tr>
+                <td align='right'>Prestativo:</td>
+                <td><div class="star-rating" data-score="<%= review.helpfull %>">
+                    </div></td>
+              </tr>
+              <tr></tr>
+              <tr>
+                <td>
+                  <%= link_to flag_professor_review_path(@professor, review),
+                      method: :post, class: "flag-#{review.id}", data: { confirm:
+                      "Tem certeza de que deseja flagrar esta revisão?
+                      (Os comentários são flagrados se forem inadequados ou irrelevantes)." },
+                       remote: true do %>
+                      <span class="glyphicon glyphicon-flag"></span>
+                  <% end %>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- right panel -->
+          <div class="box-light col-lg-9">
+            <strong>Comentários: </strong>
+            <hr />
+             <%= review.comment %>
+
+             <div class="row aditional-info">
+               <% if review.major.present? %>
+                <div class="col-sm-3">
+                 Graduação:
+                  <%= review.major %>
+                </div>
+               <% end %>
+
+               <% if review.grade.present? %>
+                <div class="col-sm-3">
+                  Nota:
+                  <%= review.grade%>
+                </div>
+               <% end %>
+
+               <% if review.whatclass.present? %>
+                <div class="col-sm-3">
+                  Nota:
+                  <%= review.whatclass%>
+                </div>
+               <% end %>
+             </div>
+          </div>
+        </div>
+      </div>
+      </div> <!-- closes each review -->
+
+
+
+      <% end %>
+
   <% end %>
   <br />
 
