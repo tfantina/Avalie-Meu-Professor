@@ -27279,3 +27279,106 @@ Completed 200 OK in 400ms (Views: 389.7ms | ActiveRecord: 2.5ms)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 [0m
+Started GET "/" for ::1 at 2017-09-08 12:13:57 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 6]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (1.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_header.html.erb (52.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.2ms) [cache miss]
+Completed 200 OK in 10142ms (Views: 10077.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.self-d24a4aac0dcb84334f03277da268edbfcf31600646c0dc5b132243b6c74b07ca.css?body=1" for ::1 at 2017-09-08 12:14:08 -0400
+Started GET "/users/sign_up" for ::1 at 2017-09-08 12:14:17 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (1346.6ms)
+  Rendered layouts/_header.html.erb (5.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.7ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 1600ms (Views: 1503.1ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/users" for ::1 at 2017-09-08 12:14:29 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eJiuEl24cmR+i1aOJ2vvjTnXFN2FuuYHNnHoMDIhGN8Z35I1lGGCpHwv0VL+iNKktQIHPSsVp1kjFIFlzHatcw==", "user"=>{"email"=>"tfantina@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tfantina@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_header.html.erb (4.0ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 381ms (Views: 154.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/professors" for ::1 at 2017-09-08 12:15:23 -0400
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (3.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (47.9ms)
+  Rendered layouts/_header.html.erb (10.5ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.2ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 275ms (Views: 244.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-09-08 12:17:04 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.2ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (57.8ms)
+  Rendered layouts/_header.html.erb (8.4ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (2.1ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 299ms (Views: 265.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-09-08 12:17:15 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rt1gkzGwdU1s/7pnbxt0/lZUxqxkgiY5JE02cP55tjzPmly0+GmFjW5bPbu2+EnX2oHVTMotZ2cxKF8lAC4DkA==", "user"=>{"email"=>"travis@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "travis@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2017-09-08 16:17:16.132718"], ["last_sign_in_at", "2017-07-01 02:43:42.864102"], ["sign_in_count", 4], ["updated_at", "2017-09-08 16:17:16.139796"], ["id", 2]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 315ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/" for ::1 at 2017-09-08 12:17:16 -0400
+Processing by SiteController#index as HTML
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 6]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (11.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (12.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (1.1ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.0ms) [cache miss]
+Completed 200 OK in 218ms (Views: 196.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/admins/2" for ::1 at 2017-09-08 12:17:19 -0400
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (1.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (60.1ms)
+  Rendered layouts/_header.html.erb (4.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 207ms (Views: 167.0ms | ActiveRecord: 5.8ms)
+
+
