@@ -27382,3 +27382,92 @@ Processing by AdminsController#show as HTML
 Completed 200 OK in 207ms (Views: 167.0ms | ActiveRecord: 5.8ms)
 
 
+Started GET "/admins/2" for ::1 at 2017-10-09 21:12:49 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (51.1ms)
+  Rendered layouts/_header.html.erb (32.1ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.8ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 774ms (Views: 687.9ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/application.self-d24a4aac0dcb84334f03277da268edbfcf31600646c0dc5b132243b6c74b07ca.css?body=1" for ::1 at 2017-10-09 21:12:50 -0400
+Started GET "/admins/2" for ::1 at 2017-10-09 21:13:52 -0400
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_header.html.erb (5.0ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.4ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 2683ms (Views: 2651.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.self-6fcd1cbef18ff88bdcda4f443500a6565bfaa650450d01054224fa5e05bb3cea.css?body=1" for ::1 at 2017-10-09 21:13:55 -0400
+Started GET "/admins/2" for ::1 at 2017-10-09 21:14:30 -0400
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (25.0ms)
+  Rendered layouts/_header.html.erb (5.7ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 2710ms (Views: 2677.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/application.self-9b9159fbef5447472c6fb892603db249f0dc4494f2850471d0408a36ee8d839b.css?body=1" for ::1 at 2017-10-09 21:14:33 -0400
+Started GET "/professors" for ::1 at 2017-10-09 21:14:35 -0400
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.7ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (9.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (1.3ms) [cache miss]
+Completed 200 OK in 96ms (Views: 88.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/professors" for ::1 at 2017-10-09 21:14:54 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered professors/index.html.erb within layouts/application (30.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (47.2ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.5ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 706ms (Views: 671.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/admins/2" for ::1 at 2017-10-09 21:14:58 -0400
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admins/show.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" WHERE (flag > 0) ORDER BY flag DESC[0m
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE (flag > 0) ORDER BY flag DESC[0m
+  Rendered admins/show.html.erb within layouts/application (64.9ms)
+  Rendered layouts/_header.html.erb (4.0ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 207ms (Views: 170.0ms | ActiveRecord: 4.6ms)
+
+
