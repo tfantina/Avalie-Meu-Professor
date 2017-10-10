@@ -9,7 +9,7 @@ class AdminsController < ApplicationController
   def show
        @user = User.find(params[:id])
        @professor = Professor.where("flag > ?", 0).order("flag DESC")
-       @review = Review.where("flag > ?", 0).order("flag DESC")
+       @review = Review.includes(:professor).where("flag > ?", 0).order("flag DESC")
   end
 
 
