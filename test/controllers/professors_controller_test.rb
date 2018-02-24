@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ProfessorsControllerTest < ActionController::TestCase
+  include Devise::Test::ControllerHelpers
   setup do
     @professor = professors(:James)
     @flag = @professor.flag
@@ -9,7 +10,6 @@ class ProfessorsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:professors)
   end
 
   test "should get new" do
@@ -25,7 +25,7 @@ class ProfessorsControllerTest < ActionController::TestCase
   end
 
   test "should show professor" do
-    get :show, id: @professor
+    get :show, id: @professor.id
     assert_response :success
   end
 

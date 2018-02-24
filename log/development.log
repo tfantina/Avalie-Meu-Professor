@@ -28662,3 +28662,28 @@ Processing by AdminsController#show as HTML
 Completed 200 OK in 124ms (Views: 111.8ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/" for ::1 at 2018-02-24 10:01:07 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SiteController#index as HTML
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "professors"[0m
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY "professors"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  Rendering site/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.8ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 4]]
+  Rendered site/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (30.6ms) [cache miss]
+  Rendered layouts/_google_analytics.html.erb (0.6ms) [cache miss]
+  Rendered layouts/_footer.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 770ms (Views: 688.7ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2018-02-24 10:01:08 -0500
+Started GET "/assets/jquery.raty.self-eb7045c9858acfa4797981589f870a37b0dc801327e96148473cad672c94b9b8.js?body=1" for ::1 at 2018-02-24 10:01:08 -0500
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2018-02-24 10:01:08 -0500
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for ::1 at 2018-02-24 10:01:08 -0500
+Started GET "/assets/professors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-02-24 10:01:08 -0500
+Started GET "/assets/application.self-9b9159fbef5447472c6fb892603db249f0dc4494f2850471d0408a36ee8d839b.css?body=1" for ::1 at 2018-02-24 10:01:08 -0500
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-02-24 10:01:08 -0500
+Started GET "/assets/admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-02-24 10:01:08 -0500
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2018-02-24 10:01:08 -0500
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-02-24 10:01:08 -0500
+Started GET "/assets/application.self-6ceb82aa3d1ab614176877593aab37e4721ab2ab7de48b64906430f7ea12ae6f.js?body=1" for ::1 at 2018-02-24 10:01:08 -0500
