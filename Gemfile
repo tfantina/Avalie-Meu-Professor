@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 #paperclip for easy upload management
-gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem "paperclip", "~> 5.2.1"
 #bootstrap-sass
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 #searchkick
